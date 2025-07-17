@@ -1,11 +1,13 @@
 services:
   mysql:
-    image: mysql:latest
+    build:
+      context: ./docker/mysql-build
+      dockerfile: Dockerfile
     restart: always
     ports:
       - 3306:3306
     volumes:
-      - "./srv/database:/var/lib/mysql"
+      - mysql_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -15,41 +17,76 @@ services:
       - path: .env
         required: true
 
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.13.0
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    ports:
+      - 9200:9200
+    command:
+      - bash
+      - -c
+      - |
+        elasticsearch-plugin install analysis-icu --batch && \
+        /usr/local/bin/docker-entrypoint.sh
+
   wordpress:
-    image: wordpress:latest
+    build:
+      context: .
+      dockerfile: docker/wordpress-build/Dockerfile
     depends_on:
       - mysql
+      - elasticsearch
     links:
       - mysql
     ports:
       - 8000:80
     restart: always
     environment:
-      WORDPRES_DB_HOST: ${WORDPRES_DB_HOST}
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
       WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
       WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
       WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
       WORDPRESS_DEBUG: 1
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'WP_HOME', 'http://localhost:8000' );
+        define( 'WP_SITEURL', 'http://localhost:8000' );
+        define( 'WP_ALLOW_MULTISITE', true );
+        define( 'MULTISITE', true );
+        define( 'SUBDOMAIN_INSTALL', false );
+        define( 'DOMAIN_CURRENT_SITE', 'localhost:8000' );
+        define( 'PATH_CURRENT_SITE', '/' );
+        define( 'SITE_ID_CURRENT_SITE', 1 );
+        define( 'BLOG_ID_CURRENT_SITE', 1 );
+      EP_HOST: http://elasticsearch:9200
+      WORDPRESS_SMTP_HOST: mailpit
+      WORDPRESS_SMTP_PORT: 1025
+      VIRTUAL_HOST: localhost
+      WP_CLI_URL: http://localhost:8000
     env_file:
       - path: .env
         required: true
     volumes:
+      - wordpress_data:/var/www/html
       - ./srv/custom.ini:/usr/local/etc/php/conf.d/custom.ini
-      - ./srv/wordpress/:/var/www/html
+      - ./srv/wordpress/demo.xml:/var/www/html/demo.xml
       - ./themes/krishna-academy/:/var/www/html/wp-content/themes/krishnaacademy
+      - ./plugins/:/var/www/html/wp-content/plugins
 
-  phpmyadmin:
-    image: phpmyadmin:latest
-    depends_on:
-      - mysql
-    links:
-      - mysql
+  redis:
+    image: redis:7-alpine
     ports:
-      - 8181:80
+      - "6379:6379"
+
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - 8025:8025
     environment:
-      MYSQL_USERNAME: ${MYSQL_USERNAME}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      PMA_HOST: mysql
-    env_file:
-      - path: .env
-        required: true
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1
+
+volumes:
+  mysql_data:
+  wordpress_data:
