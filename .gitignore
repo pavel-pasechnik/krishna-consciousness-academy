@@ -2,3 +2,9 @@
 .env
 node_modules
 build
+plugins/elasticpress
+plugins/polylang
+plugins/redis-cache
+plugins/wordpress-importer
+plugins/wp-super-cache
+themes/k-a

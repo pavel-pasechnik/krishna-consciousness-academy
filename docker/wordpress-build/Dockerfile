@@ -5,6 +5,7 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 # Copying the theme
 COPY ./themes/krishna-academy /var/www/html/wp-content/themes/krishnaacademy
+COPY ./plugins /var/www/html/wp-content/plugins
 
 # Add your entrypoint script.
 COPY ./docker/wordpress-build/init-wordpress.sh /usr/local/bin/init-wordpress.sh
