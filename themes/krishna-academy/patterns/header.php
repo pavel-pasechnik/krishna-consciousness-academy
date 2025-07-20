@@ -12,3 +12,17 @@
  * Post Types:
  * Template Types:
  */
+
+<?php
+
+register_block_pattern(
+    'krishna-academy/header',
+    [
+        'title'       => __('Header', 'krishna-academy'),
+        'categories'  => ['header'],
+        'inserter'    => true,
+        'content'     => file_get_contents(
+            get_theme_file_path('parts/header.html')
+        ),
+    ]
+);

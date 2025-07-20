@@ -7,4 +7,14 @@ plugins/polylang
 plugins/redis-cache
 plugins/wordpress-importer
 plugins/wp-super-cache
-themes/k-a
+plugins/akismet
+plugins/hello.php
+plugins/index.php
+themes/twentytwentyfive
+themes/twentytwentyfour
+themes/twentytwentythree
+themes/index.php
+.intelephense
+.history
+vendor
+wordpress

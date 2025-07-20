@@ -1,10 +1,19 @@
 {
-    "extends": ["stylelint-config-standard", "stylelint-config-clean-order"],
-    "plugins": ["stylelint-order"],
-    "rules": {
-        "declaration-property-unit-allowed-list": {
-            "letter-spacing": ["em"],
-            "line-height": []
-        }
-    }
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-clean-order",
+    "@wordpress/stylelint-config"
+  ],
+  "plugins": ["stylelint-order", "stylelint-prettier"],
+  "rules": {
+    "declaration-property-unit-allowed-list": { "letter-spacing": ["em"], "line-height": [] },
+    "custom-property-pattern": [
+      "^([a-z0-9-]+)$",
+      {
+        "message": "Expected custom property name to be kebab-case",
+        "ignoreProperties": [],
+        "ignoreVariables": ["^--wp"]
+      }
+    ]
+  }
 }

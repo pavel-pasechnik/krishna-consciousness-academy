@@ -1,16 +1,18 @@
 #!/bin/bash
-
-FORCE_REINIT=false
-if [[ "$1" == "--reinit" ]]; then
-  export WP_CLI_URL="http://localhost:8000"
-  FORCE_REINIT=true
-fi
+set -e
 
 # Waiting for the database to be available
 until nc -z "$(echo $WORDPRESS_DB_HOST | cut -d: -f1)" "$(echo $WORDPRESS_DB_HOST | cut -d: -f2)"; do
   echo "⏳ Waiting for TCP connection to MySQL..."
   sleep 2
 done
+
+if [ ! -f /var/www/html/index.php ]; then
+  echo "📦 WordPress not found. Click to copy в /var/www/html..."
+  cp -a /usr/src/wordpress/. /var/www/html/
+else
+  echo "✅ WordPress is already installed. Skip copying."
+fi
 
 # Wait for WordPress core to be copied by docker-entrypoint.sh
 until [[ -f /var/www/html/wp-includes/version.php ]]; do
@@ -21,10 +23,14 @@ done
 # If wp-config.php doesn't exist yet but env variables are set — trigger creation
 if [[ ! -f /var/www/html/wp-config.php && -n "$WORDPRESS_DB_HOST" ]]; then
   echo "⚙️ Triggering wp-config.php creation..."
-  docker-entrypoint.sh apache2-foreground &
-  WP_PID=$!
-  sleep 5
-  kill $WP_PID
+  wp config create \
+    --dbname="$WORDPRESS_DB_NAME" \
+    --dbuser="$WORDPRESS_DB_USER" \
+    --dbpass="$WORDPRESS_DB_PASSWORD" \
+    --dbhost="$WORDPRESS_DB_HOST" \
+    --path=/var/www/html \
+    --allow-root \
+    --skip-check
 fi
 
 # Wait for wp-config.php to appear
@@ -56,23 +62,70 @@ if ! wp core is-installed --allow-root || [[ "$FORCE_REINIT" == true ]]; then
 
   WP_SITE_URL="http://localhost:8000"
 
+  wp option update WPLANG uk --url="$WP_SITE_URL" --allow-root
+
   # Set languages
   wp language core install uk --allow-root
   wp language core install ru_RU --allow-root
   wp language core install en_US --allow-root
 
   # Changing the default site language
-  wp language core activate uk --allow-root
+  if wp help | grep -q 'pll'; then
+    wp language core activate uk --allow-root
+  fi
 
   # Installing the WordPress demo data
   wp plugin install wordpress-importer --activate --url="$WP_SITE_URL" --allow-root
   wp import /var/www/html/demo.xml --authors=create --url="$WP_SITE_URL" --allow-root
+  wp import /var/www/html/demo-ru.xml --authors=create --url="$WP_SITE_URL/ru" --allow-root
+  wp import /var/www/html/demo-en.xml --authors=create --url="$WP_SITE_URL/en" --allow-root
+
+  # Adding Polylang languages
+  if wp help | grep -q 'pll'; then
+    wp pll language add uk --locale=uk --slug=uk --name="Українська" --allow-root
+  fi
+  if wp help | grep -q 'pll'; then
+    wp pll language add ru --locale=ru_RU --slug=ru --name="Русский" --allow-root
+  fi
+  if wp help | grep -q 'pll'; then
+    wp pll language add en --locale=en_US --slug=en --name="English" --allow-root
+  fi
+
+  # Linking translations to pages
+  if wp help | grep -q 'pll'; then
+    if wp pll post list --allow-root | grep -q "Про академію"; then
+      wp pll post update 2 --lang=uk --allow-root
+      wp pll post update 3 --lang=uk --allow-root
+      wp pll post update 4 --lang=uk --allow-root
+
+      wp pll post update 102 --lang=ru --allow-root
+      wp pll post update 103 --lang=ru --allow-root
+      wp pll post update 104 --lang=ru --allow-root
+
+      wp pll post update 202 --lang=en --allow-root
+      wp pll post update 203 --lang=en --allow-root
+      wp pll post update 204 --lang=en --allow-root
+
+      # Translation Association
+      wp pll post associate 2 ru=102 en=202 --allow-root
+      wp pll post associate 3 ru=103 en=203 --allow-root
+      wp pll post associate 4 ru=104 en=204 --allow-root
+    fi
+  fi
+
+  # Enable user-selectable admin language (if user-language-switcher plugin is installed)
+  wp plugin install user-language-switcher --activate --url="$WP_SITE_URL" --allow-root || echo "⚠️ Plugin user-language-switcher not found, skipping"
 
   # Automatic update of rewrite rules
+  # Set the administrator language manually
+  wp user meta update admin locale en_US --url="$WP_SITE_URL" --allow-root
+
+  # Setting up a permalink structure
+  wp rewrite structure '/%postname%/' --hard --url="$WP_SITE_URL" --allow-root
   wp rewrite flush --hard --url="$WP_SITE_URL" --allow-root
 
   # Activating your own topic
-  wp theme activate krishnaacademy --url="$WP_SITE_URL" --allow-root
+  wp theme activate krishna-academy --url="$WP_SITE_URL" --allow-root
 
   wp plugin install redis-cache --activate --url="$WP_SITE_URL" --allow-root
   wp plugin install wp-super-cache --activate --url="$WP_SITE_URL" --allow-root
@@ -81,10 +134,7 @@ if ! wp core is-installed --allow-root || [[ "$FORCE_REINIT" == true ]]; then
   # Installing and activating Polylang to support multilingualism
   wp plugin install polylang-cli --activate
   wp plugin install polylang --activate --url="$WP_SITE_URL" --allow-root
-
-  # Setting up a permalink structure
-  wp rewrite structure '/%postname%/' --hard --url="$WP_SITE_URL" --allow-root
-  wp rewrite flush --hard --url="$WP_SITE_URL" --allow-root
+  # wp plugin install admin-language-per-user --activate --url="$WP_SITE_URL" --allow-root
 
   # Customizing languages (if not added manually)
   # Removed adding languages via pll language add commands as requested

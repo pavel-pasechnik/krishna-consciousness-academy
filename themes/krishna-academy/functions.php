@@ -14,7 +14,7 @@ function krishna_academy_enqueue_styles()
 	);
 	wp_enqueue_style(
 		'krishna-academy-reset',
-		get_parent_theme_file_uri('assets/css/reset.css'),
+		get_theme_file_uri('assets/css/reset.css'),
 		array(),
 		wp_get_theme()->get('Version'),
 		'all'

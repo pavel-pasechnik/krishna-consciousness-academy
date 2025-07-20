@@ -1,0 +1,7 @@
+dist/
+node_modules/
+public/
+vendor/
+tmp/
+app/assets/javascripts/generated
+coverage/
