@@ -1,0 +1,17 @@
+engines:
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+  duplication:
+    enabled: true
+ratings:
+  paths:
+    - '**.js'
+    - '**.php'
+exclude_paths:
+  - node_modules/
+  - vendor/
+  - dist/
+  - wordpress/
+  - .vscode/
