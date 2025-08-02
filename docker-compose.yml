@@ -35,6 +35,9 @@ services:
     build:
       context: .
       dockerfile: docker/wordpress-build/Dockerfile
+      ssh:
+        - default
+      target: composer-wordpress
     depends_on:
       - mysql
       - elasticsearch
@@ -52,25 +55,20 @@ services:
       WORDPRESS_CONFIG_EXTRA: |
         define( 'WP_HOME', 'http://localhost:8000' );
         define( 'WP_SITEURL', 'http://localhost:8000' );
-        define( 'WP_ALLOW_MULTISITE', true );
-        define( 'MULTISITE', true );
-        define( 'SUBDOMAIN_INSTALL', false );
-        define( 'DOMAIN_CURRENT_SITE', 'localhost:8000' );
-        define( 'PATH_CURRENT_SITE', '/' );
-        define( 'SITE_ID_CURRENT_SITE', 1 );
-        define( 'BLOG_ID_CURRENT_SITE', 1 );
       EP_HOST: http://elasticsearch:9200
       WORDPRESS_SMTP_HOST: mailpit
       WORDPRESS_SMTP_PORT: 1025
       VIRTUAL_HOST: localhost
       WP_CLI_URL: http://localhost:8000
+      SSH_AUTH_SOCK: /ssh-agent
     env_file:
       - path: .env
         required: true
     volumes:
-      - ./wordpress:/var/www/html
-      - ./themes/:/var/www/html/wp-content/themes
-      - ./plugins/:/var/www/html/wp-content/plugins
+      - wordpress_data:/var/www/html/wordpress
+      - ./themes/:/var/www/html/wordpress/wp-content/themes
+      - ./plugins/:/var/www/html/wordpress/wp-content/plugins
+      - $SSH_AUTH_SOCK:/ssh-agent
 
   redis:
     image: redis:7-alpine
@@ -87,3 +85,4 @@ services:
 
 volumes:
   mysql_data:
+  wordpress_data:

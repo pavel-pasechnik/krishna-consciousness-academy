@@ -6,13 +6,14 @@
   "files.eol": "\n",
   "files.autoSave": "onFocusChange",
   "stylelint.enable": true,
-  "stylelint.validate": ["css", "scss"],
+  "stylelint.validate": ["css"],
   "editor.codeActionsOnSave": {
     "source.fixAll": "always",
     "source.fixAll.eslint": "always",
-    "source.fixAll.stylelint": "always",
+    "source.fixAll.stylelint": "never",
     "source.organizeImports": "always"
   },
+  "colorize.languages": ["javascript", "css", "json"],
   "intelephense.environment.includePaths": ["wordpress"],
   "local-history.enabled": 1, // Only inside workspace (to avoid writing history on single files outside the project)
   "local-history.daysLimit": 60, // Store histories for 60 days
@@ -37,10 +38,8 @@
   },
   "files.exclude": {
     "**/node_modules": true,
-    "**/wordpress": true,
     "**/.history": true,
     "**/plugins/elasticpress": true,
-    "**/plugins/polylang": true,
     "**/plugins/redis-cache": true,
     "**/plugins/wordpress-importer": true,
     "**/plugins/wp-super-cache": true,
@@ -54,9 +53,13 @@
   },
   "htmlhint.enable": true,
   "htmlhint.options": { "doctype-first": false },
-  "[javascript]": {
+  "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
-  "[scss]": { "editor.defaultFormatter": "esbenp.prettier-vscode", "editor.formatOnSave": true }
+  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode", "editor.formatOnSave": true },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  }
 }

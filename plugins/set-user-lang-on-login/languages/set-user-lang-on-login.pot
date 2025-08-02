@@ -1,0 +1,15 @@
+
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Set User Language on Login 1.0.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: \n"
+
+#: set-user-lang-on-login.php:24
+msgid "Your language was saved successfully."
+msgstr ""
+
+#: set-user-lang-on-login.php
+msgid "Login"
+msgstr ""

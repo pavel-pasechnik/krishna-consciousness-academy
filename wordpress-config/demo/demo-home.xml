@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+     xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:wp="http://wordpress.org/export/1.2/">
+
+<channel>
+  <title>Krishna Academy</title>
+  <wp:wxr_version>1.2</wp:wxr_version>
+  <wp:base_site_url>http://localhost:8000</wp:base_site_url>
+  <wp:base_blog_url>http://localhost:8000</wp:base_blog_url>
+
+  <!-- Українська сторінка -->
+  <item>
+    <title>Головна</title>
+    <link>http://localhost:8000/</link>
+    <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost:8000/?page_id=1001</guid>
+    <description></description>
+    <content:encoded><![CDATA[
+      <h2>Ласкаво просимо до Академії!</h2>
+      <p>Це демонстраційна головна сторінка українською мовою.</p>
+    ]]></content:encoded>
+    <wp:post_id>1001</wp:post_id>
+    <wp:post_name>home</wp:post_name>
+    <wp:post_type>page</wp:post_type>
+    <wp:status>publish</wp:status>
+    <wp:language>uk</wp:language>
+  </item>
+
+  <!-- Русская страница -->
+  <item>
+    <title>Главная</title>
+    <link>http://localhost:8000/ru/</link>
+    <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost:8000/?page_id=1002</guid>
+    <description></description>
+    <content:encoded><![CDATA[
+      <h2>Добро пожаловать в Академию!</h2>
+      <p>Это демонстрационная главная страница на русском языке.</p>
+    ]]></content:encoded>
+    <wp:post_id>1002</wp:post_id>
+    <wp:post_name>home-ru</wp:post_name>
+    <wp:post_type>page</wp:post_type>
+    <wp:status>publish</wp:status>
+    <wp:language>ru</wp:language>
+    <wp:postmeta>
+      <wp:meta_key>_translations</wp:meta_key>
+      <wp:meta_value><![CDATA[a:3:{s:2:"uk";i:1001;s:2:"ru";i:1002;s:2:"en";i:1003;}]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+
+  <!-- English page -->
+  <item>
+    <title>Home</title>
+    <link>http://localhost:8000/en/</link>
+    <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[admin]]></dc:creator>
+    <guid isPermaLink="false">http://localhost:8000/?page_id=1003</guid>
+    <description></description>
+    <content:encoded><![CDATA[
+      <h2>Welcome to the Academy!</h2>
+      <p>This is a demo homepage in English.</p>
+    ]]></content:encoded>
+    <wp:post_id>1003</wp:post_id>
+    <wp:post_name>home-en</wp:post_name>
+    <wp:post_type>page</wp:post_type>
+    <wp:status>publish</wp:status>
+    <wp:language>en</wp:language>
+    <wp:postmeta>
+      <wp:meta_key>_translations</wp:meta_key>
+      <wp:meta_value><![CDATA[a:3:{s:2:"uk";i:1001;s:2:"ru";i:1002;s:2:"en";i:1003;}]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+</channel>
+</rss>

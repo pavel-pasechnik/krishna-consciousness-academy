@@ -22,24 +22,39 @@
       "link": true,
       "palette": [
         {
-          "color": "#2b2b2b",
-          "name": "Base",
-          "slug": "base"
+          "slug": "primary",
+          "color": "#FFFFFF",
+          "name": "Primary"
         },
         {
-          "color": "#1a318a",
-          "name": "Contrast",
-          "slug": "contrast"
+          "slug": "secondary",
+          "color": "#57a1e4",
+          "name": "Secondary"
         },
         {
-          "color": "#1f1b1a",
-          "name": "Primary",
-          "slug": "primary"
+          "slug": "opacity-secondary",
+          "color": "#57a1e4CC",
+          "name": "Opacity-secondary"
         },
         {
-          "color": "#ffffff",
-          "name": "Background",
-          "slug": "background"
+          "slug": "text-primary",
+          "color": "#C0C0C0",
+          "name": "Primary text"
+        },
+        {
+          "slug": "text-secondary",
+          "color": "#2B2B2B",
+          "name": "Secondary text"
+        },
+        {
+          "slug": "accent",
+          "color": "#FFD700",
+          "name": "Accent"
+        },
+        {
+          "slug": "background",
+          "color": "#FAFAFA",
+          "name": "Background"
         }
       ],
       "text": true
@@ -65,8 +80,8 @@
       "lineHeight": false,
       "fontFamilies": [
         {
-          "name": "Main",
-          "slug": "main",
+          "name": "Primary",
+          "slug": "primary",
           "fontFamily": "GeorgiaPro-CondRegular, sans-serif",
           "fontFace": [
             {
@@ -79,8 +94,22 @@
           ]
         },
         {
-          "name": "Primary",
-          "slug": "primary",
+          "name": "Secondary",
+          "slug": "secondary",
+          "fontFamily": "GeorgiaPro-CondBold, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "GeorgiaPro-CondBold",
+              "fontWeight": "400 500 700",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": ["file:./assets/fonts/GeorgiaPro-CondBold.ttf"]
+            }
+          ]
+        },
+        {
+          "name": "References",
+          "slug": "references",
           "fontFamily": "GeorgiaPro-CondLight, sans-serif",
           "fontFace": [
             {
@@ -93,8 +122,22 @@
           ]
         },
         {
-          "name": "Quotable",
-          "slug": "quotable",
+          "name": "Quotable primary",
+          "slug": "quotable-primary",
+          "fontFamily": "GeorgiaPro-CondItalic, sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "GeorgiaPro-CondItalic",
+              "fontWeight": "400 500 700",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": ["file:./assets/fonts/GeorgiaPro-CondItalic.ttf"]
+            }
+          ]
+        },
+        {
+          "name": "Quotable secondary",
+          "slug": "quotable-secondary",
           "fontFamily": "Jaipur, sans-serif",
           "fontFace": [
             {
@@ -111,22 +154,22 @@
         {
           "name": "Small",
           "slug": "small",
-          "size": "16px"
+          "size": "18px"
         },
         {
           "name": "Medium",
           "slug": "medium",
-          "size": "20px"
+          "size": "22px"
         },
         {
           "name": "Large",
           "slug": "large",
-          "size": "40px"
+          "size": "32px"
         },
         {
           "name": "Extra Large",
           "slug": "x-large",
-          "size": "60px"
+          "size": "46px"
         }
       ]
     },
@@ -155,32 +198,31 @@
   },
   "styles": {
     "color": {
-      "text": "#2b2b2b",
-      "background": "#ffffff"
+      "text": "var:preset|color|text-primary",
+      "background": "var:preset|color|primary"
     },
     "elements": {
       "button": {
         "color": {
-          "text": "#ffffff",
-          "background": "#1a318a"
+          "text": "var:preset|color|primary",
+          "background": "var:preset|color|secondary"
         },
         ":hover": {
           "color": {
-            "background": "#364b9c"
+            "background": "var:preset|color|secondary"
           }
         }
       },
       "link": {
         "color": {
-          "text": "var:preset|color|contrast"
+          "text": "var:preset|color|text-secondary"
         }
       }
     },
     "blocks": {
       "core/group": {
         "color": {
-          "text": "var:preset|color|base",
-          "background": "var:preset|color|background"
+          "text": "var:preset|color|text-secondary"
         }
       },
       "core/image": {
@@ -193,7 +235,7 @@
       },
       "core/paragraph": {
         "typography": {
-          "fontFamily": "GeorgiaPro-CondRegular, sans-serif",
+          "fontFamily": "GeorgiaPro-CondBold, sans-serif",
           "fontSize": "1.25rem",
           "fontStyle": "normal",
           "fontWeight": "500",
@@ -204,12 +246,44 @@
       }
     }
   },
-  "customTemplates": [],
+  "customTemplates": [
+    { "name": "archive-post-type", "title": "Archive Post Type", "postTypes": ["post", "page"] },
+    { "name": "attachment", "title": "Attachment", "postTypes": ["post", "page"] },
+    { "name": "author", "title": "Author", "postTypes": ["post", "page"] },
+    { "name": "category", "title": "Category", "postTypes": ["post", "page"] },
+    { "name": "date", "title": "Date Archive", "postTypes": ["post", "page"] },
+    { "name": "front-page", "title": "Front Page", "postTypes": ["page"] },
+    { "name": "home", "title": "Blog Home", "postTypes": ["page"] },
+    { "name": "image", "title": "Image Attachment", "postTypes": ["post", "page"] },
+    { "name": "page-slug", "title": "Page by Slug", "postTypes": ["page"] },
+    { "name": "privacy-policy", "title": "Privacy Policy", "postTypes": ["page"] },
+    { "name": "search", "title": "Search Results", "postTypes": ["post", "page"] },
+    { "name": "single-post-type", "title": "Single Post Type", "postTypes": ["post"] },
+    { "name": "promo", "title": "Promo", "postTypes": ["post"] },
+    { "name": "singular", "title": "Singular", "postTypes": ["post", "page"] },
+    { "name": "tag", "title": "Tag Archive", "postTypes": ["post", "page"] },
+    { "name": "taxonomy", "title": "Taxonomy Archive", "postTypes": ["post", "page"] },
+    {
+      "name": "single-promo",
+      "title": "Single Promo",
+      "postTypes": ["promo"]
+    }
+  ],
   "templateParts": [
     {
       "area": "header",
       "name": "header",
       "title": "Header"
+    },
+    {
+      "area": "hero",
+      "name": "hero",
+      "title": "Hero"
+    },
+    {
+      "area": "values",
+      "name": "values",
+      "title": "Values"
     },
     {
       "area": "loop",

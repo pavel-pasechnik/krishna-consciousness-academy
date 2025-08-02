@@ -6,13 +6,28 @@
   ],
   "plugins": ["stylelint-order", "stylelint-prettier"],
   "rules": {
+    "rule-empty-line-before": null,
+    "prettier/prettier": true,
     "declaration-property-unit-allowed-list": { "letter-spacing": ["em"], "line-height": [] },
     "custom-property-pattern": [
-      "^([a-z0-9-]+)$",
+      "^([a-z0-9-_]+)$",
       {
         "message": "Expected custom property name to be kebab-case",
-        "ignoreProperties": [],
-        "ignoreVariables": ["^--wp"]
+        "ignoreProperties": ["min-device-pixel-ratio"],
+        "ignoreVariables": ["^--wp"],
+        "ignoreSelectors": ["^\\.wp"]
+      }
+    ],
+    "media-feature-name-no-unknown": [
+      true,
+      {
+        "ignoreMediaFeatureNames": ["min-device-pixel-ratio", "-webkit-min-device-pixel-ratio"]
+      }
+    ],
+    "selector-class-pattern": [
+      "^([a-z][a-z0-9]*)(-[a-z0-9]+)*((__([a-z][a-z0-9]*)(-[a-z0-9]+)*)?(--([a-z][a-z0-9]*)(-[a-z0-9]+)*)?)$",
+      {
+        "message": "Classes must be in kebab case"
       }
     ]
   }

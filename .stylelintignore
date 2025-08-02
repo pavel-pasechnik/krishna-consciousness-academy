@@ -1,3 +1,6 @@
 node_modules/
 dist/
 srv/
+wordpress/
+vendor/
+.history/

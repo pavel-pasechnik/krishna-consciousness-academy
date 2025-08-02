@@ -1,2 +1,7 @@
 node_modules
 *.php
+dist
+srv
+wordpress
+vendor
+.history

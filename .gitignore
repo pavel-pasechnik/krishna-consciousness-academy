@@ -10,6 +10,8 @@ plugins/wp-super-cache
 plugins/akismet
 plugins/hello.php
 plugins/index.php
+plugins/safe-svg
+plugins/polylang-pro
 themes/twentytwentyfive
 themes/twentytwentyfour
 themes/twentytwentythree

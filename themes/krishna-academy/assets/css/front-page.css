@@ -1,0 +1,124 @@
+.front-page-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+.front-page-title {
+  padding-bottom: 10px;
+  font-family: var(--wp--preset--font-family--primary);
+  font-size: 19px;
+  color: var(--wp--preset--color--secondary);
+}
+
+.media-text-bg {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+}
+
+.wp-block-media-text .wp-block-media-text__media {
+  align-self: flex-start;
+}
+
+.wp-block-media-text .wp-block-media-text__media img {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.wp-block-media-text > .wp-block-media-text__content {
+  align-self: flex-start;
+  padding: 0;
+}
+
+.wp-block-heading {
+  padding: 10px;
+
+  font-family: var(--wp--preset--font-family--primary);
+  font-size: 16px;
+  color: var(--wp--preset--color--secondary);
+
+  box-shadow: none;
+}
+
+.wp-block-media-text__content p {
+  padding: 10px;
+  font-family: var(--wp--preset--font-family--primary);
+  color: var(--wp--preset--color--text-secondary);
+  text-align: justify;
+}
+
+@media (width >= 600px) {
+  .front-page-title {
+    font-size: 24px;
+  }
+
+  .wp-block-heading {
+    font-size: 19px;
+  }
+
+  .wp-block-media-text__content p {
+    font-size: 19px;
+  }
+}
+
+@media (width >= 768px) {
+  .front-page-title {
+    font-size: 28px;
+  }
+
+  .wp-block-media-text > .wp-block-media-text__content {
+    padding: 0;
+  }
+
+  .wp-block-heading {
+    font-size: 20px;
+  }
+
+  .wp-block-media-text__content p {
+    font-size: 20px;
+  }
+}
+
+@media (width >= 1170px) {
+  .media-text-bg {
+    margin: 20px 100px;
+  }
+
+  .wp-block-media-text__media img,
+  .wp-block-media-text__media video {
+    width: 80%;
+  }
+}
+
+@media (width >= 1440px) {
+  .front-page-section {
+    padding: 20px 40px;
+  }
+
+  .wp-block-post-content {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin: 20px;
+  }
+
+  .media-text-bg {
+    margin: 0;
+  }
+
+  .wp-block-media-text .wp-block-media-text__media img {
+    width: 150px;
+  }
+
+  .wp-block-heading {
+    font-size: 24px;
+  }
+
+  .wp-block-media-text__content p {
+    font-size: 24px;
+  }
+}

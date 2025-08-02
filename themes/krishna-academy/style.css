@@ -16,5 +16,33 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 body {
-  --wp--preset--font-family--primary: "GeorgiaPro-CondLight", sans-serif;
+  font-family: var(--wp--preset--font-family--primary);
+  color: var(--wp--preset--color--text-primary);
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* MOBILE */
+@media screen and (width >= 375px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
+/* TABLET */
+@media screen and (width >= 768px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* DESKTOP */
+@media screen and (width >= 1440px) {
+  .container {
+    padding: 0 40px;
+  }
 }

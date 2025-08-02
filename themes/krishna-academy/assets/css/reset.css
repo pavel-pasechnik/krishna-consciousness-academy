@@ -51,3 +51,7 @@ a {
 a:hover {
   color: inherit;
 }
+
+.wp-block-image {
+  margin: 0;
+}
