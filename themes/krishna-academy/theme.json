@@ -263,6 +263,7 @@
     { "name": "singular", "title": "Singular", "postTypes": ["post", "page"] },
     { "name": "tag", "title": "Tag Archive", "postTypes": ["post", "page"] },
     { "name": "taxonomy", "title": "Taxonomy Archive", "postTypes": ["post", "page"] },
+    { "name": "course", "title": "Single course", "postTypes": ["page"] },
     {
       "name": "single-promo",
       "title": "Single Promo",
@@ -281,9 +282,9 @@
       "title": "Hero"
     },
     {
-      "area": "values",
-      "name": "values",
-      "title": "Values"
+      "area": "courses",
+      "name": "courses",
+      "title": "Vourses"
     },
     {
       "area": "loop",

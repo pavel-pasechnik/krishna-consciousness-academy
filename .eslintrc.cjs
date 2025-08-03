@@ -11,6 +11,7 @@ module.exports = {
     'plugin:@wordpress/eslint-plugin/recommended',
     'plugin:import/recommended',
     'plugin:jsx-a11y/recommended',
+    'stylelint-config-standard',
     'plugin:prettier/recommended',
   ],
   overrides: [
@@ -21,12 +22,13 @@ module.exports = {
       },
     },
   ],
-  plugins: ['@wordpress', 'jsx-a11y', 'prettier', 'import'],
+  plugins: ['@wordpress', 'jsx-a11y', 'stylelint', 'prettier', 'import'],
   rules: {
     'no-console': 0,
     'n/no-missing-import': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'no-unused-vars': 'off',
+    'prettier/prettier': 'error',
     'sort-imports': [
       'error',
       {

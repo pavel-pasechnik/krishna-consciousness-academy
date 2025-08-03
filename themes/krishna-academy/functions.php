@@ -20,11 +20,14 @@ if (! function_exists('krishna_academy_support')) :
 			'flex-width'  => true,
 		]);
 
+		add_post_type_support('page', 'excerpt');
+
 		add_editor_style([
 			'style.css',
 			'assets/css/header.css',
 			'assets/css/hero.css',
 			'assets/css/front-page.css',
+			'assets/css/page.css',
 			'assets/css/footer.css'
 		]);
 	}
@@ -89,6 +92,15 @@ function krishna_academy_enqueue_styles()
 		'all'
 	);
 
+	// Connecting front-pages styles
+	wp_enqueue_style(
+		'krishna-academy-page',
+		get_theme_file_uri('assets/css/page.css'),
+		array('modern-normalize', 'krishna-academy-reset'),
+		wp_get_theme()->get('Version'),
+		'all'
+	);
+
 	// Connecting footer styles
 	wp_enqueue_style(
 		'krishna-academy-footer',
@@ -143,6 +155,7 @@ add_filter('default_wp_template_part_areas', function ($areas) {
 		'description' => __('Site Section', 'krishna_academy'),
 		'icon'        => 'layout'
 	);
+
 	$areas[] = array(
 		'area'        => 'footer',
 		'area_tag'    => 'footer',
@@ -187,6 +200,7 @@ add_action('init', function () {
 		'show_in_rest' => true,
 		'supports' => ['title', 'editor', 'thumbnail'],
 	]);
+
 
 	register_taxonomy('event_category', 'event', [
 		'label' => 'Event Categories',
@@ -245,7 +259,7 @@ add_filter('upload_mimes', function ($mimes) {
 });
 
 
-// Автоматическое подключение всех паттернов из папки patterns/
+// Automatically connect all patterns from the patterns/ folder
 add_action('init', function () {
 	$pattern_dir = get_theme_file_path('patterns');
 	if (file_exists($pattern_dir)) {
@@ -255,7 +269,7 @@ add_action('init', function () {
 	}
 });
 
-// Регистрация категории шаблонов для шаблонов Krishna Academy
+// Registering a template category for Krishna Academy templates
 register_block_pattern_category(
 	'krishna-academy',
 	[

@@ -4,10 +4,9 @@
     "stylelint-config-clean-order",
     "@wordpress/stylelint-config"
   ],
-  "plugins": ["stylelint-order", "stylelint-prettier"],
+  "plugins": ["stylelint-order"],
   "rules": {
     "rule-empty-line-before": null,
-    "prettier/prettier": true,
     "declaration-property-unit-allowed-list": { "letter-spacing": ["em"], "line-height": [] },
     "custom-property-pattern": [
       "^([a-z0-9-_]+)$",

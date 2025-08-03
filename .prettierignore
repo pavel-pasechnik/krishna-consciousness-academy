@@ -5,3 +5,4 @@ srv
 wordpress
 vendor
 .history
+*.css

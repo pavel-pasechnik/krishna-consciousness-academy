@@ -10,7 +10,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "always",
     "source.fixAll.eslint": "always",
-    "source.fixAll.stylelint": "never",
+    "source.fixAll.stylelint": "always",
     "source.organizeImports": "always"
   },
   "colorize.languages": ["javascript", "css", "json"],
@@ -57,7 +57,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
-  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode", "editor.formatOnSave": true },
+  "[css]": { "editor.defaultFormatter": "stylelint.vscode-stylelint", "editor.formatOnSave": true },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true

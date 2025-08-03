@@ -14,13 +14,14 @@
   color: var(--wp--preset--color--secondary);
 }
 
-.media-text-bg {
+.media-text {
   display: flex;
   flex-direction: row;
   margin: 20px 0;
 }
 
 .wp-block-media-text .wp-block-media-text__media {
+  flex: 1 1 50%;
   align-self: flex-start;
 }
 
@@ -84,7 +85,7 @@
 }
 
 @media (width >= 1170px) {
-  .media-text-bg {
+  .media-text {
     margin: 20px 100px;
   }
 
@@ -106,7 +107,7 @@
     margin: 20px;
   }
 
-  .media-text-bg {
+  .media-text {
     margin: 0;
   }
 
