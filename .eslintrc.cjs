@@ -11,7 +11,6 @@ module.exports = {
     'plugin:@wordpress/eslint-plugin/recommended',
     'plugin:import/recommended',
     'plugin:jsx-a11y/recommended',
-    'stylelint-config-standard',
     'plugin:prettier/recommended',
   ],
   overrides: [
@@ -22,7 +21,7 @@ module.exports = {
       },
     },
   ],
-  plugins: ['@wordpress', 'jsx-a11y', 'stylelint', 'prettier', 'import'],
+  plugins: ['@wordpress', 'jsx-a11y', 'prettier', 'import'],
   rules: {
     'no-console': 0,
     'n/no-missing-import': 'off',

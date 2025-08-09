@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const nav = document.querySelector('.nav-container');
+  const nav = document.querySelector('.header-wrapper');
 
   function updateNavScrollState() {
     requestAnimationFrame(() => {

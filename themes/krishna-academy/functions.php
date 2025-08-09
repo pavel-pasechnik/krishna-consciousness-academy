@@ -27,6 +27,8 @@ if (! function_exists('krishna_academy_support')) :
 			'assets/css/header.css',
 			'assets/css/hero.css',
 			'assets/css/front-page.css',
+			'assets/css/course.css',
+			'assets/css/courses.css',
 			'assets/css/page.css',
 			'assets/css/footer.css'
 		]);
@@ -39,6 +41,9 @@ add_action('after_setup_theme', 'krishna_academy_support');
 
 # insert styles
 add_action('wp_enqueue_scripts', 'krishna_academy_enqueue_styles');
+add_action('init', function () {
+	add_post_type_support('post', 'page-attributes');
+});
 
 function krishna_academy_enqueue_styles()
 {
@@ -92,7 +97,25 @@ function krishna_academy_enqueue_styles()
 		'all'
 	);
 
-	// Connecting front-pages styles
+	// Connecting course styles
+	wp_enqueue_style(
+		'krishna-academy-course',
+		get_theme_file_uri('assets/css/course.css'),
+		array('modern-normalize', 'krishna-academy-reset'),
+		wp_get_theme()->get('Version'),
+		'all'
+	);
+
+	// Connecting courses styles
+	wp_enqueue_style(
+		'krishna-academy-courses',
+		get_theme_file_uri('assets/css/courses.css'),
+		array('modern-normalize', 'krishna-academy-reset'),
+		wp_get_theme()->get('Version'),
+		'all'
+	);
+
+	// Connecting pages styles
 	wp_enqueue_style(
 		'krishna-academy-page',
 		get_theme_file_uri('assets/css/page.css'),
@@ -155,7 +178,13 @@ add_filter('default_wp_template_part_areas', function ($areas) {
 		'description' => __('Site Section', 'krishna_academy'),
 		'icon'        => 'layout'
 	);
-
+	$areas[] = array(
+		'area'        => 'courses',
+		'area_tag'    => 'section',
+		'label'       => __('Section courses', 'krishna_academy'),
+		'description' => __('Site Section', 'krishna_academy'),
+		'icon'        => 'layout'
+	);
 	$areas[] = array(
 		'area'        => 'footer',
 		'area_tag'    => 'footer',
@@ -182,42 +211,9 @@ add_action('wp_default_scripts', function ($scripts) {
 });
 
 
-// 👇 Registration of a custom record type "event"
-add_action('init', function () {
-	register_post_type('event', [
-		'label' => 'Events',
-		'public' => true,
-		'has_archive' => true,
-		'show_in_rest' => true,
-		'supports' => ['title', 'editor', 'thumbnail'],
-		'rewrite' => ['slug' => 'events']
-	]);
-
-	register_post_type('promo', [
-		'label' => 'Promo',
-		'public' => true,
-		'has_archive' => true,
-		'show_in_rest' => true,
-		'supports' => ['title', 'editor', 'thumbnail'],
-	]);
-
-
-	register_taxonomy('event_category', 'event', [
-		'label' => 'Event Categories',
-		'hierarchical' => true,
-		'show_in_rest' => true,
-		'rewrite' => ['slug' => 'event-category']
-	]);
-});
-
-// 👇 Enabling multilingualism for CPT and taxonomies in Polylang
-add_filter('pll_get_post_types', function ($post_types) {
-	$post_types[] = 'event';
-	return $post_types;
-});
-
+// 👇 Enable multilingualism for standard categories in Polylang
 add_filter('pll_get_taxonomies', function ($taxonomies) {
-	$taxonomies[] = 'event_category';
+	$taxonomies[] = 'category';
 	return $taxonomies;
 });
 
@@ -270,6 +266,7 @@ add_action('init', function () {
 });
 
 // Registering a template category for Krishna Academy templates
+
 register_block_pattern_category(
 	'krishna-academy',
 	[

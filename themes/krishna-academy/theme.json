@@ -242,6 +242,14 @@
           "letterSpacing": "0",
           "lineHeight": "1.6",
           "textDecoration": "none"
+        },
+        "color": {
+          "text": "var:preset|color|text-secondary"
+        }
+      },
+      "core/list-item": {
+        "color": {
+          "text": "var:preset|color|text-secondary"
         }
       }
     }
@@ -263,11 +271,11 @@
     { "name": "singular", "title": "Singular", "postTypes": ["post", "page"] },
     { "name": "tag", "title": "Tag Archive", "postTypes": ["post", "page"] },
     { "name": "taxonomy", "title": "Taxonomy Archive", "postTypes": ["post", "page"] },
-    { "name": "course", "title": "Single course", "postTypes": ["page"] },
+    { "name": "single-course", "title": "Single course", "postTypes": ["post"] },
     {
       "name": "single-promo",
       "title": "Single Promo",
-      "postTypes": ["promo"]
+      "postTypes": ["post"]
     }
   ],
   "templateParts": [

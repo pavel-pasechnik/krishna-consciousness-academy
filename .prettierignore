@@ -6,3 +6,4 @@ wordpress
 vendor
 .history
 *.css
+*.html

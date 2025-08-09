@@ -1,10 +1,28 @@
 <!-- wp:group -->
 <div class="wp-block-group header-container">
   <!-- wp:group -->
-  <div class="wp-block-group nav-container">
+  <div class="wp-block-group header-wrapper">
     <!-- wp:site-logo {"className":"logo"} /-->
-    <!-- wp:navigation {"className":"nav-link"} /-->
-    <!-- wp:loginout {"className":"login"} /-->
+    <!-- wp:group -->
+    <div class="wp-block-group nav-container">
+      <!-- wp:group -->
+      <div class="wp-block-group accessibility">
+        <!-- wp:polylang/language-switcher {
+        "className": "lang",
+        "show_names": true,
+        "hide_current": true,
+        "hide_if_no_translation": true
+        } /-->
+      </div>
+      <!-- /wp:group -->
+      <!-- wp:group -->
+      <div class="wp-block-group nav">
+        <!-- wp:navigation {"className":"nav-link"} /-->
+        <!-- wp:loginout {"className":"login"} /-->
+      </div>
+      <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
   </div>
   <!-- /wp:group -->
   <!-- wp:site-title  {"className":"header-title"} /-->

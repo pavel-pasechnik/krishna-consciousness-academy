@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# Ensure WP-CLI always points to the WordPress install
+wp() { command /usr/local/bin/wp --path=/var/www/html/wordpress "$@"; }
+
 # Ensure mod_rewrite is enabled
 if ! apache2ctl -M | grep -q rewrite_module; then
   echo "🔧 Enabling Apache mod_rewrite..."
@@ -28,45 +31,65 @@ if [[ ! -f /var/www/html/wordpress/wp-config.php && -n "$WORDPRESS_DB_HOST" ]]; 
     --allow-root \
     --skip-check
 
-  echo "📌 Add WP_LOCALE_SWITCHER manually to wp-config.php"
-  echo "define('WP_LOCALE_SWITCHER', true);" >> wp-config.php
 fi
 
-# Wait for wp-config.php to appear
-until [[ -f /var/www/html/wordpress/wp-config.php ]]; do
-  echo "⏳ Waiting for wp-config.php to be generated..."
-  sleep 2
-done
+# Check if wp-config.php exists; if not, skip steps 5 and 7
+if [[ -f /var/www/html/wordpress/wp-config.php ]]; then
+  SKIP_WP_SETUP=false
+else
+  echo "⚠️ wp-config.php not found — skipping config constants and core install steps."
+  SKIP_WP_SETUP=true
+fi
 
-# Set Redis host constant in wp-config.php
-wp config set WP_REDIS_HOST redis --type=constant --allow-root
+# Only set config constants if wp-config.php exists
+if [[ "$SKIP_WP_SETUP" == false ]]; then
+  # Set Redis host constant in wp-config.php
+  wp config set WP_REDIS_HOST redis --type=constant --allow-root
 
-# Set ElasticPress host constant in wp-config.php
-wp config set EP_HOST http://elasticsearch:9200 --type=constant --allow-root
+  # Set ElasticPress host constant in wp-config.php
+  wp config set EP_HOST http://elasticsearch:9200 --type=constant --allow-root
 
-# Turn on the language switch on the login screen
-wp config set WP_LOCALE_SWITCHER true --type=constant --allow-root
+  # Turn on the language switch on the login screen
+  wp config set WP_LOCALE_SWITCHER true --type=constant --allow-root
+fi
 
 # ? To reapply the configuration: docker exec -it wordpress-wordpress-1 init-wordpress.sh --reinit
 
-#
 # Install wp-cli RESTful package (needed for `wp rest route list`)
-if ! wp package list --allow-root | grep -q wp-cli/restful; then
+if ! wp package list --allow-root 2>/dev/null | grep -q wp-cli/restful; then
   echo "📦 Installing wp-cli/restful..."
   wp package install wp-cli/restful --allow-root
 
   REST_CLI_PATH=$(find /root/.wp-cli/packages -type f -name wp-rest-cli.php | head -n 1)
   if [[ -n "$REST_CLI_PATH" ]]; then
-    echo "require:" > /var/www/html/wordpress/wp-cli.yml
-    echo "  - $REST_CLI_PATH" >> /var/www/html/wordpress/wp-cli.yml
-    echo "✅ Created wp-cli.yml with REST CLI path: $REST_CLI_PATH"
+    WPCLI_YML="/var/www/html/wordpress/wp-cli.yml"
+    # Create file if it does not exist
+    if [[ ! -f "$WPCLI_YML" ]]; then
+      {
+        echo "require:"
+        echo "  - $REST_CLI_PATH"
+      } > "$WPCLI_YML"
+      echo "✅ Created wp-cli.yml with REST CLI path: $REST_CLI_PATH"
+    else
+      # Ensure 'require:' key exists
+      if ! grep -qE '^require:' "$WPCLI_YML"; then
+        echo "require:" >> "$WPCLI_YML"
+      fi
+      # Append path only if it is not already present
+      if ! grep -qF "  - $REST_CLI_PATH" "$WPCLI_YML"; then
+        echo "  - $REST_CLI_PATH" >> "$WPCLI_YML"
+        echo "✅ Appended REST CLI path to existing wp-cli.yml"
+      else
+        echo "ℹ️ REST CLI path already present in wp-cli.yml"
+      fi
+    fi
   else
     echo "⚠️ wp-rest-cli.php not found — wp rest route list may not work."
   fi
 fi
 
 # Check if WP is installed
-if ! wp core is-installed --allow-root || [[ "$FORCE_REINIT" == true ]]; then
+if [[ "$SKIP_WP_SETUP" == false ]] && { ! wp core is-installed --allow-root || [[ "$FORCE_REINIT" == true ]]; }; then
   echo "🚀 Configuring WordPress..."
 
   wp core install \
@@ -110,12 +133,16 @@ if ! wp core is-installed --allow-root || [[ "$FORCE_REINIT" == true ]]; then
   mkdir -p ~/.ssh
   ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-  # Ensure SSH agent socket is available before cloning
-  echo "🔐 SSH_AUTH_SOCK=$SSH_AUTH_SOCK"
-  until [ -S "$SSH_AUTH_SOCK" ]; do
-    echo "⏳ Waiting for SSH_AUTH_SOCK to be available..."
-    sleep 1
-  done
+  # Ensure SSH agent socket is available only if SSH is required and variable is set
+  echo "🔐 SSH_AUTH_SOCK=${SSH_AUTH_SOCK:-<not set>}"
+  if [[ -n "$SSH_AUTH_SOCK" ]]; then
+    until [ -S "$SSH_AUTH_SOCK" ]; do
+      echo "⏳ Waiting for SSH_AUTH_SOCK to be available..."
+      sleep 1
+    done
+  else
+    echo "🔐 No SSH agent configured — skipping SSH wait."
+  fi
 
   # Disable Polylang setup wizard before adding languages
   wp option update pll_setup_complete 1 --url="$WP_SITE_URL" --allow-root

@@ -1,9 +1,5 @@
 {
-  "extends": [
-    "stylelint-config-standard",
-    "stylelint-config-clean-order",
-    "@wordpress/stylelint-config"
-  ],
+  "extends": ["stylelint-config-standard", "stylelint-config-clean-order"],
   "plugins": ["stylelint-order"],
   "rules": {
     "rule-empty-line-before": null,

@@ -20,6 +20,11 @@ body {
   color: var(--wp--preset--color--text-primary);
 }
 
+.wp-block-post-title {
+  font-family: var(--wp--preset--font-family--primary);
+  color: var(--wp--preset--color--secondary);
+}
+
 .container {
   width: 100%;
   margin: 0 auto;

@@ -8,3 +8,5 @@ coverage/
 srv/
 wordpress/
 .history/
+*.css
+*.html

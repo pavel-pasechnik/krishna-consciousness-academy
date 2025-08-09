@@ -53,9 +53,10 @@
 
 @media (width >= 1170px) {
   .page-title {
-  padding: 20px;
-}
+    padding: 20px;
+  }
 
-.page-main .wp-block-post-content {
-  padding: 20px 10px;
-}}
+  .page-main .wp-block-post-content {
+    padding: 20px 10px;
+  }
+}
