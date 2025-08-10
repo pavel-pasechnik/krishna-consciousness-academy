@@ -1,14 +1,24 @@
 <?php
+// IDE stubs for Polylang (to satisfy Intelephense signatures). Safe: only define if plugin not loaded yet.
+if (!function_exists('pll__')) {
+	function pll__($text)
+	{
+		return $text;
+	}
+}
+if (!function_exists('pll_translate_string')) {
+	function pll_translate_string($text, $lang = null)
+	{
+		return $text;
+	}
+}
+
 if (! function_exists('krishna_academy_support')) :
 	function krishna_academy_support()
 	{
 		add_theme_support('block-templates');
 		add_theme_support('block-template-parts');
 		add_theme_support('site-logo');
-		add_theme_support('menus');
-		register_nav_menus([
-			'primary' => __('Primary Menu', 'krishna_academy'),
-		]);
 		add_theme_support('wp-block-styles');
 		add_theme_support('align-wide');
 		add_theme_support('editor-styles');
@@ -21,6 +31,16 @@ if (! function_exists('krishna_academy_support')) :
 		]);
 
 		add_post_type_support('page', 'excerpt');
+
+		add_action('admin_menu', function () {
+			add_submenu_page(
+				'themes.php',
+				__('Меню', 'krishna_academy'),
+				__('Меню', 'krishna_academy'),
+				'edit_theme_options',
+				'edit.php?post_type=wp_navigation'
+			);
+		});
 
 		add_editor_style([
 			'style.css',
@@ -35,6 +55,7 @@ if (! function_exists('krishna_academy_support')) :
 	}
 endif;
 add_action('after_setup_theme', 'krishna_academy_support');
+
 
 #include get_parent_theme_file_path('inc/helpers.php');
 
@@ -152,6 +173,20 @@ function krishna_academy_enqueue_scripts()
 		wp_get_theme()->get('Version'),
 		false
 	);
+
+	wp_enqueue_script(
+		'ka-anchor-offset',
+		get_theme_file_uri('assets/js/anchor-offset.js'),
+		[],
+		wp_get_theme()->get('Version'),
+		true // внизу перед </body>
+	);
+
+	// Pass current-language home URL to JS (used to intercept same-page anchors)
+	$ka_home_url = function_exists('pll_home_url') ? pll_home_url() : home_url('/');
+	wp_localize_script('ka-anchor-offset', 'KA_NAV', [
+		'homeUrl' => esc_url_raw($ka_home_url),
+	]);
 }
 
 # Area named Loop for assigning parts of the template
@@ -175,13 +210,6 @@ add_filter('default_wp_template_part_areas', function ($areas) {
 		'area'        => 'hero',
 		'area_tag'    => 'section',
 		'label'       => __('Section hero', 'krishna_academy'),
-		'description' => __('Site Section', 'krishna_academy'),
-		'icon'        => 'layout'
-	);
-	$areas[] = array(
-		'area'        => 'courses',
-		'area_tag'    => 'section',
-		'label'       => __('Section courses', 'krishna_academy'),
 		'description' => __('Site Section', 'krishna_academy'),
 		'icon'        => 'layout'
 	);
@@ -267,9 +295,110 @@ add_action('init', function () {
 
 // Registering a template category for Krishna Academy templates
 
+
 register_block_pattern_category(
 	'krishna-academy',
 	[
 		'label' => __('Krishna Academy', 'krishna_academy')
 	]
 );
+
+/**
+ * === Footer links via Polylang strings + shortcodes (Variant #3) ===
+ * One common footer; texts/URLs translated via String Translations.
+ */
+if (! function_exists('ka_footer_defaults')) {
+	function ka_footer_defaults()
+	{
+		return [
+			'group'            => 'Theme: Krishna Academy',
+			'address_text'     => 'Зоряний провулок, 16, Київ',
+			'address_url'      => 'https://maps.app.goo.gl/7iRstgRygdGF47E67',
+			'certificate_text' => 'Свідоцтво академії',
+			'certificate_url'  => '/',
+			'charter_text'     => 'Статут академії',
+			'charter_url'      => '/',
+		];
+	}
+}
+
+// Register strings for translation in Polylang → String translations
+add_action('init', function () {
+	if (! function_exists('pll_register_string')) return;
+	$defs = ka_footer_defaults();
+	pll_register_string('Footer: address_text',     $defs['address_text'],     $defs['group']);
+	pll_register_string('Footer: address_url',      $defs['address_url'],      $defs['group']);
+	pll_register_string('Footer: certificate_text', $defs['certificate_text'], $defs['group']);
+	pll_register_string('Footer: certificate_url',  $defs['certificate_url'],  $defs['group']);
+	pll_register_string('Footer: charter_text',     $defs['charter_text'],     $defs['group']);
+	pll_register_string('Footer: charter_url',      $defs['charter_url'],      $defs['group']);
+});
+
+if (! function_exists('ka_footer_get')) {
+	/** Get translated value for footer field; fallback to defaults. */
+	function ka_footer_get($key)
+	{
+		$defs = ka_footer_defaults();
+		$val  = isset($defs[$key]) ? $defs[$key] : '';
+		// Texts
+		if (function_exists('pll__') && in_array($key, ['address_text', 'certificate_text', 'charter_text'], true)) {
+			return pll__($val);
+		}
+		// URLs
+		// URLs
+		if (
+			function_exists('pll_translate_string') &&
+			function_exists('pll_current_language') &&
+			in_array($key, ['address_url', 'certificate_url', 'charter_url'], true)
+		) {
+			return pll_translate_string($val, pll_current_language('slug'));
+		}
+		return $val;
+	}
+}
+
+// Shortcodes used in the footer template part
+add_shortcode('ka_footer_address', function () {
+	$href = esc_url(ka_footer_get('address_url'));
+	$text = esc_html(ka_footer_get('address_text'));
+	return '<p class="footer-address"><a class="footer-link" href="' . $href . '" target="_blank">' . $text . '</a></p>';
+});
+
+add_shortcode('ka_footer_link', function ($atts) {
+	$atts = shortcode_atts(['slug' => 'certificate'], $atts, 'ka_footer_link');
+	$slug = ($atts['slug'] === 'charter') ? 'charter' : 'certificate';
+	$text = esc_html(ka_footer_get($slug . '_text'));
+	$href = esc_url(ka_footer_get($slug . '_url'));
+	$img  = '<img class="footer-' . esc_attr($slug) . '-icon" src="' . esc_url(get_theme_file_uri('assets/images/award-certificate.svg')) . '" alt="' . ($slug === 'certificate' ? 'certificate icon' : 'charter icon') . '" />';
+	$wrapper = ($slug === 'certificate') ? 'footer-academy-certificate' : 'footer-academy-charter';
+	return '<p class="' . esc_attr($wrapper) . '"><a class="footer-link" href="' . $href . '" target="_blank">' . $img . $text . '</a></p>';
+});
+
+// Cleanup previously seeded inline footers from page content (to avoid duplicates)
+add_action('init', function () {
+	$front_id = (int) get_option('page_on_front');
+	if (! $front_id) return;
+	$clean = function (int $page_id) {
+		$content = (string) get_post_field('post_content', $page_id);
+		$start = strpos($content, '<!-- KA:footer -->');
+		if ($start === false) return;
+		$end = strpos($content, '<!-- /KA:footer -->', $start);
+		if ($end === false) return;
+		$new = trim(substr($content, 0, $start) . substr($content, $end + strlen('<!-- /KA:footer -->')));
+		wp_update_post(['ID' => $page_id, 'post_content' => $new]);
+	};
+	$clean($front_id);
+	if (function_exists('pll_get_post_translations')) {
+		$translations = (array) pll_get_post_translations($front_id);
+		foreach ($translations as $pid) {
+			if ((int)$pid !== (int)$front_id) $clean((int)$pid);
+		}
+	}
+	delete_option('ka_footer_seeded_v2');
+});
+
+// Ensure shortcodes render inside template parts (footer/header etc.)
+add_filter('render_block_core/template-part', function ($content, $block) {
+	// Run shortcodes on the rendered HTML of template parts
+	return do_shortcode($content);
+}, 9, 2);

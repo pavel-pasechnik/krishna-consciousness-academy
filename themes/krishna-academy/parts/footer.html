@@ -2,31 +2,25 @@
   <div class="wp-block-group footer-container">
     <!-- wp:group -->
     <div class="wp-block-group footer-address-container">
-      <!-- wp:paragraph -->
-      <p class="footer-address">
-        <a class="footer-link" href="https://maps.app.goo.gl/7iRstgRygdGF47E67" target="_blank">Зоряний провулок, 16, Київ</a>
-      </p>
-      <!-- /wp:paragraph -->
+      <!-- wp:shortcode {"className":"footer-address"} -->
+      [ka_footer_address]
+      <!-- /wp:shortcode -->
     </div>
     <!-- /wp:group -->
+
     <!-- wp:group -->
     <div class="wp-block-group footer-docs">
-      <!-- wp:paragraph -->
-        <p class="footer-academy-certificate">
-          <a class="footer-link" href="/" target="_blank"><img class="footer-academy-certificate-icon" src="/wp-content/themes/krishna-academy/assets/images/award-certificate.svg" alt="certificate icon" />Свідоцтво академії</a>
-        </p>
-      <!-- /wp:paragraph -->
-      <!-- wp:paragraph -->
-        <p class="footer-academy-charter">
-          <a class="footer-link" href="/" target="_blank"><img class="footer-academy-charter-icon" src="/wp-content/themes/krishna-academy/assets/images/award-certificate.svg" alt="charter icon" />Статут академії</a>
-        </p>
-      <!-- /wp:paragraph -->
+      <!-- wp:shortcode {"className":"footer-link"} -->
+      [ka_footer_link slug="certificate"]
+      <!-- /wp:shortcode -->
+      <!-- wp:shortcode {"className":"footer-link"} -->
+      [ka_footer_link slug="charter"]
+      <!-- /wp:shortcode -->
     </div>
     <!-- /wp:group -->
+
     <!-- wp:paragraph -->
     <p class="footer-p">© 2025 Kyiv Krishna consciousness spiritual Academy. <br> All rights reserved.</p>
     <!-- /wp:paragraph -->
   </div>
 <!-- /wp:group -->
-
-

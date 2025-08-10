@@ -31,6 +31,19 @@ body {
   padding: 0 20px;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-offset, 120px);
+}
+
+section,
+.wp-block-template-part,
+.wp-block-group.section-courses {
+  /* Offset задаём централизованно через scroll-padding-top на html,
+     чтобы не складывались margin+padding (двойной отступ) */
+  scroll-margin-top: 0;
+}
+
 /* MOBILE */
 @media screen and (width >= 375px) {
   .container {

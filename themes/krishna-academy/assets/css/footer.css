@@ -45,8 +45,8 @@
   color: var(--wp--preset--color--text-secondary);
 }
 
-.footer-academy-charter-icon,
-.footer-academy-certificate-icon {
+.footer-charter-icon,
+.footer-certificate-icon {
   display: block;
   width: 30px;
 }
@@ -85,8 +85,8 @@
     font-size: 19px;
   }
 
-  .footer-academy-charter-icon,
-  .footer-academy-certificate-icon {
+  .footer-charter-icon,
+  .footer-certificate-icon {
     width: 60px;
   }
 
