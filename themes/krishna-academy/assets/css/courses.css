@@ -37,6 +37,9 @@
 }
 
 .section-courses .taxonomy-category a {
+  pointer-events: none;
+  cursor: default;
+
   padding: 10px;
 
   font-family: var(--wp--preset--font-family--primary);

@@ -110,6 +110,7 @@ body.admin-bar .header-wrapper.scrolled {
 }
 
 .header-title a {
+  font-family: var(--wp--preset--font-family--primary);
   font-size: 28px;
   line-height: 1.25;
   color: var(--wp--preset--color--primary);
@@ -254,8 +255,15 @@ body.admin-bar .header-wrapper.scrolled {
 }
 
 @media screen and (width >= 783px) {
+  .header-wrapper.scrolled {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
   body.admin-bar .header-wrapper.scrolled {
     top: 31px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -351,7 +359,7 @@ body.admin-bar .header-wrapper.scrolled {
 
 /* ===== Mobile Navigation Overlay additions ===== */
 
-.wp-block-navigation__responsive-container.is-menu-open {
+.wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
   background-color: rgb(0 0 0 / 50%);
 }
 

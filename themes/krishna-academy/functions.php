@@ -1,4 +1,14 @@
 <?php
+
+/**
+ * Catch Krishna Academy functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package Krishna_Academy
+ * @since 1.0
+ */
+
 // IDE stubs for Polylang (to satisfy Intelephense signatures). Safe: only define if plugin not loaded yet.
 if (!function_exists('pll__')) {
 	function pll__($text)
@@ -14,6 +24,14 @@ if (!function_exists('pll_translate_string')) {
 }
 
 if (! function_exists('krishna_academy_support')) :
+
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * @since 1.0
+	 *
+	 * @return void
+	 */
 	function krishna_academy_support()
 	{
 		add_theme_support('block-templates');
@@ -35,8 +53,8 @@ if (! function_exists('krishna_academy_support')) :
 		add_action('admin_menu', function () {
 			add_submenu_page(
 				'themes.php',
-				__('Меню', 'krishna_academy'),
-				__('Меню', 'krishna_academy'),
+				__('Меню шаблона', 'krishna_academy'),
+				__('Меню шаблона', 'krishna_academy'),
 				'edit_theme_options',
 				'edit.php?post_type=wp_navigation'
 			);
@@ -44,20 +62,31 @@ if (! function_exists('krishna_academy_support')) :
 
 		add_editor_style([
 			'style.css',
+			'assets/css/reset.css',
 			'assets/css/header.css',
 			'assets/css/hero.css',
 			'assets/css/front-page.css',
 			'assets/css/course.css',
 			'assets/css/courses.css',
 			'assets/css/page.css',
-			'assets/css/footer.css'
+			'assets/css/footer.css',
+			'https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.css'
 		]);
 	}
+
 endif;
+
 add_action('after_setup_theme', 'krishna_academy_support');
 
-
-#include get_parent_theme_file_path('inc/helpers.php');
+# Fallback: Enqueue normalize for editor if add_editor_style doesn't load external links
+add_action('enqueue_block_editor_assets', function () {
+	wp_enqueue_style(
+		'krishna-academy-editor-normalize',
+		'https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.css',
+		[],
+		null
+	);
+});
 
 
 # insert styles
@@ -66,6 +95,13 @@ add_action('init', function () {
 	add_post_type_support('post', 'page-attributes');
 });
 
+/**
+ * Enqueue styles.
+ *
+ * @since 1.0
+ *
+ * @return void
+ */
 function krishna_academy_enqueue_styles()
 {
 	wp_enqueue_style(
@@ -189,6 +225,72 @@ function krishna_academy_enqueue_scripts()
 	]);
 }
 
+// === Dynamic host for generated URLs (front-end) ===
+// Ensures home_url(), site_url() and all their consumers (permalinks, login/logout, etc.)
+// use the current request's scheme+host (incl. ports like :8000) without changing values in DB.
+if (! function_exists('ka_current_origin')) {
+	/** Return current request origin like https://example.com:8443 or '' if CLI/cron. */
+	function ka_current_origin()
+	{
+		// Prefer proxy headers if present
+		$proto = isset($_SERVER['HTTP_X_FORWARDED_PROTO']) ? strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) : '';
+		$host  = isset($_SERVER['HTTP_X_FORWARDED_HOST'])  ? $_SERVER['HTTP_X_FORWARDED_HOST'] : '';
+
+		if (!$host) {
+			$host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
+		}
+		if (!$proto) {
+			$proto = (is_ssl() ? 'https' : 'http');
+		}
+		if ($host) {
+			return $proto . '://' . $host; // host may already include :port
+		}
+		return '';
+	}
+}
+
+/** Replace scheme+host of a URL with current request origin; keep path/query/fragment intact. */
+if (! function_exists('ka_url_with_current_host')) {
+	function ka_url_with_current_host($url)
+	{
+		$origin = ka_current_origin();
+		if ($origin === '') {
+			return $url; // in CLI/cron contexts leave as-is
+		}
+		$parts = wp_parse_url($url);
+		if ($parts === false) {
+			return $url;
+		}
+		// Build path+query+fragment
+		$path = isset($parts['path']) ? $parts['path'] : '';
+		$query = isset($parts['query']) && $parts['query'] !== '' ? ('?' . $parts['query']) : '';
+		$frag = isset($parts['fragment']) && $parts['fragment'] !== '' ? ('#' . $parts['fragment']) : '';
+		return trailingslashit($origin) . ltrim($path, '/') . $query . $frag;
+	}
+}
+
+// Apply on front-end only to avoid surprising the admin panel URLs
+if (! is_admin()) {
+	add_filter('home_url', function ($url) {
+		return ka_url_with_current_host($url);
+	}, 20);
+
+	add_filter('site_url', function ($url) {
+		return ka_url_with_current_host($url);
+	}, 20);
+
+	// Also ensure login/logout/register URLs follow the current host
+	add_filter('login_url', function ($login, $redirect, $force_reauth) {
+		return ka_url_with_current_host($login);
+	}, 20, 3);
+	add_filter('logout_url', function ($logout, $redirect) {
+		return ka_url_with_current_host($logout);
+	}, 20, 2);
+	add_filter('register_url', function ($register) {
+		return ka_url_with_current_host($register);
+	}, 20);
+}
+
 # Area named Loop for assigning parts of the template
 
 add_filter('default_wp_template_part_areas', function ($areas) {
@@ -196,7 +298,7 @@ add_filter('default_wp_template_part_areas', function ($areas) {
 		'area'        => 'header',
 		'area_tag'    => 'header',
 		'label'       => __('Header', 'krishna_academy'),
-		'description' => __('Site Header', 'krishna_academy'),
+		'description' => __('Site header', 'krishna_academy'),
 		'icon'        => 'layout'
 	);
 	$areas[] = array(
@@ -245,35 +347,101 @@ add_filter('pll_get_taxonomies', function ($taxonomies) {
 	return $taxonomies;
 });
 
+// Enable multilingualism for block menus (FSE Navigation) in Polylang
+add_filter('pll_get_post_types', function ($post_types, $is_settings) {
+	// Register the block-based menus so each language can have its own Navigation
+	$post_types['wp_navigation'] = 'wp_navigation';
+	return $post_types;
+}, 10, 2);
+
+// Auto-assign language to block menus and backfill existing menus without language
+add_action('save_post_wp_navigation', function ($post_id, $post, $update) {
+	if (! function_exists('pll_set_post_language') || (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)) {
+		return;
+	}
+	// If the menu already has a language, do nothing
+	if (function_exists('pll_get_post_language') && pll_get_post_language($post_id)) {
+		return;
+	}
+	// Set current admin language or default language
+	$lang = function_exists('pll_current_language') ? pll_current_language('slug') : '';
+	if (! $lang && function_exists('pll_default_language')) {
+		$lang = pll_default_language('slug');
+	}
+	if ($lang) {
+		pll_set_post_language($post_id, $lang);
+	}
+}, 10, 3);
+
+// One-time backfill: assign default language to existing wp_navigation items without language
+add_action('admin_init', function () {
+	if (! function_exists('pll_set_post_language') || ! function_exists('pll_default_language')) return;
+	$flag = get_option('ka_pll_nav_backfilled');
+	if ($flag) return;
+	$default = pll_default_language('slug');
+	if (! $default) return;
+	$menus = get_posts([
+		'post_type'      => 'wp_navigation',
+		'posts_per_page' => -1,
+		'post_status'    => 'any',
+	]);
+	foreach ($menus as $m) {
+		if (! function_exists('pll_get_post_language') || ! pll_get_post_language($m->ID)) {
+			pll_set_post_language($m->ID, $default);
+		}
+	}
+	update_option('ka_pll_nav_backfilled', 1);
+});
+
 # Set default logo when activating theme
 add_action('after_switch_theme', function () {
 	$logo_path = get_theme_file_path('assets/images/logo.svg');
-	$logo_url  = get_theme_file_uri('assets/images/logo.svg');
-
-	// Upload the image to the media library when you first activate the theme.
-	if (!get_theme_mod('custom_logo')) {
-		$upload_dir = wp_upload_dir();
-		$filename   = basename($logo_path);
-		$dest_file  = $upload_dir['path'] . '/' . $filename;
-
-		if (!file_exists($dest_file)) {
-			copy($logo_path, $dest_file);
-		}
-
-		$attachment = [
-			'post_mime_type' => 'image/svg+xml',
-			'post_title'     => sanitize_file_name($filename),
-			'post_content'   => '',
-			'post_status'    => 'inherit'
-		];
-
-		$attach_id = wp_insert_attachment($attachment, $dest_file);
-		require_once ABSPATH . 'wp-admin/includes/image.php';
-		$attach_data = wp_generate_attachment_metadata($attach_id, $dest_file);
-		wp_update_attachment_metadata($attach_id, $attach_data);
-
-		set_theme_mod('custom_logo', $attach_id);
+	if (! file_exists($logo_path)) {
+		return; // nothing to do if theme logo missing
 	}
+
+	// Do nothing if a custom logo is already set
+	if (get_theme_mod('custom_logo')) {
+		return;
+	}
+
+	$upload_dir = wp_upload_dir();
+	if (! empty($upload_dir['error'])) {
+		return;
+	}
+
+	// Ensure upload subdirectory exists
+	if (! file_exists($upload_dir['path'])) {
+		wp_mkdir_p($upload_dir['path']);
+	}
+
+	$filename  = sanitize_file_name(basename($logo_path));
+	$dest_file = trailingslashit($upload_dir['path']) . $filename;
+
+	// Copy file into uploads if not there yet
+	if (! file_exists($dest_file)) {
+		copy($logo_path, $dest_file);
+	}
+
+	// Detect mime type (SVG or raster)
+	$filetype = wp_check_filetype($filename);
+	$mime     = $filetype['type'] ? $filetype['type'] : 'image/svg+xml';
+
+	$attachment = [
+		'post_mime_type' => $mime,
+		'post_title'     => pathinfo($filename, PATHINFO_FILENAME),
+		'post_content'   => '',
+		'post_status'    => 'inherit',
+	];
+
+	$attach_id = wp_insert_attachment($attachment, $dest_file);
+
+	// For raster images this will generate sizes; for SVG it will be a no-op.
+	require_once ABSPATH . 'wp-admin/includes/image.php';
+	$attach_data = wp_generate_attachment_metadata($attach_id, $dest_file);
+	wp_update_attachment_metadata($attach_id, $attach_data);
+
+	set_theme_mod('custom_logo', $attach_id);
 });
 
 # Allow SVG uploads
@@ -283,25 +451,37 @@ add_filter('upload_mimes', function ($mimes) {
 });
 
 
-// Automatically connect all patterns from the patterns/ folder
+
+// Ensure pattern category exists and register file-based patterns programmatically (for reliability across WP versions)
 add_action('init', function () {
-	$pattern_dir = get_theme_file_path('patterns');
-	if (file_exists($pattern_dir)) {
-		foreach (glob($pattern_dir . '/*.php') as $pattern_file) {
-			require_once $pattern_file;
+	// 1) Category (safe to re-register)
+	if (function_exists('register_block_pattern_category')) {
+		register_block_pattern_category(
+			'krishna-academy',
+			[
+				'label' => __('Krishna Academy', 'krishna_academy')
+			]
+		);
+	}
+
+	// 2) Header pattern: load array from patterns/header.php and register with explicit slug
+	if (function_exists('register_block_pattern')) {
+		$file = get_theme_file_path('patterns/header.php');
+		if (file_exists($file)) {
+			$pattern = require $file;
+			if (is_array($pattern)) {
+				if (empty($pattern['slug'])) {
+					$pattern['slug'] = 'krishna-academy/header';
+				}
+				$slug = $pattern['slug'];
+				$registry = WP_Block_Patterns_Registry::get_instance();
+				if (! $registry->is_registered($slug)) {
+					register_block_pattern($slug, $pattern);
+				}
+			}
 		}
 	}
 });
-
-// Registering a template category for Krishna Academy templates
-
-
-register_block_pattern_category(
-	'krishna-academy',
-	[
-		'label' => __('Krishna Academy', 'krishna_academy')
-	]
-);
 
 /**
  * === Footer links via Polylang strings + shortcodes (Variant #3) ===
@@ -344,7 +524,6 @@ if (! function_exists('ka_footer_get')) {
 		if (function_exists('pll__') && in_array($key, ['address_text', 'certificate_text', 'charter_text'], true)) {
 			return pll__($val);
 		}
-		// URLs
 		// URLs
 		if (
 			function_exists('pll_translate_string') &&
