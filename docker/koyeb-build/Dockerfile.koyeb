@@ -19,6 +19,10 @@ RUN apt-get update && apt-get install -y \
 ENV APACHE_LISTEN_PORT=8080
 RUN sed -i "s/Listen 80/Listen ${APACHE_LISTEN_PORT}/" /etc/apache2/ports.conf
 
+# Suppress Apache FQDN warning
+RUN printf 'ServerName localhost\n' > /etc/apache2/conf-available/servername.conf \
+  && a2enconf servername
+
 # In prod, we serve from the root /var/www/html
 # (no /wordpress subdirectory)
 RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html|g' /etc/apache2/sites-available/000-default.conf

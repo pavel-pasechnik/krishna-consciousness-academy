@@ -1,67 +1,96 @@
-# syntax=docker/dockerfile:1.4
-FROM php:8.3-apache
+#!/usr/bin/env bash
+set -e
 
-WORKDIR /var/www/html
+DOCROOT="/var/www/html"
+WP="wp --allow-root --path=${DOCROOT}"
 
-# Composer
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+# --- 1) Wait for DB (if provided) ---
+if [ -n "${WORDPRESS_DB_HOST:-}" ]; then
+  echo "Waiting for MySQL at ${WORDPRESS_DB_HOST}..."
+  for i in {1..60}; do
+    (echo > "/dev/tcp/${WORDPRESS_DB_HOST%%:*}/${WORDPRESS_DB_HOST##*:}" 2>/dev/null) && break || sleep 1
+  done
+fi
 
-# PHP dependencies
-RUN apt-get update && apt-get install -y \
-  git unzip libzip-dev libjpeg-dev libpng-dev libwebp-dev libxpm-dev \
-  libfreetype6-dev libmagickwand-dev libicu-dev default-mysql-client \
-  && docker-php-ext-configure gd --with-jpeg --with-webp --with-xpm --with-freetype \
-  && docker-php-ext-install zip mysqli gd intl exif \
-  && pecl install imagick \
-  && docker-php-ext-enable imagick
+# --- 2) Create wp-config.php from ENV if missing ---
+if [ ! -f "${DOCROOT}/wp-config.php" ]; then
+  echo "Creating wp-config.php from environment variables..."
+  ${WP} config create \
+    --dbname="${WORDPRESS_DB_NAME}" \
+    --dbuser="${WORDPRESS_DB_USER}" \
+    --dbpass="${WORDPRESS_DB_PASSWORD}" \
+    --dbhost="${WORDPRESS_DB_HOST}" \
+    --force \
+    --skip-check
 
-# Apache on 8080 (Koyeb expects PORT=8080)
-ENV APACHE_LISTEN_PORT=8080
-RUN sed -i "s/Listen 80/Listen ${APACHE_LISTEN_PORT}/" /etc/apache2/ports.conf
+  # Write custom constants to a separate include to avoid quoting issues
+  cat > "${DOCROOT}/wp-config.custom.php" <<'PHP'
+<?php
+$__home = getenv('WP_HOME') ?: ('https://' . getenv('KOYEB_APP_ID') . '.koyeb.app');
+$__siteurl = getenv('WP_SITEURL') ?: $__home;
+if (!defined('WP_HOME')) define('WP_HOME', $__home);
+if (!defined('WP_SITEURL')) define('WP_SITEURL', $__siteurl);
+$__debug = getenv('WORDPRESS_DEBUG');
+if (!defined('WP_DEBUG')) define('WP_DEBUG', ($__debug === '1' || strtolower((string)$__debug) === 'true'));
+PHP
 
-# In prod, we serve from the root /var/www/html
-# (no /wordpress subdirectory)
-RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html|g' /etc/apache2/sites-available/000-default.conf
+  # Ensure the include is present just before the ABSPATH block
+  if ! grep -q "wp-config.custom.php" "${DOCROOT}/wp-config.php"; then
+    sed -i "/^\/\* That's all, stop editing!.*\*\//i require_once __DIR__ . '\/wp-config.custom.php';" "${DOCROOT}/wp-config.php"
+  fi
 
-# WP-CLI
-RUN curl -sS -L https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o /usr/local/bin/wp \
-  && chmod +x /usr/local/bin/wp
+  # Keys/salts
+  ${WP} config shuffle-salts || true
 
-# Download and extract WordPress core without WP-CLI (avoids PHP memory limits during build)
-RUN rm -rf /var/www/html/* \
-  && curl -fsSL https://wordpress.org/latest.tar.gz -o /tmp/wordpress.tar.gz \
-  && tar -xzf /tmp/wordpress.tar.gz -C /var/www/html --strip-components=1 \
-  && rm -f /tmp/wordpress.tar.gz
-
-# PHP-INI
-COPY ./wordpress-config/custom.ini /usr/local/etc/php/conf.d/custom.ini
-
-# Copy the project (including composer files)
-COPY ./composer.json ./composer.lock ./
-RUN composer install --prefer-dist --no-dev --no-scripts --no-interaction || true
-
-# Copy themes and plugins from the root of the repository
-COPY ./themes/ /var/www/html/wp-content/themes/
-COPY ./plugins/ /var/www/html/wp-content/plugins/
-
-# If necessary — demo files/scripts (do not perform auto-import!)
-# COPY ./wordpress-config/demo /var/www/html/demo/
-
-# Fix .htaccess under the root
-RUN if [ -f /var/www/html/.htaccess ]; then \
-      sed -i 's|RewriteBase /wordpress/|RewriteBase /|g; s|/wordpress/index.php|/index.php|g' /var/www/html/.htaccess || true ; \
+  # Validate wp-config.php; if broken — recreate cleanly
+  if ! php -l "${DOCROOT}/wp-config.php" >/dev/null 2>&1; then
+    echo "wp-config.php has syntax errors. Recreating..."
+    mv "${DOCROOT}/wp-config.php" "${DOCROOT}/wp-config.php.bad" 2>/dev/null || true
+    ${WP} config create \
+      --dbname="${WORDPRESS_DB_NAME}" \
+      --dbuser="${WORDPRESS_DB_USER}" \
+      --dbpass="${WORDPRESS_DB_PASSWORD}" \
+      --dbhost="${WORDPRESS_DB_HOST}" \
+      --force \
+      --skip-check
+    cat > "${DOCROOT}/wp-config.custom.php" <<'PHP'
+<?php
+$__home = getenv('WP_HOME') ?: ('https://' . getenv('KOYEB_APP_ID') . '.koyeb.app');
+$__siteurl = getenv('WP_SITEURL') ?: $__home;
+if (!defined('WP_HOME')) define('WP_HOME', $__home);
+if (!defined('WP_SITEURL')) define('WP_SITEURL', $__siteurl);
+$__debug = getenv('WORDPRESS_DEBUG');
+if (!defined('WP_DEBUG')) define('WP_DEBUG', ($__debug === '1' || strtolower((string)$__debug) === 'true'));
+PHP
+    if ! grep -q "wp-config.custom.php" "${DOCROOT}/wp-config.php"; then
+      sed -i "/^\/\* That's all, stop editing!.*\*\//i require_once __DIR__ . '\/wp-config.custom.php';" "${DOCROOT}/wp-config.php"
     fi
+    ${WP} config shuffle-salts || true
+  fi
+fi
 
-# Entrypoint: creates wp-config.php if it does not exist
-COPY ./docker/koyeb-build/init-wordpress.sh /usr/local/bin/init-wordpress.sh
-RUN chmod +x /usr/local/bin/init-wordpress.sh
+# --- 3) Optional auto-install (default admin/admin) ---
+if ! ${WP} core is-installed >/dev/null 2>&1; then
+  echo "Running WordPress installation..."
+  SITE_URL="${WP_HOME:-https://$KOYEB_APP_ID.koyeb.app}"
+  ${WP} core install \
+    --url="${SITE_URL}" \
+    --title="${WP_SITE_TITLE:-My Site}" \
+    --admin_user="${WP_ADMIN_USER:-admin}" \
+    --admin_password="${WP_ADMIN_PASS:-admin}" \
+    --admin_email="${WP_ADMIN_EMAIL:-admin@example.com}" \
+    --skip-email
+  # Ensure pretty permalinks work on first run
+  ${WP} rewrite structure '/%postname%/' --hard || true
+  ${WP} rewrite flush --hard || true
+fi
 
-# Permissions
-RUN chown -R www-data:www-data /var/www/html && \
-    find /var/www/html -type d -exec chmod 755 {} \; && \
-    find /var/www/html -type f -exec chmod 644 {} \;
+# --- 4) Final validation ---
+if ! php -l "${DOCROOT}/wp-config.php" >/dev/null 2>&1; then
+  echo "FATAL: wp-config.php still has syntax errors after repair. Dumping tail for diagnostics:" >&2
+  nl -ba "${DOCROOT}/wp-config.php" | tail -n 60 >&2 || true
+  exit 1
+fi
 
-ENV PORT=8080
-EXPOSE 8080
-
-CMD ["/usr/local/bin/init-wordpress.sh"]
+# --- 5) Run Apache ---
+exec apache2-foreground
