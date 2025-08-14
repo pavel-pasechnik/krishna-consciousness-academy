@@ -1,29 +1,32 @@
-FROM wordpress:php8.1-fpm
+# --- 1) Wait for DB (if provided) ---
+if [ -n "${DB_HOST_ONLY}" ] && [ -n "${DB_PORT_ONLY}" ]; then
+  echo "Waiting for database at ${DB_HOST_ONLY}:${DB_PORT_ONLY} ..."
+  # Wait loop code here...
+fi
 
-# ... previous content unchanged ...
-
-COPY ./wordpress-config/custom.ini /usr/local/etc/php/conf.d/custom.ini
-
-# === Optional: Reset Aiven MySQL at build-time (TEST ONLY) ===
-ARG AIVEN_TOKEN
-ARG AIVEN_PROJECT
-ARG AIVEN_SERVICE
-ARG AIVEN_DB
-ARG AIVEN_RESET_DB=0
-RUN if [ "$AIVEN_RESET_DB" = "1" ]; then \
-      API="https://api.aiven.io/v1/project/${AIVEN_PROJECT}/service/${AIVEN_SERVICE}" && \
-      echo "Deleting DB ${AIVEN_DB}…" && \
-      (curl -fsS -X DELETE -H "Authorization: Bearer ${AIVEN_TOKEN}" -H "Accept: application/json" "$API/db/${AIVEN_DB}" || true) && \
-      sleep 2 && \
-      echo "Creating DB ${AIVEN_DB}…" && \
-      curl -fsS -X POST -H "Authorization: Bearer ${AIVEN_TOKEN}" -H "Content-Type: application/json" -d "{\"database\":\"${AIVEN_DB}\"}" "$API/db" ; \
-    else \
-      echo "AIVEN_RESET_DB!=1 → skip DB reset at build" ; \
-    fi
-# === End optional reset ===
-
-# ... any other COPY or RUN steps ...
-
-# Removed the lines that copy and chmod reset_aiven_mysql.sh
-
-CMD ["/usr/local/bin/init-wordpress.sh"]
+# --- Drop ALL tables on boot if requested (only before first init) ---
+if [ "${RESET_DB_ON_BOOT:-0}" = "1" ] && [ ! -f "${DOCROOT}/wp-config.php" ]; then
+  if [ -n "${WORDPRESS_DB_NAME}" ] && [ -n "${WORDPRESS_DB_USER}" ] && [ -n "${WORDPRESS_DB_PASSWORD}" ] && [ -n "${DB_HOST_ONLY}" ] && [ -n "${DB_PORT_ONLY}" ]; then
+    echo "RESET_DB_ON_BOOT=1 and no wp-config.php → Dropping ALL TABLES in ${WORDPRESS_DB_NAME}@${DB_HOST_ONLY}:${DB_PORT_ONLY} ..."
+    MYSQL_OPTS=( -h "${DB_HOST_ONLY}" -P "${DB_PORT_ONLY}" -u "${WORDPRESS_DB_USER}" --protocol=TCP --batch --skip-column-names )
+    # SSL options if enabled
+    case "$(echo "${WORDPRESS_DB_SSL}" | tr '[:upper:]' '[:lower:]')" in
+      1|true|required)
+        CA_PATH="${WORDPRESS_DB_SSL_CA_PATH:-/etc/ssl/certs/mysql-ca.pem}"
+        MYSQL_OPTS+=( --ssl-mode=REQUIRED --ssl-ca="${CA_PATH}" )
+        ;;
+    esac
+    export MYSQL_PWD="${WORDPRESS_DB_PASSWORD}"
+    mysql "${MYSQL_OPTS[@]}" -e "SET SESSION sql_notes=0; SET FOREIGN_KEY_CHECKS=0; SELECT CONCAT('DROP TABLE IF EXISTS \`', table_name, '\`;') FROM information_schema.tables WHERE table_schema='${WORDPRESS_DB_NAME}'; SET FOREIGN_KEY_CHECKS=1;" \
+      | mysql "${MYSQL_OPTS[@]}" "${WORDPRESS_DB_NAME}" \
+      && echo "All tables dropped in ${WORDPRESS_DB_NAME}." \
+      || echo "WARNING: Failed to drop tables (database may be empty or unreachable)."
+    unset MYSQL_PWD
+  else
+    echo "RESET_DB_ON_BOOT=1 set, but DB env vars are incomplete; skipping drop."
+  fi
+else
+  if [ "${RESET_DB_ON_BOOT:-0}" = "1" ] && [ -f "${DOCROOT}/wp-config.php" ]; then
+    echo "RESET_DB_ON_BOOT=1 but wp-config.php exists → redeploy detected, skipping drop."
+  fi
+fi

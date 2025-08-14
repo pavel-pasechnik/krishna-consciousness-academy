@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install -y \
 # Apache on 8080 (Koyeb expects PORT=8080)
 ENV APACHE_LISTEN_PORT=8080
 RUN sed -i "s/Listen 80/Listen ${APACHE_LISTEN_PORT}/" /etc/apache2/ports.conf
+ENV APACHE_RUN_USER=www-data
+ENV APACHE_RUN_GROUP=www-data
 
 # Suppress Apache FQDN warning
 RUN printf 'ServerName localhost\n' > /etc/apache2/conf-available/servername.conf \
@@ -36,6 +38,11 @@ RUN rm -rf /var/www/html/* \
   && curl -fsSL https://wordpress.org/latest.tar.gz -o /tmp/wordpress.tar.gz \
   && tar -xzf /tmp/wordpress.tar.gz -C /var/www/html --strip-components=1 \
   && rm -f /tmp/wordpress.tar.gz
+ARG WWW_UID=33
+ARG WWW_GID=33
+RUN groupmod -o -g ${WWW_GID} www-data && \
+    usermod  -o -u ${WWW_UID} -g ${WWW_GID} www-data && \
+    chown -R www-data:www-data /var/www/html
 
 # Bundle DB CA certificate (provided in repo)
 COPY ./docker/koyeb-build/ca.pem /etc/ssl/certs/mysql-ca.pem
@@ -44,21 +51,29 @@ RUN chmod 644 /etc/ssl/certs/mysql-ca.pem || true
 # PHP-INI
 COPY ./wordpress-config/custom.ini /usr/local/etc/php/conf.d/custom.ini
 
-# === Optional: Reset Aiven MySQL at build-time (TEST ONLY) ===
-ARG AIVEN_TOKEN
-ARG AIVEN_PROJECT
-ARG AIVEN_SERVICE
-ARG AIVEN_DB
+# === Optional: Drop ALL TABLES in target DB at build-time (TEST ONLY) ===
+ARG MYSQL_HOST
+ARG MYSQL_PORT
+ARG MYSQL_USER
+ARG MYSQL_PASSWORD
+ARG MYSQL_DATABASE
 ARG AIVEN_RESET_DB=0
-RUN if [ "$AIVEN_RESET_DB" = "1" ]; then \
-      API="https://api.aiven.io/v1/project/${AIVEN_PROJECT}/service/${AIVEN_SERVICE}" && \
-      echo "Deleting DB ${AIVEN_DB}…" && \
-      (curl -fsS -X DELETE -H "Authorization: Bearer ${AIVEN_TOKEN}" -H "Accept: application/json" "$API/db/${AIVEN_DB}" || true) && \
-      sleep 2 && \
-      echo "Creating DB ${AIVEN_DB}…" && \
-      curl -fsS -X POST -H "Authorization: Bearer ${AIVEN_TOKEN}" -H "Content-Type: application/json" -d "{\"database\":\"${AIVEN_DB}\"}" "$API/db" ; \
+RUN if [ "${AIVEN_RESET_DB}" = "1" ]; then \
+      if [ -z "${MYSQL_HOST}" ] || [ -z "${MYSQL_PORT}" ] || [ -z "${MYSQL_USER}" ] || [ -z "${MYSQL_PASSWORD}" ] || [ -z "${MYSQL_DATABASE}" ]; then \
+        echo "[ERROR] Missing required build args: MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE" >&2; \
+        exit 2; \
+      fi; \
+      echo "Dropping ALL TABLES in ${MYSQL_DATABASE}@${MYSQL_HOST}:${MYSQL_PORT} …" && \
+      MYSQL_PWD="${MYSQL_PASSWORD}" mysql \
+        -h "${MYSQL_HOST}" -P "${MYSQL_PORT}" -u "${MYSQL_USER}" \
+        --protocol=TCP --batch --skip-column-names \
+        -e "SET SESSION sql_notes=0; SET FOREIGN_KEY_CHECKS=0; SELECT CONCAT('DROP TABLE IF EXISTS \`', table_name, '\`;') FROM information_schema.tables WHERE table_schema='${MYSQL_DATABASE}'; SET FOREIGN_KEY_CHECKS=1;" \
+      | MYSQL_PWD="${MYSQL_PASSWORD}" mysql \
+          -h "${MYSQL_HOST}" -P "${MYSQL_PORT}" -u "${MYSQL_USER}" \
+          --protocol=TCP "${MYSQL_DATABASE}" \
+      && echo "All tables dropped in ${MYSQL_DATABASE}."; \
     else \
-      echo "AIVEN_RESET_DB!=1 → skip DB reset at build" ; \
+      echo "AIVEN_RESET_DB!=1 → skipping table drop at build"; \
     fi
 # === End optional reset ===
 

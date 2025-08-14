@@ -82,13 +82,6 @@ add_action('init', function () {
 	add_post_type_support('post', 'page-attributes');
 });
 
-/**
- * Enqueue styles.
- *
- * @since 1.0
- *
- * @return void
- */
 function krishna_academy_enqueue_styles()
 {
 	wp_enqueue_style(
@@ -466,20 +459,41 @@ add_action('after_switch_theme', function () {
 		return;
 	}
 
+	$upload_path = trailingslashit($upload_dir['path']);
+
 	// Ensure upload subdirectory exists
-	if (! file_exists($upload_dir['path'])) {
-		wp_mkdir_p($upload_dir['path']);
+	if (! file_exists($upload_path)) {
+		wp_mkdir_p($upload_path);
+	}
+
+	// If uploads path is not writable, bail silently (log only)
+	if (! function_exists('wp_is_writable') || ! wp_is_writable($upload_path)) {
+		error_log('[krishna-academy] Uploads path is not writable: ' . $upload_path);
+		return;
 	}
 
 	$filename  = sanitize_file_name(basename($logo_path));
-	$dest_file = trailingslashit($upload_dir['path']) . $filename;
+	$dest_file = $upload_path . $filename;
 
-	// Copy file into uploads if not there yet
-	if (! file_exists($dest_file)) {
-		copy($logo_path, $dest_file);
+	// If source logo is missing or unreadable, stop
+	if (! is_readable($logo_path)) {
+		error_log('[krishna-academy] Default logo not readable: ' . $logo_path);
+		return;
 	}
 
-	// Detect mime type (SVG or raster)
+	// Copy only if destination is missing; suppress warnings and log failures
+	if (! file_exists($dest_file)) {
+		if (! @copy($logo_path, $dest_file)) {
+			error_log('[krishna-academy] Failed to copy default logo to uploads: ' . $dest_file);
+			return;
+		}
+	}
+
+	// At this point the file must exist; if not, bail
+	if (! file_exists($dest_file)) {
+		return;
+	}
+
 	$filetype = wp_check_filetype($filename);
 	$mime     = $filetype['type'] ? $filetype['type'] : 'image/svg+xml';
 
@@ -536,10 +550,9 @@ add_action('admin_notices', function () {
 			'repo' => true,
 		],
 		[
-			'name' => 'Polylang Pro',
-			'slug' => 'polylang-pro', // commercial, cannot auto-install
-			'repo' => false,
-			'url'  => 'https://polylang.pro/',
+			'name' => 'Polylang',
+			'slug' => 'polylang', // free version from wp.org
+			'repo' => true,
 		],
 		[
 			'name' => 'WordPress Importer',
@@ -550,12 +563,37 @@ add_action('admin_notices', function () {
 
 	$all = get_plugins(); // ["dir/file.php" => headers]
 
-	// Helper: find first plugin file within a directory (slug)
-	$find_plugin_file = function ($slug) use ($all) {
-		foreach ($all as $file => $headers) {
-			if (str_starts_with($file, $slug . '/')) return $file;
+	// Also consider must-use plugins as installed
+	$mu = function_exists('get_mu_plugins') ? get_mu_plugins() : [];
+
+	/**
+	 * Find plugin file by matching:
+	 *  - directory slug prefix (dir starts with $slug/)
+	 *  - TextDomain equals $slug
+	 *  - sanitized Name equals $slug
+	 *  - Name contains $name (case-insensitive)
+	 * Search normal plugins first, then MU plugins.
+	 */
+	$match_plugin_file = function ($slug, $name) use ($all, $mu) {
+		$slug_l = strtolower($slug);
+		$try_sets = [$all, $mu];
+		foreach ($try_sets as $set) {
+			foreach ($set as $file => $headers) {
+				$dir_ok   = str_starts_with($file, $slug . '/');
+				$td_ok    = isset($headers['TextDomain']) && strtolower($headers['TextDomain']) === $slug_l;
+				$name_eq  = function_exists('sanitize_title') && sanitize_title($headers['Name'] ?? '') === $slug;
+				$name_has = isset($headers['Name']) && stripos($headers['Name'], $name) !== false;
+				if ($dir_ok || $td_ok || $name_eq || $name_has) {
+					return $file; // first reasonable match
+				}
+			}
 		}
 		return '';
+	};
+
+	// Helper: robust plugin lookup (handles non-catalog installs / different slug)
+	$find_plugin_file = function ($slug, $name) use ($match_plugin_file) {
+		return $match_plugin_file($slug, $name);
 	};
 
 	$dismiss_url = wp_nonce_url(add_query_arg('ka-dismiss-plugins', 1), 'ka_dismiss_plugins');
@@ -567,21 +605,39 @@ add_action('admin_notices', function () {
 		$slug = $p['slug'];
 		$name = $p['name'];
 		$repo = !empty($p['repo']);
-		$file = $find_plugin_file($slug);
+		$file = $find_plugin_file($slug, $name);
 		$is_installed = ($file !== '');
 		$is_active = $is_installed && is_plugin_active($file);
+
+		if (! $is_installed) {
+			// Soft detection by headers: if any plugin matches textdomain or name, treat as installed (non-repo path)
+			foreach ($all as $f2 => $h2) {
+				$td_ok   = isset($h2['TextDomain']) && strtolower($h2['TextDomain']) === strtolower($slug);
+				$name_ok = isset($h2['Name']) && stripos($h2['Name'], $name) !== false;
+				if ($td_ok || $name_ok) {
+					$is_installed = true;
+					break;
+				}
+			}
+		}
 
 		echo '<li style="margin: .25em 0;">';
 		echo '<strong>' . esc_html($name) . '</strong> ';
 
 		if ($repo) {
-			if (! $is_installed) {
-				$install_url = wp_nonce_url(self_admin_url('update.php?action=install-plugin&plugin=' . $slug), 'install-plugin_' . $slug);
-				echo '<a class="button button-small" href="' . esc_url($install_url) . '">' . esc_html__('Install', 'krishna-academy') . '</a> ';
-			} elseif (! $is_active) {
+			if ($is_installed && ! $is_active && $file) {
+				// Плагин установлен, но не активен → предлагать только активацию
 				$activate_url = wp_nonce_url(self_admin_url('plugins.php?action=activate&plugin=' . urlencode($file)), 'activate-plugin_' . $file);
 				echo '<a class="button button-small button-primary" href="' . esc_url($activate_url) . '">' . esc_html__('Activate', 'krishna-academy') . '</a> ';
+			} elseif (! $is_installed) {
+				// Плагин не установлен → предложить установку
+				$install_url = wp_nonce_url(self_admin_url('update.php?action=install-plugin&plugin=' . $slug), 'install-plugin_' . $slug);
+				echo '<a class="button button-small" href="' . esc_url($install_url) . '">' . esc_html__('Install', 'krishna-academy') . '</a> ';
+			} elseif ($is_installed && ! $file) {
+				// Установлен под другим слагом/в MU-плагинах — не предлагаем установку
+				echo '<span class="description">' . esc_html__('Installed (custom path)', 'krishna-academy') . '</span> ';
 			} else {
+				// Уже активен
 				echo '<span class="dashicons dashicons-yes" style="color:#46b450"></span> ' . esc_html__('Active', 'krishna-academy');
 			}
 		} else {
