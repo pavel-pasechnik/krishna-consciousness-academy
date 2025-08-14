@@ -4,6 +4,14 @@ set -e
 DOCROOT="/var/www/html"
 WP="wp --allow-root --path=${DOCROOT}"
 
+CA_DEST="/etc/ssl/certs/mysql-ca.pem"
+if [ -f "${CA_DEST}" ]; then
+  echo "Using bundled DB CA certificate at ${CA_DEST}"
+elif [ -n "${WORDPRESS_DB_SSL_CA_URL:-}" ]; then
+  echo "Fetching DB CA certificate from URL..."
+  curl -fsSL "${WORDPRESS_DB_SSL_CA_URL}" -o "${CA_DEST}" || echo "WARNING: failed to download CA from WORDPRESS_DB_SSL_CA_URL"
+fi
+
 # --- DB host/port normalization ---
 RAW_HOST="${WORDPRESS_DB_HOST:-}"
 RAW_PORT="${WORDPRESS_DB_PORT:-}"
@@ -47,6 +55,24 @@ if (!defined('WP_HOME')) define('WP_HOME', $__home);
 if (!defined('WP_SITEURL')) define('WP_SITEURL', $__siteurl);
 $__debug = getenv('WORDPRESS_DEBUG');
 if (!defined('WP_DEBUG')) define('WP_DEBUG', ($__debug === '1' || strtolower((string)$__debug) === 'true'));
+
+// --- DB SSL support (Aiven etc.) ---
+$__ssl = strtolower((string) getenv('WORDPRESS_DB_SSL'));
+if ($__ssl === '1' || $__ssl === 'true' || $__ssl === 'required') {
+    $ca_path = getenv('WORDPRESS_DB_SSL_CA_PATH');
+    if (!$ca_path) {
+        $ca_path = '/etc/ssl/certs/mysql-ca.pem'; // same as CA_DEST in init script
+    }
+    if (!defined('MYSQL_CLIENT_FLAGS')) {
+        // Require mysqli SSL connection
+        if (defined('MYSQLI_CLIENT_SSL')) {
+            define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL);
+        }
+    }
+    if (!defined('MYSQL_SSL_CA')) {
+        define('MYSQL_SSL_CA', $ca_path);
+    }
+}
 PHP
 
   # Ensure the include is present just before the ABSPATH block
@@ -79,6 +105,24 @@ if (!defined('WP_HOME')) define('WP_HOME', $__home);
 if (!defined('WP_SITEURL')) define('WP_SITEURL', $__siteurl);
 $__debug = getenv('WORDPRESS_DEBUG');
 if (!defined('WP_DEBUG')) define('WP_DEBUG', ($__debug === '1' || strtolower((string)$__debug) === 'true'));
+
+// --- DB SSL support (Aiven etc.) ---
+$__ssl = strtolower((string) getenv('WORDPRESS_DB_SSL'));
+if ($__ssl === '1' || $__ssl === 'true' || $__ssl === 'required') {
+    $ca_path = getenv('WORDPRESS_DB_SSL_CA_PATH');
+    if (!$ca_path) {
+        $ca_path = '/etc/ssl/certs/mysql-ca.pem'; // same as CA_DEST in init script
+    }
+    if (!defined('MYSQL_CLIENT_FLAGS')) {
+        // Require mysqli SSL connection
+        if (defined('MYSQLI_CLIENT_SSL')) {
+            define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL);
+        }
+    }
+    if (!defined('MYSQL_SSL_CA')) {
+        define('MYSQL_SSL_CA', $ca_path);
+    }
+}
 PHP
     if ! grep -q "wp-config.custom.php" "${DOCROOT}/wp-config.php"; then
       sed -i "/^\/\* That's all, stop editing!.*\*\//i require_once __DIR__ . '\/wp-config.custom.php';" "${DOCROOT}/wp-config.php"

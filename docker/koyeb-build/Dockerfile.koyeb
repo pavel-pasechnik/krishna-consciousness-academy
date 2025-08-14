@@ -37,6 +37,10 @@ RUN rm -rf /var/www/html/* \
   && tar -xzf /tmp/wordpress.tar.gz -C /var/www/html --strip-components=1 \
   && rm -f /tmp/wordpress.tar.gz
 
+# Bundle DB CA certificate (provided in repo)
+COPY ./docker/koyeb-build/ca.pem /etc/ssl/certs/mysql-ca.pem
+RUN chmod 644 /etc/ssl/certs/mysql-ca.pem || true
+
 # PHP-INI
 COPY ./wordpress-config/custom.ini /usr/local/etc/php/conf.d/custom.ini
 
