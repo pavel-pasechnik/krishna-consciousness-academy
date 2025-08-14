@@ -23,6 +23,14 @@ RUN sed -i "s/Listen 80/Listen ${APACHE_LISTEN_PORT}/" /etc/apache2/ports.conf
 # (никакого подкаталога /wordpress)
 RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html|g' /etc/apache2/sites-available/000-default.conf
 
+# WP-CLI
+RUN curl -sS -L https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o /usr/local/bin/wp \
+  && chmod +x /usr/local/bin/wp
+
+# Кладём собранный composer-ом WordPress core из ./wordpress в корень контейнера
+RUN rm -rf /var/www/html/*
+COPY ./wordpress/ /var/www/html/
+
 # PHP-INI
 COPY ./wordpress-config/custom.ini /usr/local/etc/php/conf.d/custom.ini
 
@@ -31,8 +39,9 @@ COPY ./wordpress-config/custom.ini /usr/local/etc/php/conf.d/custom.ini
 COPY ./composer.json ./composer.lock ./
 RUN composer install --prefer-dist --no-dev --no-scripts --no-interaction
 
-# Если у тебя WP core и контент лежат в ./wordpress — развернём его в корень
-COPY ./wordpress/ /var/www/html/
+# Копируем темы и плагины из корня репозитория
+COPY ./themes/ /var/www/html/wp-content/themes/
+COPY ./plugins/ /var/www/html/wp-content/plugins/
 
 # При необходимости — демо-файлы/скрипты (не исполняем автоимпорт!)
 # COPY ./wordpress-config/demo /var/www/html/demo/
@@ -43,12 +52,8 @@ RUN if [ -f /var/www/html/.htaccess ]; then \
       sed -i 's|RewriteBase /wordpress/|RewriteBase /|g; s|/wordpress/index.php|/index.php|g' /var/www/html/.htaccess || true ; \
     fi
 
-# WP-CLI
-RUN curl -sS -L https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o /usr/local/bin/wp \
-  && chmod +x /usr/local/bin/wp
-
 # Простой entrypoint: создаёт wp-config.php, если его нет
-COPY ./docker/wordpress-build/init-wordpress.sh /usr/local/bin/init-wordpress.sh
+COPY ./docker/koyeb-build/init-wordpress.sh /usr/local/bin/init-wordpress.sh
 RUN chmod +x /usr/local/bin/init-wordpress.sh
 
 # Права
