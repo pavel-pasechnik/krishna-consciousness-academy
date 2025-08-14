@@ -1,14 +1,5 @@
 <?php
 
-/**
- * Catch Krishna Academy functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package krishna-academy
- * @since 1.0
- */
-
 // IDE stubs for Polylang (to satisfy Intelephense signatures). Safe: only define if plugin not loaded yet.
 if (!function_exists('pll__')) {
 	function pll__($text)
@@ -25,13 +16,6 @@ if (!function_exists('pll_translate_string')) {
 
 if (! function_exists('krishna_academy_support')) :
 
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * @since 1.0
-	 *
-	 * @return void
-	 */
 	function krishna_academy_support()
 	{
 		add_theme_support('block-templates');
