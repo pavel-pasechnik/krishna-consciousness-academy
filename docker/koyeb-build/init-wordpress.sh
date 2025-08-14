@@ -51,10 +51,18 @@ if [ ! -f "${DOCROOT}/wp-config.php" ]; then
 <?php
 $__home = getenv('WP_HOME') ?: ('https://' . getenv('KOYEB_APP_ID') . '.koyeb.app');
 $__siteurl = getenv('WP_SITEURL') ?: $__home;
+// Normalize to no trailing slash
+$__home = rtrim($__home, '/');
+$__siteurl = rtrim($__siteurl, '/');
 if (!defined('WP_HOME')) define('WP_HOME', $__home);
 if (!defined('WP_SITEURL')) define('WP_SITEURL', $__siteurl);
 $__debug = getenv('WORDPRESS_DEBUG');
 if (!defined('WP_DEBUG')) define('WP_DEBUG', ($__debug === '1' || strtolower((string)$__debug) === 'true'));
+// Force SSL for admin
+if (!defined('FORCE_SSL_ADMIN')) define('FORCE_SSL_ADMIN', true);
+// Behind proxy: trust X-Forwarded-Proto to detect HTTPS (Koyeb)
+$__xfp = $_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '';
+if ($__xfp === 'https') { $_SERVER['HTTPS'] = 'on'; }
 
 // --- DB SSL support (Aiven etc.) ---
 $__ssl = strtolower((string) getenv('WORDPRESS_DB_SSL'));
@@ -73,6 +81,8 @@ if ($__ssl === '1' || $__ssl === 'true' || $__ssl === 'required') {
         define('MYSQL_SSL_CA', $ca_path);
     }
 }
+// Security hardening: disable theme/plugin file editor in admin
+if (!defined('DISALLOW_FILE_EDIT')) define('DISALLOW_FILE_EDIT', true);
 PHP
 
   # Ensure the include is present just before the ABSPATH block
@@ -101,10 +111,18 @@ PHP
 <?php
 $__home = getenv('WP_HOME') ?: ('https://' . getenv('KOYEB_APP_ID') . '.koyeb.app');
 $__siteurl = getenv('WP_SITEURL') ?: $__home;
+// Normalize to no trailing slash
+$__home = rtrim($__home, '/');
+$__siteurl = rtrim($__siteurl, '/');
 if (!defined('WP_HOME')) define('WP_HOME', $__home);
 if (!defined('WP_SITEURL')) define('WP_SITEURL', $__siteurl);
 $__debug = getenv('WORDPRESS_DEBUG');
 if (!defined('WP_DEBUG')) define('WP_DEBUG', ($__debug === '1' || strtolower((string)$__debug) === 'true'));
+// Force SSL for admin
+if (!defined('FORCE_SSL_ADMIN')) define('FORCE_SSL_ADMIN', true);
+// Behind proxy: trust X-Forwarded-Proto to detect HTTPS (Koyeb)
+$__xfp = $_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '';
+if ($__xfp === 'https') { $_SERVER['HTTPS'] = 'on'; }
 
 // --- DB SSL support (Aiven etc.) ---
 $__ssl = strtolower((string) getenv('WORDPRESS_DB_SSL'));
@@ -123,6 +141,8 @@ if ($__ssl === '1' || $__ssl === 'true' || $__ssl === 'required') {
         define('MYSQL_SSL_CA', $ca_path);
     }
 }
+// Security hardening: disable theme/plugin file editor in admin
+if (!defined('DISALLOW_FILE_EDIT')) define('DISALLOW_FILE_EDIT', true);
 PHP
     if ! grep -q "wp-config.custom.php" "${DOCROOT}/wp-config.php"; then
       sed -i "/^\/\* That's all, stop editing!.*\*\//i require_once __DIR__ . '\/wp-config.custom.php';" "${DOCROOT}/wp-config.php"
