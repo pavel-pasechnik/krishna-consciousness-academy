@@ -1,0 +1,54 @@
+# Directories
+ /node_modules export-ignore
+/build export-ignore
+/themes/index.php export-ignore
+/.history export-ignore
+ /vendor export-ignore
+/wordpress export-ignore
+/wordpress-config export-ignore
+/wordpress-org export-ignore
+/.github export-ignore
+/.intelephense export-ignore
+/.vscode export-ignore
+/docker export-ignore
+
+ /plugins/plugin-check export-ignore
+/plugins/polylang-pro export-ignore
+/plugins/safe-svg export-ignore
+/plugins/theme-check export-ignore
+/plugins/elasticpress
+/plugins/polylang export-ignore
+/plugins/redis-cache export-ignore
+/plugins/wordpress-importer export-ignore
+/plugins/wp-super-cache export-ignore
+/plugins/akismet export-ignore
+
+ /themes/twentytwentyfive export-ignore
+/themes/twentytwentyfour export-ignore
+/themes/twentytwentythree export-ignore
+
+# Files
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/.dockerignore export-ignore
+/.env.example export-ignore
+/.htmlhintrc export-ignore
+/.nvmrc export-ignore
+/.prettierignore export-ignore
+/.prettierrc.json export-ignore
+/.qlty.yml export-ignore
+/.stylelintignore.yml export-ignore
+/.stylelintrc.json export-ignore
+/.composer.json export-ignore
+/.composer.lock export-ignore
+/.docker-compose.yml export-ignore
+/.LICENSE export-ignore
+/.package-lock.json export-ignore
+/.package.json export-ignore
+/.README.md export-ignore
+
+/.DS_Store export-ignore
+/.env export-ignore
+/plugins/hello.php export-ignore
+/plugins/index.php export-ignore
+

@@ -1,17 +1,17 @@
-<!-- wp:template-part {"slug":"header"} /-->
+<!-- wp:template-part {"slug":"header","theme":"krishna-academy"} /-->
+
 <!-- wp:group {"tagName":"main"} -->
-<main class="wp-block-group">
-  <!-- wp:template-part {"slug":"hero", "className":"hero-section"} /-->
-  <!-- wp:group {"tagName":"section", "className":"front-page-section"} -->
-  <section class="wp-block-group front-page-section" id="page-section">
-    <!-- wp:post-title {"className":"front-page-title"} /-->
-    <!-- wp:post-content /-->
-  </section>
-  <!-- /wp:group -->
-  <!-- wp:group {"tagName":"section", "className":"section-courses"} -->
-  <section class="wp-block-group section-courses" id="courses-section">
-  <!-- wp:template-part {"slug":"courses"} /-->
-  </section>
-</main>
+<main class="wp-block-group"><!-- wp:template-part {"slug":"hero","theme":"krishna-academy","className":"hero-section"} /-->
+
+<!-- wp:group {"tagName":"section","className":"front-page-section"} -->
+<section id="page-section" class="wp-block-group front-page-section"><!-- wp:post-title {"className":"front-page-title"} /-->
+
+<!-- wp:post-content /--></section>
 <!-- /wp:group -->
-<!-- wp:template-part {"slug":"footer"} /-->
+
+<!-- wp:group {"tagName":"section","className":"section-courses"} -->
+<section id="courses-section" class="wp-block-group section-courses"><!-- wp:template-part {"slug":"courses","theme":"krishna-academy"} /--></section>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"krishna-academy"} /--></main>
+<!-- /wp:group -->

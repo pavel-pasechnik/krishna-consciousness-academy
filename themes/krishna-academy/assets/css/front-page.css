@@ -146,7 +146,7 @@
     padding: 20px 40px;
   }
 
-  .front-page-section < .wp-block-post-content {
+  .front-page-section .wp-block-post-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;

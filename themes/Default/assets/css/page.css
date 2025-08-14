@@ -1,0 +1,62 @@
+.page-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-wrapper {
+  background-color: var(--wp--preset--color--background);
+}
+
+.page-title {
+  padding: 10px;
+
+  font-family: var(--wp--preset--font-family--primary);
+  font-size: 18px;
+  color: var(--wp--preset--color--secondary);
+  text-align: justify;
+}
+
+.page-main .wp-block-post-content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.page-main .wp-block-post-content .wp-block-group p {
+  padding: 10px;
+
+  font-family: var(--wp--preset--font-family--primary);
+  font-size: 16px;
+  color: var(--wp--preset--color--text-secondary);
+  text-align: justify;
+}
+
+.page-main .wp-block-post-content .wp-block-group .wp-block-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.page-main .wp-block-post-content .wp-block-group .wp-block-buttons .wp-block-button {
+  margin: 10px;
+}
+
+@media (width >= 600px) {
+  .page-title {
+    font-size: 22px;
+  }
+
+  .page-main .wp-block-post-content .wp-block-group p {
+    font-size: 19px;
+  }
+}
+
+@media (width >= 1170px) {
+  .page-title {
+    padding: 20px;
+  }
+
+  .page-main .wp-block-post-content {
+    padding: 20px 10px;
+  }
+}

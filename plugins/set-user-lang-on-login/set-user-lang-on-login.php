@@ -4,7 +4,10 @@
  * Plugin Name: Set User Language on Login
  * Description: Sets the user's language when logging in based on the selection on the authorization screen.
  * Version: 1.0.0
- * Author: Krishna Academy Devs
+ * Author: Pavel Pasechnik
+ * Text Domain: krishna-academy
+ * Requires at least: 6.3
+ * Requires PHP: 7.4
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */

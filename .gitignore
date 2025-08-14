@@ -12,6 +12,7 @@ plugins/hello.php
 plugins/index.php
 plugins/safe-svg
 plugins/polylang-pro
+plugins/plugin-check
 themes/twentytwentyfive
 themes/twentytwentyfour
 themes/twentytwentythree
@@ -20,3 +21,4 @@ themes/index.php
 .history
 vendor
 wordpress
+.github

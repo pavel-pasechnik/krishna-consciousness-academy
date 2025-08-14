@@ -1,0 +1,409 @@
+# Copyright (C) 2025 Pavel Pasechnik
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Krishna academy 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/krishna-academy\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-08-14T09:06:40+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: krishna-academy\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "Krishna academy"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://github.com/pavel-pasechnik/wordpress/tree/main/themes/krishna-academy"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Custom theme description..."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Pavel Pasechnik"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://www.linkedin.com/in/pasechnikpavel/"
+msgstr ""
+
+#: functions.php:84
+#: functions.php:85
+msgid "Меню шаблона"
+msgstr ""
+
+#: functions.php:328
+msgid "Header"
+msgstr ""
+
+#: functions.php:329
+msgid "Site header"
+msgstr ""
+
+#: functions.php:335
+msgid "Main"
+msgstr ""
+
+#: functions.php:336
+msgid "Site Main"
+msgstr ""
+
+#: functions.php:342
+msgid "Section hero"
+msgstr ""
+
+#: functions.php:343
+msgid "Site Section"
+msgstr ""
+
+#: functions.php:349
+msgid "Footer"
+msgstr ""
+
+#: functions.php:350
+msgid "Site Footer"
+msgstr ""
+
+#: functions.php:442
+msgid "Lead (larger intro)"
+msgstr ""
+
+#: functions.php:448
+msgid "Soft shadow"
+msgstr ""
+
+#: functions.php:454
+msgid "Pill buttons"
+msgstr ""
+
+#: functions.php:470
+msgid "Krishna Academy"
+msgstr ""
+
+#: functions.php:605
+msgid "Plugins required/recommended for full theme functionality:"
+msgstr ""
+
+#: functions.php:621
+msgid "Install"
+msgstr ""
+
+#: functions.php:624
+#: functions.php:635
+msgid "Activate"
+msgstr ""
+
+#: functions.php:626
+#: functions.php:638
+msgid "Active"
+msgstr ""
+
+#: functions.php:631
+msgid "Buy/download"
+msgstr ""
+
+#: functions.php:645
+msgid "Do not show this again"
+msgstr ""
+
+#: theme.json
+msgctxt "Gradient name"
+msgid "Brand Vertical"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Opacity Secondary"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Primary Text"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Secondary Text"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Accent"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Background"
+msgstr ""
+
+#: theme.json
+msgctxt "Aspect ratio name"
+msgid "Square"
+msgstr ""
+
+#: theme.json
+msgctxt "Aspect ratio name"
+msgid "16:9"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "XS"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "SM"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "MD"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "LG"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "XL"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "2XL"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "3XL"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "4XL"
+msgstr ""
+
+#: theme.json
+msgctxt "Space size name"
+msgid "5XL"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Primary"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Secondary"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "References"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Quotable primary"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Quotable secondary"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "XS"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "SM"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Base"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "MD"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "LG"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "XL"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "2XL"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "3XL"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "4XL"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "5XL"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "6XL"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Archive Post Type"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Attachment"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Author"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Category"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Date Archive"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Front Page"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Blog Home"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Image Attachment"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Page by Slug"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Privacy Policy"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Search Results"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Single Post Type"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Promo"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Singular"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Tag Archive"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Taxonomy Archive"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Single course"
+msgstr ""
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Single Promo"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Hero"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Courses"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Loop"
+msgstr ""
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer"
+msgstr ""

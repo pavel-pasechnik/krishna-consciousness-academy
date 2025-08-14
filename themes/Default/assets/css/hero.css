@@ -1,0 +1,78 @@
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.hero-section p {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.hero-section p:nth-of-type(2) {
+  font-family: var(--wp--preset--font-family--primary);
+  color: var(--wp--preset--color--text-secondary);
+}
+
+@media screen and (width >= 600px) {
+  .hero-promo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .hero-section > img,
+  .hero-promo {
+    max-width: 100%;
+  }
+
+  .hero-section > img {
+    padding: 0 100px;
+  }
+
+  .hero-section p {
+    padding: 20px;
+    font-size: 19px;
+  }
+}
+
+@media screen and (width >= 1170px) {
+  .hero-section p {
+    margin: 0 100px;
+  }
+}
+
+@media screen and (width >= 1440px) {
+  .hero-section {
+    flex-direction: row;
+  }
+
+  .hero-section > img {
+    flex: 0 1 33.33%;
+    max-width: 33.33%;
+    padding: 20px;
+  }
+
+  .hero-promo {
+    display: flex;
+    flex: 1 1 66.66%;
+    flex-direction: column;
+    gap: 100px;
+    justify-content: center;
+
+    max-width: 66.66%;
+  }
+
+  .hero-section p {
+    margin: 0;
+    padding: 20px;
+    font-size: 24px;
+  }
+
+  .hero-section > .wp-block-post-content p {
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
+}

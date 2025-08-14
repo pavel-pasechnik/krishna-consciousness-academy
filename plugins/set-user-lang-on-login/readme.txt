@@ -1,7 +1,7 @@
 
 
 === Set User Language on Login ===
-Contributors: krishnaacademydevs
+Contributors: Pavel Pasechnik
 Tags: language, user, login, locale, switch
 Requires at least: 5.0
 Tested up to: 6.5
