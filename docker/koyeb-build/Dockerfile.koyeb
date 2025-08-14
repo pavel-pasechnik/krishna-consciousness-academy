@@ -27,9 +27,11 @@ RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html|g' /etc/apac
 RUN curl -sS -L https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o /usr/local/bin/wp \
   && chmod +x /usr/local/bin/wp
 
-# Download WordPress core inside the image (do not expect ./wordpress in the repository)
+# Download and extract WordPress core without WP-CLI (avoids PHP memory limits during build)
 RUN rm -rf /var/www/html/* \
-  && wp core download --path=/var/www/html --allow-root
+  && curl -fsSL https://wordpress.org/latest.tar.gz -o /tmp/wordpress.tar.gz \
+  && tar -xzf /tmp/wordpress.tar.gz -C /var/www/html --strip-components=1 \
+  && rm -f /tmp/wordpress.tar.gz
 
 # PHP-INI
 COPY ./wordpress-config/custom.ini /usr/local/etc/php/conf.d/custom.ini
