@@ -64,6 +64,9 @@ RUN if [ -f /var/www/html/.htaccess ]; then \
 COPY ./docker/koyeb-build/init-wordpress.sh /usr/local/bin/init-wordpress.sh
 RUN chmod +x /usr/local/bin/init-wordpress.sh
 
+COPY ./docker/koyeb-build/reset_aiven_mysql.sh /usr/local/bin/reset_aiven_mysql.sh
+RUN chmod +x /usr/local/bin/reset_aiven_mysql.sh
+
 # Permissions
 RUN chown -R www-data:www-data /var/www/html && \
     find /var/www/html -type d -exec chmod 755 {} \; && \
@@ -72,4 +75,4 @@ RUN chown -R www-data:www-data /var/www/html && \
 ENV PORT=8080
 EXPOSE 8080
 
-CMD ["/usr/local/bin/init-wordpress.sh"]
+CMD ["bash", "-c", "/usr/local/bin/reset_aiven_mysql.sh && /usr/local/bin/init-wordpress.sh"]
