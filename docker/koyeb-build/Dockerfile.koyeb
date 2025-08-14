@@ -44,6 +44,24 @@ RUN chmod 644 /etc/ssl/certs/mysql-ca.pem || true
 # PHP-INI
 COPY ./wordpress-config/custom.ini /usr/local/etc/php/conf.d/custom.ini
 
+# === Optional: Reset Aiven MySQL at build-time (TEST ONLY) ===
+ARG AIVEN_TOKEN
+ARG AIVEN_PROJECT
+ARG AIVEN_SERVICE
+ARG AIVEN_DB
+ARG AIVEN_RESET_DB=0
+RUN if [ "$AIVEN_RESET_DB" = "1" ]; then \
+      API="https://api.aiven.io/v1/project/${AIVEN_PROJECT}/service/${AIVEN_SERVICE}" && \
+      echo "Deleting DB ${AIVEN_DB}…" && \
+      (curl -fsS -X DELETE -H "Authorization: Bearer ${AIVEN_TOKEN}" -H "Accept: application/json" "$API/db/${AIVEN_DB}" || true) && \
+      sleep 2 && \
+      echo "Creating DB ${AIVEN_DB}…" && \
+      curl -fsS -X POST -H "Authorization: Bearer ${AIVEN_TOKEN}" -H "Content-Type: application/json" -d "{\"database\":\"${AIVEN_DB}\"}" "$API/db" ; \
+    else \
+      echo "AIVEN_RESET_DB!=1 → skip DB reset at build" ; \
+    fi
+# === End optional reset ===
+
 # Copy the project (including composer files)
 COPY ./composer.json ./composer.lock ./
 RUN composer install --prefer-dist --no-dev --no-scripts --no-interaction || true
@@ -64,9 +82,6 @@ RUN if [ -f /var/www/html/.htaccess ]; then \
 COPY ./docker/koyeb-build/init-wordpress.sh /usr/local/bin/init-wordpress.sh
 RUN chmod +x /usr/local/bin/init-wordpress.sh
 
-COPY ./docker/koyeb-build/reset_aiven_mysql.sh /usr/local/bin/reset_aiven_mysql.sh
-RUN chmod +x /usr/local/bin/reset_aiven_mysql.sh
-
 # Permissions
 RUN chown -R www-data:www-data /var/www/html && \
     find /var/www/html -type d -exec chmod 755 {} \; && \
@@ -75,4 +90,4 @@ RUN chown -R www-data:www-data /var/www/html && \
 ENV PORT=8080
 EXPOSE 8080
 
-CMD ["bash", "-c", "/usr/local/bin/reset_aiven_mysql.sh && /usr/local/bin/init-wordpress.sh"]
+CMD ["/usr/local/bin/init-wordpress.sh"]
