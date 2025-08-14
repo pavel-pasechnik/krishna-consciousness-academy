@@ -3,7 +3,7 @@ set -e
 
 DOCROOT="/var/www/html"
 
-# Ждём доступности БД (опционально, но полезно)
+# Waiting for database availability (optional, but useful)
 if [ -n "${WORDPRESS_DB_HOST}" ]; then
   echo "Waiting for MySQL at ${WORDPRESS_DB_HOST}..."
   for i in {1..30}; do
@@ -11,7 +11,7 @@ if [ -n "${WORDPRESS_DB_HOST}" ]; then
   done
 fi
 
-# Создать wp-config.php из ENV, если его нет
+# Create wp-config.php from ENV if it does not exist
 if [ ! -f "${DOCROOT}/wp-config.php" ]; then
   echo "Creating wp-config.php from environment variables..."
   wp config create \
@@ -23,16 +23,16 @@ if [ ! -f "${DOCROOT}/wp-config.php" ]; then
     --force \
     --skip-check
 
-  # Доп. константы (домены, WP_DEBUG и пр.)
+  # Additional constants (domains, WP_DEBUG, etc.)
   wp config set WP_HOME "${WP_HOME:-https://$KOYEB_APP_ID.koyeb.app}" --path="${DOCROOT}" --type=constant --raw=false
   wp config set WP_SITEURL "${WP_SITEURL:-${WP_HOME:-https://$KOYEB_APP_ID.koyeb.app}}" --path="${DOCROOT}" --type=constant --raw=false
   wp config set WP_DEBUG "${WORDPRESS_DEBUG:-false}" --path="${DOCROOT}" --type=constant --raw=true
 
-  # Ключи/соли, если не заданы
+  # Keys/salts, if not specified
   wp config shuffle-salts --path="${DOCROOT}" || true
 fi
 
-# Ничего не импортируем и не активируем автоматически (policy-safe)
+# Do not import or activate anything automatically (policy-safe)
 
-# Запуск Apache в форграунде
+# Run Apache in the foreground
 apache2-foreground

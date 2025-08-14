@@ -6,7 +6,7 @@ WORKDIR /var/www/html
 # Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Зависимости PHP
+# PHP dependencies
 RUN apt-get update && apt-get install -y \
   git unzip libzip-dev libjpeg-dev libpng-dev libwebp-dev libxpm-dev \
   libfreetype6-dev libmagickwand-dev libicu-dev default-mysql-client \
@@ -15,48 +15,48 @@ RUN apt-get update && apt-get install -y \
   && pecl install imagick \
   && docker-php-ext-enable imagick
 
-# Apache на 8080 (Koyeb ожидает PORT=8080)
+# Apache on 8080 (Koyeb expects PORT=8080)
 ENV APACHE_LISTEN_PORT=8080
 RUN sed -i "s/Listen 80/Listen ${APACHE_LISTEN_PORT}/" /etc/apache2/ports.conf
 
-# В проде служим из корня /var/www/html
-# (никакого подкаталога /wordpress)
+# In prod, we serve from the root /var/www/html
+# (no /wordpress subdirectory)
 RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html|g' /etc/apache2/sites-available/000-default.conf
 
 # WP-CLI
 RUN curl -sS -L https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o /usr/local/bin/wp \
   && chmod +x /usr/local/bin/wp
 
-# Кладём собранный composer-ом WordPress core из ./wordpress в корень контейнера
-RUN rm -rf /var/www/html/*
-COPY ./wordpress/ /var/www/html/
+# Download WordPress core inside the image (do not expect ./wordpress in the repository)
+RUN rm -rf /var/www/html/* \
+  && wp core download --path=/var/www/html --allow-root
 
 # PHP-INI
 COPY ./wordpress-config/custom.ini /usr/local/etc/php/conf.d/custom.ini
 
-# Копируем проект (включая wp-core, тему, плагины)
-# Предполагаю, что у тебя composer уже собирает core/контент.
+# Copy the project (including wp-core, theme, plugins)
+# I assume that composer is already collecting core/content for you.
 COPY ./composer.json ./composer.lock ./
 RUN composer install --prefer-dist --no-dev --no-scripts --no-interaction
 
-# Копируем темы и плагины из корня репозитория
+# Copy themes and plugins from the root of the repository
 COPY ./themes/ /var/www/html/wp-content/themes/
 COPY ./plugins/ /var/www/html/wp-content/plugins/
 
-# При необходимости — демо-файлы/скрипты (не исполняем автоимпорт!)
+# If necessary — demo files/scripts (do not perform auto-import!)
 # COPY ./wordpress-config/demo /var/www/html/demo/
 
-# Удаляем/правим .htaccess под корень
+# Delete/edit .htaccess under the root
 # (никаких RewriteBase /wordpress)
 RUN if [ -f /var/www/html/.htaccess ]; then \
       sed -i 's|RewriteBase /wordpress/|RewriteBase /|g; s|/wordpress/index.php|/index.php|g' /var/www/html/.htaccess || true ; \
     fi
 
-# Простой entrypoint: создаёт wp-config.php, если его нет
+# Simple entrypoint: creates wp-config.php if it does not exist
 COPY ./docker/koyeb-build/init-wordpress.sh /usr/local/bin/init-wordpress.sh
 RUN chmod +x /usr/local/bin/init-wordpress.sh
 
-# Права
+# Rights
 RUN chown -R www-data:www-data /var/www/html && \
     find /var/www/html -type d -exec chmod 755 {} \; && \
     find /var/www/html -type f -exec chmod 644 {} \;
