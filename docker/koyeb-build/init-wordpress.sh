@@ -2,6 +2,7 @@
 set -e
 
 DOCROOT="/var/www/html"
+WP="wp --allow-root --path=${DOCROOT}"
 
 # Waiting for database availability (optional, but useful)
 if [ -n "${WORDPRESS_DB_HOST}" ]; then
@@ -14,8 +15,7 @@ fi
 # Create wp-config.php from ENV if it does not exist
 if [ ! -f "${DOCROOT}/wp-config.php" ]; then
   echo "Creating wp-config.php from environment variables..."
-  wp config create \
-    --path="${DOCROOT}" \
+  ${WP} config create \
     --dbname="${WORDPRESS_DB_NAME}" \
     --dbuser="${WORDPRESS_DB_USER}" \
     --dbpass="${WORDPRESS_DB_PASSWORD}" \
@@ -24,12 +24,12 @@ if [ ! -f "${DOCROOT}/wp-config.php" ]; then
     --skip-check
 
   # Additional constants (domains, WP_DEBUG, etc.)
-  wp config set WP_HOME "${WP_HOME:-https://$KOYEB_APP_ID.koyeb.app}" --path="${DOCROOT}" --type=constant --raw=false
-  wp config set WP_SITEURL "${WP_SITEURL:-${WP_HOME:-https://$KOYEB_APP_ID.koyeb.app}}" --path="${DOCROOT}" --type=constant --raw=false
-  wp config set WP_DEBUG "${WORDPRESS_DEBUG:-false}" --path="${DOCROOT}" --type=constant --raw=true
+  ${WP} config set WP_HOME "${WP_HOME:-https://$KOYEB_APP_ID.koyeb.app}" --type=constant --raw=false
+  ${WP} config set WP_SITEURL "${WP_SITEURL:-${WP_HOME:-https://$KOYEB_APP_ID.koyeb.app}}" --type=constant --raw=false
+  ${WP} config set WP_DEBUG "${WORDPRESS_DEBUG:-false}" --type=constant --raw=true
 
   # Keys/salts, if not specified
-  wp config shuffle-salts --path="${DOCROOT}" || true
+  ${WP} config shuffle-salts || true
 fi
 
 # Do not import or activate anything automatically (policy-safe)
