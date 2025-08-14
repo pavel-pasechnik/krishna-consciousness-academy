@@ -4,11 +4,24 @@ set -e
 DOCROOT="/var/www/html"
 WP="wp --allow-root --path=${DOCROOT}"
 
+# --- DB host/port normalization ---
+RAW_HOST="${WORDPRESS_DB_HOST:-}"
+RAW_PORT="${WORDPRESS_DB_PORT:-}"
+# If RAW_HOST contains a colon, split; otherwise use RAW_PORT or 3306
+if [[ "$RAW_HOST" == *:* ]]; then
+  DB_HOST_ONLY="${RAW_HOST%%:*}"
+  DB_PORT_ONLY="${RAW_HOST##*:}"
+else
+  DB_HOST_ONLY="$RAW_HOST"
+  DB_PORT_ONLY="${RAW_PORT:-3306}"
+fi
+DB_HOSTPORT="${DB_HOST_ONLY}:${DB_PORT_ONLY}"
+
 # --- 1) Wait for DB (if provided) ---
 if [ -n "${WORDPRESS_DB_HOST:-}" ]; then
   echo "Waiting for MySQL at ${WORDPRESS_DB_HOST}..."
   for i in {1..60}; do
-    (echo > "/dev/tcp/${WORDPRESS_DB_HOST%%:*}/${WORDPRESS_DB_HOST##*:}" 2>/dev/null) && break || sleep 1
+    (echo > "/dev/tcp/${DB_HOST_ONLY}/${DB_PORT_ONLY}" 2>/dev/null) && break || sleep 1
   done
 fi
 
@@ -19,9 +32,11 @@ if [ ! -f "${DOCROOT}/wp-config.php" ]; then
     --dbname="${WORDPRESS_DB_NAME}" \
     --dbuser="${WORDPRESS_DB_USER}" \
     --dbpass="${WORDPRESS_DB_PASSWORD}" \
-    --dbhost="${WORDPRESS_DB_HOST}" \
+    --dbhost="${DB_HOSTPORT}" \
     --force \
     --skip-check
+
+  echo "DB resolved as host=${DB_HOST_ONLY} port=${DB_PORT_ONLY}"
 
   # Write custom constants to a separate include to avoid quoting issues
   cat > "${DOCROOT}/wp-config.custom.php" <<'PHP'
@@ -50,9 +65,12 @@ PHP
       --dbname="${WORDPRESS_DB_NAME}" \
       --dbuser="${WORDPRESS_DB_USER}" \
       --dbpass="${WORDPRESS_DB_PASSWORD}" \
-      --dbhost="${WORDPRESS_DB_HOST}" \
+      --dbhost="${DB_HOSTPORT}" \
       --force \
       --skip-check
+
+    echo "DB resolved as host=${DB_HOST_ONLY} port=${DB_PORT_ONLY}"
+
     cat > "${DOCROOT}/wp-config.custom.php" <<'PHP'
 <?php
 $__home = getenv('WP_HOME') ?: ('https://' . getenv('KOYEB_APP_ID') . '.koyeb.app');
