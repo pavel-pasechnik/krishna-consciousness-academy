@@ -1,13 +1,40 @@
-FROM wordpress:latest
+#!/usr/bin/env bash
+set -euo pipefail
 
-# Copy the init script and make it executable
-COPY init-wordpress.sh /usr/local/bin/init-wordpress.sh
-RUN chmod +x /usr/local/bin/init-wordpress.sh
+: "${AIVEN_TOKEN:?AIVEN_TOKEN is required}"
+: "${AIVEN_PROJECT:?AIVEN_PROJECT is required}"
+: "${AIVEN_SERVICE:?AIVEN_SERVICE is required}"
+: "${AIVEN_DB:?AIVEN_DB is required}"
 
-# Copy the reset script and make it executable
-COPY reset_aiven_mysql.sh /usr/local/bin/reset_aiven_mysql.sh
-RUN chmod +x /usr/local/bin/reset_aiven_mysql.sh
+# Предохранитель: выполнится только если явно включён reset
+if [[ "${AIVEN_RESET_DB:-}" != "1" ]]; then
+  echo "AIVEN_RESET_DB!=1 → пропускаю сброс базы"
+  exit 0
+fi
 
-# curl is already installed earlier, so no need to install again
+API="https://api.aiven.io/v1/project/${AIVEN_PROJECT}/service/${AIVEN_SERVICE}"
 
-CMD ["bash", "-c", "/usr/local/bin/reset_aiven_mysql.sh && /usr/local/bin/init-wordpress.sh"]
+echo "→ Удаляю БД ${AIVEN_DB} в сервисе ${AIVEN_SERVICE} (проект ${AIVEN_PROJECT})"
+# Пытаемся удалить; 404 игнорируем (базы могло не быть)
+set +e
+curl -fsS -X DELETE \
+  -H "Authorization: Bearer ${AIVEN_TOKEN}" \
+  -H "Accept: application/json" \
+  "${API}/db/${AIVEN_DB}"
+status=$?
+set -e
+if [[ $status -ne 0 ]]; then
+  echo "Внимание: DELETE вернул код $status (вероятно, БД не существовала) — продолжаю"
+fi
+
+# Небольшая пауза, чтобы сервис применил изменения
+sleep 2
+
+echo "→ Создаю БД ${AIVEN_DB} заново"
+curl -fsS -X POST \
+  -H "Authorization: Bearer ${AIVEN_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -d "{\"database\":\"${AIVEN_DB}\"}" \
+  "${API}/db"
+
+echo "✓ Готово: база ${AIVEN_DB} пересоздана"
