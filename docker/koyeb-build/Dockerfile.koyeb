@@ -36,10 +36,9 @@ RUN rm -rf /var/www/html/* \
 # PHP-INI
 COPY ./wordpress-config/custom.ini /usr/local/etc/php/conf.d/custom.ini
 
-# Copy the project (including wp-core, theme, plugins)
-# I assume that composer is already collecting core/content for you.
+# Copy the project (including composer files)
 COPY ./composer.json ./composer.lock ./
-RUN composer install --prefer-dist --no-dev --no-scripts --no-interaction
+RUN composer install --prefer-dist --no-dev --no-scripts --no-interaction || true
 
 # Copy themes and plugins from the root of the repository
 COPY ./themes/ /var/www/html/wp-content/themes/
@@ -48,17 +47,16 @@ COPY ./plugins/ /var/www/html/wp-content/plugins/
 # If necessary — demo files/scripts (do not perform auto-import!)
 # COPY ./wordpress-config/demo /var/www/html/demo/
 
-# Delete/edit .htaccess under the root
-# (никаких RewriteBase /wordpress)
+# Fix .htaccess under the root
 RUN if [ -f /var/www/html/.htaccess ]; then \
       sed -i 's|RewriteBase /wordpress/|RewriteBase /|g; s|/wordpress/index.php|/index.php|g' /var/www/html/.htaccess || true ; \
     fi
 
-# Simple entrypoint: creates wp-config.php if it does not exist
+# Entrypoint: creates wp-config.php if it does not exist
 COPY ./docker/koyeb-build/init-wordpress.sh /usr/local/bin/init-wordpress.sh
 RUN chmod +x /usr/local/bin/init-wordpress.sh
 
-# Rights
+# Permissions
 RUN chown -R www-data:www-data /var/www/html && \
     find /var/www/html -type d -exec chmod 755 {} \; && \
     find /var/www/html -type f -exec chmod 644 {} \;

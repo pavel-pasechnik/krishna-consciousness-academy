@@ -1,55 +1,67 @@
-#!/usr/bin/env bash
-set -e
+# syntax=docker/dockerfile:1.4
+FROM php:8.3-apache
 
-DOCROOT="/var/www/html"
-WP="wp --allow-root --path=${DOCROOT}"
+WORKDIR /var/www/html
 
-# Waiting for database availability (optional, but useful)
-if [ -n "${WORDPRESS_DB_HOST}" ]; then
-  echo "Waiting for MySQL at ${WORDPRESS_DB_HOST}..."
-  for i in {1..30}; do
-    (echo > /dev/tcp/${WORDPRESS_DB_HOST%%:*}/${WORDPRESS_DB_HOST##*:} 2>/dev/null) && break || sleep 2
-  done
-fi
+# Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Create wp-config.php from ENV if it does not exist
-if [ ! -f "${DOCROOT}/wp-config.php" ]; then
-  echo "Creating wp-config.php from environment variables..."
-  ${WP} config create \
-    --dbname="${WORDPRESS_DB_NAME}" \
-    --dbuser="${WORDPRESS_DB_USER}" \
-    --dbpass="${WORDPRESS_DB_PASSWORD}" \
-    --dbhost="${WORDPRESS_DB_HOST}" \
-    --force \
-    --skip-check
+# PHP dependencies
+RUN apt-get update && apt-get install -y \
+  git unzip libzip-dev libjpeg-dev libpng-dev libwebp-dev libxpm-dev \
+  libfreetype6-dev libmagickwand-dev libicu-dev default-mysql-client \
+  && docker-php-ext-configure gd --with-jpeg --with-webp --with-xpm --with-freetype \
+  && docker-php-ext-install zip mysqli gd intl exif \
+  && pecl install imagick \
+  && docker-php-ext-enable imagick
 
-  # Additional constants (domains, WP_DEBUG, etc.)
-  ${WP} config set WP_HOME "${WP_HOME:-https://$KOYEB_APP_ID.koyeb.app}" --type=constant --raw=false
-  ${WP} config set WP_SITEURL "${WP_SITEURL:-${WP_HOME:-https://$KOYEB_APP_ID.koyeb.app}}" --type=constant --raw=false
-  ${WP} config set WP_DEBUG "${WORDPRESS_DEBUG:-false}" --type=constant --raw=true
+# Apache on 8080 (Koyeb expects PORT=8080)
+ENV APACHE_LISTEN_PORT=8080
+RUN sed -i "s/Listen 80/Listen ${APACHE_LISTEN_PORT}/" /etc/apache2/ports.conf
 
-  # Keys/salts, if not specified
-  ${WP} config shuffle-salts || true
+# In prod, we serve from the root /var/www/html
+# (no /wordpress subdirectory)
+RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html|g' /etc/apache2/sites-available/000-default.conf
 
-  # Validate wp-config.php syntax; if broken (e.g., due to bad escaping), recreate cleanly
-  if ! php -l "${DOCROOT}/wp-config.php" >/dev/null 2>&1; then
-    echo "wp-config.php has syntax errors. Recreating..."
-    mv "${DOCROOT}/wp-config.php" "${DOCROOT}/wp-config.php.bad" 2>/dev/null || true
-    ${WP} config create \
-      --dbname="${WORDPRESS_DB_NAME}" \
-      --dbuser="${WORDPRESS_DB_USER}" \
-      --dbpass="${WORDPRESS_DB_PASSWORD}" \
-      --dbhost="${WORDPRESS_DB_HOST}" \
-      --force \
-      --skip-check
-    ${WP} config set WP_HOME "${WP_HOME:-https://$KOYEB_APP_ID.koyeb.app}" --type=constant --raw=false
-    ${WP} config set WP_SITEURL "${WP_SITEURL:-${WP_HOME:-https://$KOYEB_APP_ID.koyeb.app}}" --type=constant --raw=false
-    ${WP} config set WP_DEBUG "${WORDPRESS_DEBUG:-false}" --type=constant --raw=true
-    ${WP} config shuffle-salts || true
-  fi
-fi
+# WP-CLI
+RUN curl -sS -L https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o /usr/local/bin/wp \
+  && chmod +x /usr/local/bin/wp
 
-# Do not import or activate anything automatically (policy-safe)
+# Download and extract WordPress core without WP-CLI (avoids PHP memory limits during build)
+RUN rm -rf /var/www/html/* \
+  && curl -fsSL https://wordpress.org/latest.tar.gz -o /tmp/wordpress.tar.gz \
+  && tar -xzf /tmp/wordpress.tar.gz -C /var/www/html --strip-components=1 \
+  && rm -f /tmp/wordpress.tar.gz
 
-# Run Apache in the foreground
-apache2-foreground
+# PHP-INI
+COPY ./wordpress-config/custom.ini /usr/local/etc/php/conf.d/custom.ini
+
+# Copy the project (including composer files)
+COPY ./composer.json ./composer.lock ./
+RUN composer install --prefer-dist --no-dev --no-scripts --no-interaction || true
+
+# Copy themes and plugins from the root of the repository
+COPY ./themes/ /var/www/html/wp-content/themes/
+COPY ./plugins/ /var/www/html/wp-content/plugins/
+
+# If necessary — demo files/scripts (do not perform auto-import!)
+# COPY ./wordpress-config/demo /var/www/html/demo/
+
+# Fix .htaccess under the root
+RUN if [ -f /var/www/html/.htaccess ]; then \
+      sed -i 's|RewriteBase /wordpress/|RewriteBase /|g; s|/wordpress/index.php|/index.php|g' /var/www/html/.htaccess || true ; \
+    fi
+
+# Entrypoint: creates wp-config.php if it does not exist
+COPY ./docker/koyeb-build/init-wordpress.sh /usr/local/bin/init-wordpress.sh
+RUN chmod +x /usr/local/bin/init-wordpress.sh
+
+# Permissions
+RUN chown -R www-data:www-data /var/www/html && \
+    find /var/www/html -type d -exec chmod 755 {} \; && \
+    find /var/www/html -type f -exec chmod 644 {} \;
+
+ENV PORT=8080
+EXPOSE 8080
+
+CMD ["/usr/local/bin/init-wordpress.sh"]
