@@ -17,7 +17,7 @@ if [ "${RESET_DB_ON_BOOT:-0}" = "1" ] && [ ! -f "${DOCROOT}/wp-config.php" ]; th
         ;;
     esac
     export MYSQL_PWD="${WORDPRESS_DB_PASSWORD}"
-    mysql "${MYSQL_OPTS[@]}" -e "SET SESSION sql_notes=0; SET FOREIGN_KEY_CHECKS=0; SELECT CONCAT('DROP TABLE IF EXISTS \`', table_name, '\`;') FROM information_schema.tables WHERE table_schema='${WORDPRESS_DB_NAME}'; SET FOREIGN_KEY_CHECKS=1;" \
+    mysql "${MYSQL_OPTS[@]}" -e "SET SESSION sql_notes=0; SET FOREIGN_KEY_CHECKS=0; SELECT CONCAT('DROP TABLE IF EXISTS ', GROUP_CONCAT(CONCAT('\`', table_name, '\`') SEPARATOR ','), ';') FROM information_schema.tables WHERE table_schema='${WORDPRESS_DB_NAME}'; SET FOREIGN_KEY_CHECKS=1;" \
       | mysql "${MYSQL_OPTS[@]}" "${WORDPRESS_DB_NAME}" \
       && echo "All tables dropped in ${WORDPRESS_DB_NAME}." \
       || echo "WARNING: Failed to drop tables (database may be empty or unreachable)."
