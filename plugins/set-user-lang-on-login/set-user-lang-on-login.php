@@ -67,12 +67,14 @@ add_action('admin_init', function () {
   if (! is_admin()) return;
   if (! current_user_can('install_languages')) return;
 
-  // If there are missing locales, enqueue a notice
-  if (function_exists('sulol_get_missing_locales')) {
-    $missing = sulol_get_missing_locales();
-    if (! empty($missing)) {
-      add_action('admin_notices', 'sulol_langpacks_notice');
-    }
+  if (function_exists('wp_can_install_language_pack') && ! wp_can_install_language_pack()) {
+    // Host cannot install language packs; don't nag
+    return;
+  }
+
+  $missing = sulol_get_missing_locales();
+  if (! empty($missing)) {
+    add_action('admin_notices', 'sulol_langpacks_notice');
   }
 });
 
@@ -130,14 +132,32 @@ function sulol_get_target_locales()
 }
 
 /**
- * Calculate which locales are missing from the installed core language packs.
+ * Calculate which locales are missing from the installed core language packs (robust).
  */
 function sulol_get_missing_locales()
 {
-  $installed = array_map('sulol_normalize_locale', (array) get_available_languages());
-  $targets   = sulol_get_target_locales(); // already normalized & filtered
-  $missing   = [];
+  // Collect installed core locales
+  $installed = [];
+  if (function_exists('wp_get_installed_translations')) {
+    $core = wp_get_installed_translations('core');
+    if (isset($core['default']) && is_array($core['default'])) {
+      $installed = array_keys($core['default']);
+    }
+  }
 
+  // Fallback if core map is empty
+  if (empty($installed)) {
+    $installed = (array) get_available_languages();
+  }
+
+  // Normalize and ensure built-in English is considered present
+  $installed = array_map('sulol_normalize_locale', $installed);
+  $installed[] = 'en_US';
+  $installed   = array_values(array_unique($installed));
+
+  // Compare against normalized targets
+  $targets = sulol_get_target_locales();
+  $missing = [];
   foreach ($targets as $loc) {
     if (! in_array($loc, $installed, true)) {
       $missing[] = $loc;
@@ -161,6 +181,10 @@ function sulol_render_langpacks_page()
 {
   if (! current_user_can('install_languages')) {
     wp_die(esc_html__('You do not have permission to install languages.', 'set-user-lang-on-login'));
+  }
+
+  if (function_exists('wp_can_install_language_pack') && ! wp_can_install_language_pack()) {
+    echo '<div class="notice notice-info"><p>' . esc_html__('This site cannot install language packs automatically (restricted filesystem).', 'set-user-lang-on-login') . '</p></div>';
   }
 
   $missing = sulol_get_missing_locales();
