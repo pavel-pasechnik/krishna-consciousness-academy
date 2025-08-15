@@ -1,6 +1,6 @@
 /* Mobile devices */
 header {
-  height: 448px;
+  height: 233px;
 
   background-image: url('../images/header-mobile.jpg');
   background-repeat: no-repeat;
@@ -28,7 +28,7 @@ header {
 }
 
 .wp-block-site-logo.is-default-size img {
-  max-width: 100px;
+  max-width: 50px;
 }
 
 .header-wrapper {
@@ -111,11 +111,11 @@ body.admin-bar .header-wrapper.scrolled {
 
 .header-title a {
   font-family: var(--wp--preset--font-family--primary);
-  font-size: 28px;
+  font-size: 20px;
   line-height: 1.25;
   color: var(--wp--preset--color--primary);
   text-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.05em ;
 }
 
 .login {
@@ -161,8 +161,8 @@ body.admin-bar .header-wrapper.scrolled {
 .header-title {
   align-self: flex-start;
 
-  max-width: 364px;
-  margin-top: 200px;
+  max-width: 60%;
+  margin-top: 60px;
 
   font-size: 28px;
   line-height: 1.25;
@@ -172,6 +172,14 @@ body.admin-bar .header-wrapper.scrolled {
 }
 
 @media screen and (width >= 600px) {
+  header {
+    height: 340px;
+  }
+
+  .wp-block-site-logo.is-default-size img {
+    max-width: 100px;
+  }
+
   .accessibility{
     display: flex;
   }
@@ -194,8 +202,12 @@ body.admin-bar .header-wrapper.scrolled {
 
 
   .header-title {
-    width: 50%;
-    max-width: none;
+    margin-top: 120px;
+    font-size: 28px;
+  }
+
+  .header-title a {
+    font-size: 28px;
   }
 }
 
@@ -216,7 +228,7 @@ body.admin-bar .header-wrapper.scrolled {
 /* Tablets */
 @media screen and (width >= 768px) {
   header {
-    height: 698px;
+    height: 460px;
     background-image: url('../images/header-tablet.jpg');
   }
 
@@ -233,7 +245,7 @@ body.admin-bar .header-wrapper.scrolled {
   }
 
   .header-title {
-    margin-top: 290px;
+    margin-top: 150px;
     font-size: 38px;
     line-height: 1.25;
     letter-spacing: 0.05em;
@@ -269,7 +281,7 @@ body.admin-bar .header-wrapper.scrolled {
 
 @media screen and (width >= 1170px) {
   header {
-    height: 896px;
+    height: 560px;
   }
 
   body.admin-bar .header-wrapper {
@@ -294,7 +306,7 @@ body.admin-bar .header-wrapper.scrolled {
   }
 
   .header-title {
-    margin-top: 390px;
+    margin-top: 170px;
     font-size: 48px;
   }
 
@@ -306,6 +318,7 @@ body.admin-bar .header-wrapper.scrolled {
 /* Desktops */
 @media screen and (width >= 1440px) {
   header {
+    height: 600px;
     background-image: url('../images/header-desktop.jpg');
   }
 
