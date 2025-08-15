@@ -40,8 +40,8 @@ if (! function_exists('krishna_academy_support')) :
 		add_action('admin_menu', function () {
 			add_submenu_page(
 				'themes.php',
-				__('Меню шаблона', 'krishna-academy'),
-				__('Меню шаблона', 'krishna-academy'),
+				__('Template menu', 'krishna-academy'),
+				__('Template menu', 'krishna-academy'),
 				'edit_theme_options',
 				'edit.php?post_type=wp_navigation'
 			);
