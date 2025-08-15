@@ -3,9 +3,9 @@
 /**
  * Plugin Name: Set User Language on Login
  * Description: Sets the user's language when logging in based on the selection on the authorization screen.
- * Version: 1.0.0
+ * Version: 1.0.6
  * Author: Pavel Pasechnik
- * Text Domain: krishna-academy
+ * Text Domain: set-user-lang-on-login
  * Requires at least: 6.3
  * Requires PHP: 7.4
  * License: GPLv2 or later
@@ -20,6 +20,33 @@
 // Download translations
 add_action('plugins_loaded', function () {
   load_plugin_textdomain('set-user-lang-on-login', false, dirname(plugin_basename(__FILE__)) . '/languages');
+
+  // Auto-install required core language packs so the login language switcher works
+  if (is_admin() && current_user_can('install_languages')) {
+    require_once ABSPATH . 'wp-admin/includes/translation-install.php';
+
+    // Remove transient throttling (no longer used)
+
+    // Build locales list from Polylang (if present), always include English, allow filter
+    $locales = [];
+    if (function_exists('pll_languages_list')) {
+      // Get locales configured in Polylang (e.g., ['uk', 'ru_RU', 'en_US'])
+      $pll_locales = (array) pll_languages_list(['fields' => 'locale']);
+      $locales = array_filter(array_map('strval', $pll_locales));
+    }
+    // Ensure English is available as a safe fallback alongside Polylang languages
+    $locales = array_unique(array_merge($locales, ['en_US']));
+    // If Polylang is not active/configured, fall back to defaults
+    if (empty($locales)) {
+      $locales = ['uk', 'ru_RU', 'en_US'];
+    }
+    // Allow customization via filter
+    $locales = apply_filters('sulol_locales', $locales);
+
+    foreach ($locales as $locale) {
+      wp_download_language_pack($locale);
+    }
+  }
 });
 
 // Save the selected language in user_meta
@@ -59,4 +86,34 @@ add_action('login_form', function () {
     });
   </script>
 <?php
+});
+
+// Auto-install required core language packs so the login language switcher works
+add_action('admin_init', function () {
+  if (!is_admin()) return;
+  if (!current_user_can('update_core')) return;
+
+  // Avoid doing this too often
+  if (get_transient('sulol_langpacks_checked')) return;
+  set_transient('sulol_langpacks_checked', 12 * HOUR_IN_SECONDS);
+
+  // Functions for installing language packs
+  if (!function_exists('wp_can_install_language_pack') || !function_exists('wp_download_language_pack')) {
+    require_once ABSPATH . 'wp-admin/includes/translation-install.php';
+  }
+
+  if (!function_exists('wp_can_install_language_pack') || !wp_can_install_language_pack()) return;
+
+  // Locales you want to ensure are present (can be customized via filter)
+  $locales = apply_filters('sulol_locales', ['uk', 'ru_RU']);
+
+  // Installed core language packs
+  $installed = get_available_languages();
+
+  foreach ($locales as $loc) {
+    if (!in_array($loc, $installed, true)) {
+      // Silently try to download the language pack
+      wp_download_language_pack($loc);
+    }
+  }
 });

@@ -562,8 +562,8 @@ add_action('admin_notices', function () {
 			'repo' => true,
 		],
 		[
-			'name' => 'Krishna Academy Extras',
-			'slug' => 'krishna-academy-extras',
+			'name' => 'Krishna Academy Extrax',
+			'slug' => 'krishna-academy-extrax',
 			'repo' => false,
 			'url'  => '',
 		],
@@ -648,8 +648,21 @@ add_action('admin_notices', function () {
 	$dismiss_url = wp_nonce_url(add_query_arg('ka-dismiss-plugins', 1), 'ka_dismiss_plugins');
 
 	echo '<div class="notice notice-info is-dismissible" data-dismissible="ka-plugins">';
-	echo '<p><strong>' . esc_html__('Plugins required/recommended for full theme functionality (status only):', 'krishna-academy') . '</strong></p>';
+	echo '<p><strong>' . esc_html__('Plugins required/recommended for full theme functionality:', 'krishna-academy') . '</strong></p>';
 	echo '<ul style="margin-left:1em; list-style:disc;">';
+
+	$build_install_link = function ($slug) {
+		if (! current_user_can('install_plugins')) return '';
+		$href = wp_nonce_url(self_admin_url('update.php?action=install-plugin&plugin=' . urlencode($slug)), 'install-plugin_' . $slug);
+		return '<a class="button button-small" href="' . esc_url($href) . '">' . esc_html__('Install', 'krishna-academy') . '</a>';
+	};
+
+	$build_activate_link = function ($file) {
+		if (! current_user_can('activate_plugins')) return '';
+		$href = wp_nonce_url(self_admin_url('plugins.php?action=activate&plugin=' . urlencode($file)), 'activate-plugin_' . $file);
+		return '<a class="button button-small" href="' . esc_url($href) . '">' . esc_html__('Activate', 'krishna-academy') . '</a>';
+	};
+
 	foreach ($plugins as $p) {
 		$slug = $p['slug'];
 		$name = $p['name'];
@@ -672,25 +685,20 @@ add_action('admin_notices', function () {
 		echo '<li style="margin: .25em 0;">';
 		echo '<strong>' . esc_html($name) . '</strong> ';
 
-		// Only show status, no actions
-		if ($repo) {
-			// Репозиторные плагины: показываем только статус, без Install/Activate
-			if ($is_active) {
-				echo '<span class="dashicons dashicons-yes" style="color:#46b450"></span> ' . esc_html__('Active', 'krishna-academy');
-			} elseif ($is_installed) {
-				echo '<span class="dashicons dashicons-info"></span> ' . esc_html__('Installed (inactive)', 'krishna-academy');
-			} else {
-				echo '<span class="dashicons dashicons-warning"></span> ' . esc_html__('Not installed', 'krishna-academy');
-			}
+		$actions = '';
+		if ($is_active) {
+			echo '<span class="dashicons dashicons-yes" style="color:#46b450"></span> ' . esc_html__('Active', 'krishna-academy');
+		} elseif ($is_installed) {
+			echo '<span class="dashicons dashicons-info"></span> ' . esc_html__('Installed (inactive)', 'krishna-academy');
+			$actions = $build_activate_link($file);
 		} else {
-			// Внешние/кастомные плагины: только статус
-			if ($is_active) {
-				echo '<span class="dashicons dashicons-yes" style="color:#46b450"></span> ' . esc_html__('Active', 'krishna-academy');
-			} elseif ($is_installed) {
-				echo '<span class="dashicons dashicons-info"></span> ' . esc_html__('Installed (inactive)', 'krishna-academy');
-			} else {
-				echo '<span class="dashicons dashicons-warning"></span> ' . esc_html__('Not installed', 'krishna-academy');
+			echo '<span class="dashicons dashicons-warning"></span> ' . esc_html__('Not installed', 'krishna-academy');
+			if (!empty($repo)) {
+				$actions = $build_install_link($slug);
 			}
+		}
+		if ($actions) {
+			echo ' &nbsp; ' . $actions;
 		}
 
 		echo '</li>';
