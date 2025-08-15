@@ -19,34 +19,8 @@
 
 // Download translations
 add_action('plugins_loaded', function () {
+  // Load plugin translations only; no auto-install of language packs
   load_plugin_textdomain('set-user-lang-on-login', false, dirname(plugin_basename(__FILE__)) . '/languages');
-
-  // Auto-install required core language packs so the login language switcher works
-  if (is_admin() && current_user_can('install_languages')) {
-    require_once ABSPATH . 'wp-admin/includes/translation-install.php';
-
-    // Remove transient throttling (no longer used)
-
-    // Build locales list from Polylang (if present), always include English, allow filter
-    $locales = [];
-    if (function_exists('pll_languages_list')) {
-      // Get locales configured in Polylang (e.g., ['uk', 'ru_RU', 'en_US'])
-      $pll_locales = (array) pll_languages_list(['fields' => 'locale']);
-      $locales = array_filter(array_map('strval', $pll_locales));
-    }
-    // Ensure English is available as a safe fallback alongside Polylang languages
-    $locales = array_unique(array_merge($locales, ['en_US']));
-    // If Polylang is not active/configured, fall back to defaults
-    if (empty($locales)) {
-      $locales = ['uk', 'ru_RU', 'en_US'];
-    }
-    // Allow customization via filter
-    $locales = apply_filters('sulol_locales', $locales);
-
-    foreach ($locales as $locale) {
-      wp_download_language_pack($locale);
-    }
-  }
 });
 
 // Save the selected language in user_meta
