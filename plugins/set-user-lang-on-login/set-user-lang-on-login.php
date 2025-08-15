@@ -2,18 +2,18 @@
 
 /**
  * Plugin Name: Set User Language on Login
- * Description: Sets the user's language when logging in based on the selection on the authorization screen.
- * Version: 1.0.6
  * Author: Pavel Pasechnik
+ * Description: Sets the user's language when logging in based on the selection on the authorization screen.
  * Text Domain: set-user-lang-on-login
+ * Version: 1.0.6
  * Requires at least: 6.3
  * Requires PHP: 7.4
+ * Update URI: https://github.com/pavel-pasechnik/wordpress/tree/main/plugins/set-user-lang-on-login
+ * GitHub Plugin URI: https://github.com/pavel-pasechnik/wordpress/plugins/set-user-lang-on-login
+ * Network: true
+ * Primary Branch: main
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Update URI: https://github.com/pavel-pasechnik/wordpress/tree/main/plugins/set-user-lang-on-login
- * GitHub Plugin URI: https://github.com/pavel-pasechnik/wordpress
- * Primary Branch: main
- * Directory: plugins/set-user-lang-on-login
  */
 
 

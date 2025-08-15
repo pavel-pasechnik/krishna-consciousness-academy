@@ -2,18 +2,18 @@
 
 /**
  * Plugin Name: Krishna Academy Extras
- * Description: Custom dynamic blocks and helpers for the Krishna Academy theme (kept out of the theme to satisfy Theme Review).
  * Author: Pavel Pasechnik
- * Version: 1.0.6
+ * Description: Custom dynamic blocks and helpers for the Krishna Academy theme (kept out of the theme to satisfy Theme Review).
  * Text Domain: krishna-academy-extrax
+ * Version: 1.0.6
  * Requires at least: 6.3
  * Requires PHP: 7.4
+ * Update URI: https://github.com/pavel-pasechnik/wordpress/tree/main/plugins/krishna-academy-extrax
+ * GitHub Plugin URI: https://github.com/pavel-pasechnik/wordpress/plugins/krishna-academy-extrax
+ * Network: true
+ * Primary Branch: main
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Update URI: https://github.com/pavel-pasechnik/wordpress/tree/main/plugins/krishna-academy-extrax
- * GitHub Plugin URI: https://github.com/pavel-pasechnik/wordpress
- * Primary Branch: main
- * Directory: plugins/krishna-academy-extrax
  */
 
 if (!defined('ABSPATH')) {

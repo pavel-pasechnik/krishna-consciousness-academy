@@ -535,88 +535,6 @@ add_action('admin_init', function () {
 	}
 });
 
-// Handle external plugin installation from a ZIP URL (used for Git Updater)
-
-// Handle external plugin installation from a ZIP URL (used for Git Updater)
-add_action('admin_post_ka_install_plugin', function () {
-	if (! current_user_can('install_plugins')) {
-		wp_die(__('Sorry, you are not allowed to install plugins on this site.'), 403);
-	}
-	check_admin_referer('ka_install_plugin');
-
-	if (defined('DISALLOW_FILE_MODS') && constant('DISALLOW_FILE_MODS')) {
-		wp_safe_redirect(self_admin_url('plugins.php'));
-		exit;
-	}
-
-	// Ensure filesystem API is initialized (avoid credential prompt in admin-post context)
-	require_once ABSPATH . 'wp-admin/includes/file.php';
-	$fs_ok = WP_Filesystem();
-	if (! $fs_ok) {
-		wp_safe_redirect(self_admin_url('plugins.php'));
-		exit;
-	}
-
-	$zip_url = isset($_GET['url']) ? esc_url_raw(wp_unslash($_GET['url'])) : '';
-	// Auto-activation disabled; activation must be done manually from Plugins screen.
-	if (empty($zip_url)) {
-		wp_safe_redirect(self_admin_url('plugins.php'));
-		exit;
-	}
-
-	require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-	require_once ABSPATH . 'wp-admin/includes/plugin.php';
-
-	$skin = new Automatic_Upgrader_Skin();
-	$upgrader = new Plugin_Upgrader($skin);
-	$result = $upgrader->install($zip_url);
-
-	if (is_wp_error($result)) {
-		wp_safe_redirect(self_admin_url('plugins.php'));
-		exit;
-	}
-
-	// Handle nested plugin directory inside GitHub branch archives
-	$dest = $upgrader->result['destination'] ?? '';
-	if ($dest && is_dir($dest)) {
-		// GitHub branch archives may unpack as git-updater-main/git-updater/
-		$nested = trailingslashit($dest) . 'git-updater';
-		if (is_dir($nested) && file_exists(trailingslashit($nested) . 'git-updater.php')) {
-			$target = trailingslashit(WP_PLUGIN_DIR) . 'git-updater';
-
-			// Remove previous target if exists (best-effort)
-			if (is_dir($target)) {
-				global $wp_filesystem;
-				if ($wp_filesystem && method_exists($wp_filesystem, 'delete')) {
-					$wp_filesystem->delete($target, true);
-				} else {
-					$it = new RecursiveDirectoryIterator($target, FilesystemIterator::SKIP_DOTS);
-					$files = new RecursiveIteratorIterator($it, RecursiveIteratorIterator::CHILD_FIRST);
-					foreach ($files as $fileinfo) {
-						$p = $fileinfo->getPathname();
-						if ($fileinfo->isDir()) {
-							@rmdir($p);
-						} else {
-							@unlink($p);
-						}
-					}
-					@rmdir($target);
-				}
-			}
-
-			// Move nested folder into final location
-			@rename($nested, $target);
-
-			// Point $dest to the final folder so activation below can find it
-			if (is_dir($target)) {
-				$dest = $target;
-			}
-		}
-	}
-
-	wp_safe_redirect(self_admin_url('plugins.php'));
-	exit;
-});
 
 add_action('admin_notices', function () {
 	if (! current_user_can('install_plugins')) return;
@@ -624,12 +542,6 @@ add_action('admin_notices', function () {
 
 	require_once ABSPATH . 'wp-admin/includes/plugin.php';
 	require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
-
-	// Where to fetch Git Updater from (your repo by default; can be overridden via filter)
-	$git_updater_zip = apply_filters(
-		'ka_git_updater_zip_url',
-		'https://github.com/afragen/git-updater/archive/refs/heads/main.zip'
-	);
 
 	$plugins = [
 		[
@@ -654,15 +566,11 @@ add_action('admin_notices', function () {
 			'url'  => '',
 		],
 		[
-			'name' => 'WordPress Importer',
-			'slug' => 'wordpress-importer',
-			'repo' => true,
-		],
-		[
-			'name' => 'Git Updater',
-			'slug' => 'git-updater',
-			'repo' => false,
-			'url'  => $git_updater_zip,
+			'name'  => 'Git Updater',
+			'slug'  => 'git-updater',
+			'repo'  => false,
+			'git'   => 'https://github.com/afragen/git-updater.git',
+			'branch' => 'master',
 		],
 	];
 
@@ -750,10 +658,12 @@ add_action('admin_notices', function () {
 		return '<a class="button button-small" href="' . esc_url($href) . '">' . esc_html__('Activate', 'krishna-academy') . '</a>';
 	};
 
-	$build_external_install_link = function ($zip_url) {
+
+	// Build install link for cloning via git (no archive)
+	$build_git_install_link = function ($repo_url, $branch = 'main') {
 		if (! current_user_can('install_plugins')) return '';
-		if (empty($zip_url)) return '';
-		$href = wp_nonce_url(self_admin_url('admin-post.php?action=ka_install_plugin&url=' . urlencode($zip_url)), 'ka_install_plugin');
+		if (empty($repo_url)) return '';
+		$href = wp_nonce_url(self_admin_url('admin-post.php?action=ka_git_clone_plugin&repo=' . urlencode($repo_url) . '&branch=' . urlencode($branch)), 'ka_git_clone_plugin');
 		return '<a class="button button-small" href="' . esc_url($href) . '">' . esc_html__('Install', 'krishna-academy') . '</a>';
 	};
 
@@ -790,10 +700,10 @@ add_action('admin_notices', function () {
 			if (!empty($repo)) {
 				$actions = $build_install_link($slug);
 			} else {
-				// external zip install
-				$zip = $p['url'] ?? '';
-				if ($zip) {
-					$actions = $build_external_install_link($zip);
+				$git = $p['git'] ?? '';
+				if ($git) {
+					$branch = $p['branch'] ?? 'main';
+					$actions = $build_git_install_link($git, $branch);
 				}
 			}
 		}
@@ -806,4 +716,116 @@ add_action('admin_notices', function () {
 	echo '</ul>';
 	echo '<p><a href="' . esc_url($dismiss_url) . '" class="button button-link">' . esc_html__('Do not show this again', 'krishna-academy') . '</a></p>';
 	echo '</div>';
+});
+
+// Handle installing a plugin by cloning a git repository (no archive)
+add_action('admin_post_ka_git_clone_plugin', function () {
+	if (! current_user_can('install_plugins')) {
+		wp_die(__('Sorry, you are not allowed to install plugins on this site.'), 403);
+	}
+	check_admin_referer('ka_git_clone_plugin');
+
+	if (defined('DISALLOW_FILE_MODS') && constant('DISALLOW_FILE_MODS')) {
+		wp_safe_redirect(self_admin_url('plugins.php'));
+		exit;
+	}
+
+	$repo  = isset($_GET['repo']) ? esc_url_raw(wp_unslash($_GET['repo'])) : '';
+	$branch = isset($_GET['branch']) ? sanitize_text_field(wp_unslash($_GET['branch'])) : 'main';
+	if (empty($repo)) {
+		wp_safe_redirect(self_admin_url('plugins.php'));
+		exit;
+	}
+
+	// Basic safety: only allow GitHub HTTPS URLs
+	if (stripos($repo, 'https://github.com/') !== 0) {
+		wp_safe_redirect(self_admin_url('plugins.php'));
+		exit;
+	}
+
+	// Ensure filesystem API is initialized
+	require_once ABSPATH . 'wp-admin/includes/file.php';
+	$fs_ok = WP_Filesystem();
+	if (! $fs_ok) {
+		wp_safe_redirect(self_admin_url('plugins.php'));
+		exit;
+	}
+
+	// Check git availability
+	@exec('git --version 2>&1', $out, $code);
+	if ($code !== 0) {
+		// No git available; bail silently (you can install via ZIP instead)
+		wp_safe_redirect(self_admin_url('plugins.php'));
+		exit;
+	}
+
+	$plugins_dir = trailingslashit(WP_PLUGIN_DIR);
+	$target_dir  = $plugins_dir . 'git-updater';
+
+	// Remove existing target if present
+	if (is_dir($target_dir)) {
+		global $wp_filesystem;
+		if ($wp_filesystem && method_exists($wp_filesystem, 'delete')) {
+			$wp_filesystem->delete($target_dir, true);
+		} else {
+			$it = new RecursiveDirectoryIterator($target_dir, FilesystemIterator::SKIP_DOTS);
+			$files = new RecursiveIteratorIterator($it, RecursiveIteratorIterator::CHILD_FIRST);
+			foreach ($files as $fileinfo) {
+				$p = $fileinfo->getPathname();
+				if ($fileinfo->isDir()) {
+					@rmdir($p);
+				} else {
+					@unlink($p);
+				}
+			}
+			@rmdir($target_dir);
+		}
+	}
+
+	// Create a temp directory inside plugins dir to avoid cross-device rename issues
+	$tmp_base = $plugins_dir . '._ka_tmp_' . wp_generate_password(8, false, false);
+	if (! @mkdir($tmp_base, 0755, true)) {
+		wp_safe_redirect(self_admin_url('plugins.php'));
+		exit;
+	}
+
+	$repo_esc   = escapeshellarg($repo);
+	$branch_esc = escapeshellarg($branch);
+	$dest_esc   = escapeshellarg($tmp_base);
+
+	// Shallow clone specific branch into temp dir
+	@exec('git clone --depth=1 --branch ' . $branch_esc . ' ' . $repo_esc . ' ' . $dest_esc . ' 2>&1', $cl_out, $cl_code);
+	if ($cl_code !== 0 || ! is_dir($tmp_base)) {
+		// Cleanup and bail
+		$it = new RecursiveDirectoryIterator($tmp_base, FilesystemIterator::SKIP_DOTS);
+		foreach (new RecursiveIteratorIterator($it, RecursiveIteratorIterator::CHILD_FIRST) as $fi) {
+			$pp = $fi->getPathname();
+			if ($fi->isDir()) {
+				@rmdir($pp);
+			} else {
+				@unlink($pp);
+			}
+		}
+		@rmdir($tmp_base);
+		wp_safe_redirect(self_admin_url('plugins.php'));
+		exit;
+	}
+
+	// If repo contains plugin in a subfolder (e.g., git-updater/...), move it accordingly
+	$sub = trailingslashit($tmp_base) . 'git-updater';
+	$source_dir = is_dir($sub) ? $sub : $tmp_base;
+
+	// Move to final target
+	@rename($source_dir, $target_dir);
+
+	// Cleanup temp base if it still exists and is empty
+	if (is_dir($tmp_base)) {
+		$it = new FilesystemIterator($tmp_base);
+		if (! $it->valid()) {
+			@rmdir($tmp_base);
+		}
+	}
+
+	wp_safe_redirect(self_admin_url('plugins.php'));
+	exit;
 });
