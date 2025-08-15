@@ -67,10 +67,10 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
 # END WordPress
-HTEND \
-    fi \
-    && chown www-data:www-data /var/www/html/.htaccess \
-    && chmod 644 /var/www/html/.htaccess
+HTEND
+    fi && \
+    chown www-data:www-data /var/www/html/.htaccess && \
+    chmod 644 /var/www/html/.htaccess
 
 # Bundle DB CA certificate (provided in repo)
 COPY ./docker/koyeb-build/ca.pem /etc/ssl/certs/mysql-ca.pem
