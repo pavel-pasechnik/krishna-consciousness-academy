@@ -283,7 +283,7 @@
   ],
   "templateParts": [
     { "area": "header", "name": "header", "title": "Header" },
-    { "area": "branding", "name": "hero", "title": "Hero" },
+    { "area": "hero", "name": "hero", "title": "Hero" },
     { "area": "courses", "name": "courses", "title": "Courses" },
     { "area": "footer", "name": "footer", "title": "Footer" }
   ]
