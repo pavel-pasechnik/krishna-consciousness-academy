@@ -55,8 +55,10 @@ RUN groupmod -o -g ${WWW_GID} www-data && \
     chown -R www-data:www-data /var/www/html
 
 # Ensure WordPress .htaccess exists with standard rules
-RUN if [ ! -f /var/www/html/.htaccess ]; then \
-      cat > /var/www/html/.htaccess <<'HTEND'
+RUN <<'BASH'
+set -e
+if [ ! -f /var/www/html/.htaccess ]; then
+  cat > /var/www/html/.htaccess <<'HTEND'
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
@@ -68,9 +70,10 @@ RewriteRule . /index.php [L]
 </IfModule>
 # END WordPress
 HTEND
-    fi && \
-    chown www-data:www-data /var/www/html/.htaccess && \
-    chmod 644 /var/www/html/.htaccess
+fi
+chown www-data:www-data /var/www/html/.htaccess
+chmod 644 /var/www/html/.htaccess
+BASH
 
 # Bundle DB CA certificate (provided in repo)
 COPY ./docker/koyeb-build/ca.pem /etc/ssl/certs/mysql-ca.pem
