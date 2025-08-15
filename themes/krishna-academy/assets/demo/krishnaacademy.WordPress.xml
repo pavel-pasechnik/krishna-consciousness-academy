@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.8.2" created="2025-08-14 08:31" -->
+	<!-- generator="WordPress/6.8.2" created="2025-08-15 15:18" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>Krishna Academy</title>
 	<link></link>
 	<description></description>
-	<pubDate>Thu, 14 Aug 2025 08:31:17 +0000</pubDate>
+	<pubDate>Fri, 15 Aug 2025 15:18:37 +0000</pubDate>
 	<language>ru-RU</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url></wp:base_site_url>
@@ -96,7 +96,7 @@
 		<wp:term_taxonomy><![CDATA[language]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[en]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[EN]]></wp:term_name>
+		<wp:term_name><![CDATA[English]]></wp:term_name>
 		<wp:term_description><![CDATA[a:4:{s:9:"fallbacks";a:0:{}s:6:"locale";s:5:"en_US";s:3:"rtl";i:0;s:9:"flag_code";s:2:"us";}]]></wp:term_description>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[_pll_strings_translations]]></wp:meta_key>
@@ -108,7 +108,7 @@
 		<wp:term_taxonomy><![CDATA[term_language]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[pll_en]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[EN]]></wp:term_name>
+		<wp:term_name><![CDATA[English]]></wp:term_name>
 	</wp:term>
 		<wp:term>
 		<wp:term_id>5</wp:term_id>
@@ -275,14 +275,14 @@
 		<wp:term_taxonomy><![CDATA[term_language]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[pll_ru]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[RU]]></wp:term_name>
+		<wp:term_name><![CDATA[Русский]]></wp:term_name>
 	</wp:term>
 		<wp:term>
 		<wp:term_id>6</wp:term_id>
 		<wp:term_taxonomy><![CDATA[language]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[ru]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[RU]]></wp:term_name>
+		<wp:term_name><![CDATA[Русский]]></wp:term_name>
 		<wp:term_description><![CDATA[a:4:{s:9:"fallbacks";a:0:{}s:6:"locale";s:5:"ru_RU";s:3:"rtl";i:0;s:9:"flag_code";s:2:"ru";}]]></wp:term_description>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[_pll_strings_translations]]></wp:meta_key>
@@ -294,14 +294,14 @@
 		<wp:term_taxonomy><![CDATA[term_language]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[pll_uk]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[UK]]></wp:term_name>
+		<wp:term_name><![CDATA[Українська]]></wp:term_name>
 	</wp:term>
 		<wp:term>
 		<wp:term_id>3</wp:term_id>
 		<wp:term_taxonomy><![CDATA[language]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[uk]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[UK]]></wp:term_name>
+		<wp:term_name><![CDATA[Українська]]></wp:term_name>
 		<wp:term_description><![CDATA[a:4:{s:9:"fallbacks";a:0:{}s:6:"locale";s:2:"uk";s:3:"rtl";i:0;s:9:"flag_code";s:2:"ua";}]]></wp:term_description>
 		<wp:termmeta>
 			<wp:meta_key><![CDATA[_pll_strings_translations]]></wp:meta_key>
@@ -334,11 +334,11 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/logo.svg]]></wp:attachment_url>
-							<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/logo.svg]]></wp:attachment_url>
+							<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[logo.svg]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/logo.svg]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
@@ -350,7 +350,7 @@
 		<link>/dawn-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:08:19 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/dawn.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/dawn.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -368,16 +368,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/dawn.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/dawn.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707baab938"><![CDATA[pll_689707baab938]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[dawn.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/dawn.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:21:"dawn.png.webp";s:8:"filesize";i:7112;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:21:"dawn.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3442;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:21:"2025/08/dawn.png.webp";s:8:"filesize";i:7112;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:21:"dawn.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3442;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -385,7 +385,7 @@
 		<link>/heart-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:09:38 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/heart.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/heart.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -403,16 +403,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/heart.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/heart.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707bab2112"><![CDATA[pll_689707bab2112]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[heart.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/heart.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"heart.png.webp";s:8:"filesize";i:5004;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"heart.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2556;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"2025/08/heart.png.webp";s:8:"filesize";i:5004;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"heart.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2556;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -420,7 +420,7 @@
 		<link>/lotus-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:10:14 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/lotus.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/lotus.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -438,16 +438,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/lotus.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/lotus.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707bab8a46"><![CDATA[pll_689707bab8a46]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[lotus.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/lotus.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"lotus.png.webp";s:8:"filesize";i:4738;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"lotus.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2366;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"2025/08/lotus.png.webp";s:8:"filesize";i:4738;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"lotus.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2366;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -455,7 +455,7 @@
 		<link>/roots-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:10:51 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/roots.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/roots.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -473,16 +473,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/roots.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/roots.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707babea23"><![CDATA[pll_689707babea23]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[roots.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/roots.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"roots.png.webp";s:8:"filesize";i:9230;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"roots.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:4168;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"2025/08/roots.png.webp";s:8:"filesize";i:9230;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"roots.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:4168;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -490,7 +490,7 @@
 		<link>/teacher-without-hair-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:11:19 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/teacher-without-hair.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/teacher-without-hair.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -508,16 +508,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/teacher-without-hair.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/teacher-without-hair.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707bac5023"><![CDATA[pll_689707bac5023]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[teacher-without-hair.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/teacher-without-hair.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:37:"teacher-without-hair.png.webp";s:8:"filesize";i:9842;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:37:"teacher-without-hair.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:5460;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:37:"2025/08/teacher-without-hair.png.webp";s:8:"filesize";i:9842;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:37:"teacher-without-hair.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:5460;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -525,7 +525,7 @@
 		<link>/leaf_1-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:11:52 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/leaf_1.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/leaf_1.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -543,16 +543,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/leaf_1.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/leaf_1.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707bacaad8"><![CDATA[pll_689707bacaad8]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[leaf_1.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/leaf_1.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:23:"leaf_1.png.webp";s:8:"filesize";i:7384;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:23:"leaf_1.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3524;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:23:"2025/08/leaf_1.png.webp";s:8:"filesize";i:7384;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:23:"leaf_1.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3524;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -560,7 +560,7 @@
 		<link>/mountain-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:13:10 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/mountain.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/mountain.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -578,16 +578,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/mountain.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/mountain.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707bad0969"><![CDATA[pll_689707bad0969]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[mountain.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/mountain.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:25:"mountain.png.webp";s:8:"filesize";i:4598;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:25:"mountain.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2404;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:25:"2025/08/mountain.png.webp";s:8:"filesize";i:4598;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:25:"mountain.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2404;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -595,7 +595,7 @@
 		<link>/ru/dawn-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:08:19 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/dawn.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/dawn.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -613,16 +613,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/dawn.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/dawn.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707baab938"><![CDATA[pll_689707baab938]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:21:"dawn.png.webp";s:8:"filesize";i:7112;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:21:"dawn.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3442;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:21:"2025/08/dawn.png.webp";s:8:"filesize";i:7112;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:21:"dawn.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3442;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[dawn.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/dawn.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -634,7 +634,7 @@
 		<link>/ru/heart-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:09:38 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/heart.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/heart.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -652,16 +652,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/heart.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/heart.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707bab2112"><![CDATA[pll_689707bab2112]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"heart.png.webp";s:8:"filesize";i:5004;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"heart.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2556;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"2025/08/heart.png.webp";s:8:"filesize";i:5004;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"heart.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2556;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[heart.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/heart.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -673,7 +673,7 @@
 		<link>/ru/lotus-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:10:14 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/lotus.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/lotus.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -691,16 +691,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/lotus.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/lotus.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707bab8a46"><![CDATA[pll_689707bab8a46]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"lotus.png.webp";s:8:"filesize";i:4738;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"lotus.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2366;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"2025/08/lotus.png.webp";s:8:"filesize";i:4738;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"lotus.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2366;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[lotus.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/lotus.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -712,7 +712,7 @@
 		<link>/ru/roots-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:10:51 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/roots.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/roots.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -730,16 +730,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/roots.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/roots.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707babea23"><![CDATA[pll_689707babea23]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"roots.png.webp";s:8:"filesize";i:9230;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"roots.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:4168;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"2025/08/roots.png.webp";s:8:"filesize";i:9230;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"roots.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:4168;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[roots.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/roots.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -751,7 +751,7 @@
 		<link>/ru/teacher-without-hair-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:11:19 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/teacher-without-hair.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/teacher-without-hair.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -769,16 +769,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/teacher-without-hair.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/teacher-without-hair.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707bac5023"><![CDATA[pll_689707bac5023]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:37:"teacher-without-hair.png.webp";s:8:"filesize";i:9842;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:37:"teacher-without-hair.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:5460;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:37:"2025/08/teacher-without-hair.png.webp";s:8:"filesize";i:9842;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:37:"teacher-without-hair.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:5460;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[teacher-without-hair.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/teacher-without-hair.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -790,7 +790,7 @@
 		<link>/ru/leaf_1-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:11:52 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/leaf_1.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/leaf_1.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -808,16 +808,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/leaf_1.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/leaf_1.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707bacaad8"><![CDATA[pll_689707bacaad8]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:23:"leaf_1.png.webp";s:8:"filesize";i:7384;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:23:"leaf_1.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3524;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:23:"2025/08/leaf_1.png.webp";s:8:"filesize";i:7384;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:23:"leaf_1.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3524;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[leaf_1.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/leaf_1.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -829,7 +829,7 @@
 		<link>/en/dawn-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:08:19 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/dawn.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/dawn.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -847,16 +847,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/dawn.png.webp]]></wp:attachment_url>
-							<category domain="language" nicename="en"><![CDATA[EN]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/dawn.png.webp]]></wp:attachment_url>
+							<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="post_translations" nicename="pll_689707baab938"><![CDATA[pll_689707baab938]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:21:"dawn.png.webp";s:8:"filesize";i:7112;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:21:"dawn.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3442;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:21:"2025/08/dawn.png.webp";s:8:"filesize";i:7112;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:21:"dawn.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3442;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[dawn.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/dawn.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -868,7 +868,7 @@
 		<link>/en/heart-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:09:38 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/heart.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/heart.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -886,16 +886,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/heart.png.webp]]></wp:attachment_url>
-							<category domain="language" nicename="en"><![CDATA[EN]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/heart.png.webp]]></wp:attachment_url>
+							<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="post_translations" nicename="pll_689707bab2112"><![CDATA[pll_689707bab2112]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"heart.png.webp";s:8:"filesize";i:5004;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"heart.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2556;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"2025/08/heart.png.webp";s:8:"filesize";i:5004;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"heart.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2556;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[heart.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/heart.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -907,7 +907,7 @@
 		<link>/en/lotus-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:10:14 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/lotus.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/lotus.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -925,16 +925,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/lotus.png.webp]]></wp:attachment_url>
-							<category domain="language" nicename="en"><![CDATA[EN]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/lotus.png.webp]]></wp:attachment_url>
+							<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="post_translations" nicename="pll_689707bab8a46"><![CDATA[pll_689707bab8a46]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"lotus.png.webp";s:8:"filesize";i:4738;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"lotus.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2366;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"2025/08/lotus.png.webp";s:8:"filesize";i:4738;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"lotus.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2366;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[lotus.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/lotus.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -946,7 +946,7 @@
 		<link>/en/roots-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:10:51 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/roots.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/roots.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -964,16 +964,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/roots.png.webp]]></wp:attachment_url>
-							<category domain="language" nicename="en"><![CDATA[EN]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/roots.png.webp]]></wp:attachment_url>
+							<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="post_translations" nicename="pll_689707babea23"><![CDATA[pll_689707babea23]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"roots.png.webp";s:8:"filesize";i:9230;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"roots.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:4168;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:22:"2025/08/roots.png.webp";s:8:"filesize";i:9230;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:22:"roots.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:4168;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[roots.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/roots.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -985,7 +985,7 @@
 		<link>/en/teacher-without-hair-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:11:19 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/teacher-without-hair.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/teacher-without-hair.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1003,16 +1003,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/teacher-without-hair.png.webp]]></wp:attachment_url>
-							<category domain="language" nicename="en"><![CDATA[EN]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/teacher-without-hair.png.webp]]></wp:attachment_url>
+							<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="post_translations" nicename="pll_689707bac5023"><![CDATA[pll_689707bac5023]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:37:"teacher-without-hair.png.webp";s:8:"filesize";i:9842;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:37:"teacher-without-hair.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:5460;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:37:"2025/08/teacher-without-hair.png.webp";s:8:"filesize";i:9842;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:37:"teacher-without-hair.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:5460;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[teacher-without-hair.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/teacher-without-hair.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1024,7 +1024,7 @@
 		<link>/en/leaf_1-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:11:52 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/leaf_1.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/leaf_1.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1042,16 +1042,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/leaf_1.png.webp]]></wp:attachment_url>
-							<category domain="language" nicename="en"><![CDATA[EN]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/leaf_1.png.webp]]></wp:attachment_url>
+							<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="post_translations" nicename="pll_689707bacaad8"><![CDATA[pll_689707bacaad8]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:23:"leaf_1.png.webp";s:8:"filesize";i:7384;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:23:"leaf_1.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3524;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:23:"2025/08/leaf_1.png.webp";s:8:"filesize";i:7384;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:23:"leaf_1.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3524;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[leaf_1.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/leaf_1.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1063,7 +1063,7 @@
 		<link>/seasons-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:13:37 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/seasons.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/seasons.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1081,16 +1081,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/seasons.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/seasons.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707bad6550"><![CDATA[pll_689707bad6550]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[seasons.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/seasons.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:24:"seasons.png.webp";s:8:"filesize";i:5120;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:24:"seasons.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2620;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:24:"2025/08/seasons.png.webp";s:8:"filesize";i:5120;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:24:"seasons.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2620;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1098,7 +1098,7 @@
 		<link>/beehive_1-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:14:06 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/beehive_1.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/beehive_1.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1116,16 +1116,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/beehive_1.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/beehive_1.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707badc984"><![CDATA[pll_689707badc984]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[beehive_1.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/beehive_1.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:26:"beehive_1.png.webp";s:8:"filesize";i:15260;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:26:"beehive_1.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7984;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:26:"2025/08/beehive_1.png.webp";s:8:"filesize";i:15260;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:26:"beehive_1.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7984;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1133,7 +1133,7 @@
 		<link>/ru/mountain-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:13:10 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/mountain.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/mountain.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1151,16 +1151,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/mountain.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/mountain.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707bad0969"><![CDATA[pll_689707bad0969]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:25:"mountain.png.webp";s:8:"filesize";i:4598;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:25:"mountain.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2404;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:25:"2025/08/mountain.png.webp";s:8:"filesize";i:4598;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:25:"mountain.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2404;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[mountain.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/mountain.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1172,7 +1172,7 @@
 		<link>/ru/seasons-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:13:37 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/seasons.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/seasons.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1190,16 +1190,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/seasons.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/seasons.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707bad6550"><![CDATA[pll_689707bad6550]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:24:"seasons.png.webp";s:8:"filesize";i:5120;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:24:"seasons.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2620;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:24:"2025/08/seasons.png.webp";s:8:"filesize";i:5120;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:24:"seasons.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2620;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[seasons.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/seasons.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1211,7 +1211,7 @@
 		<link>/ru/beehive_1-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:14:06 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/beehive_1.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/beehive_1.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1229,16 +1229,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/beehive_1.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/beehive_1.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689707badc984"><![CDATA[pll_689707badc984]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:26:"beehive_1.png.webp";s:8:"filesize";i:15260;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:26:"beehive_1.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7984;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:26:"2025/08/beehive_1.png.webp";s:8:"filesize";i:15260;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:26:"beehive_1.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7984;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[beehive_1.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/beehive_1.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1250,7 +1250,7 @@
 		<link>/en/mountain-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:13:10 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/mountain.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/mountain.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1268,16 +1268,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/mountain.png.webp]]></wp:attachment_url>
-							<category domain="language" nicename="en"><![CDATA[EN]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/mountain.png.webp]]></wp:attachment_url>
+							<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="post_translations" nicename="pll_689707bad0969"><![CDATA[pll_689707bad0969]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:25:"mountain.png.webp";s:8:"filesize";i:4598;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:25:"mountain.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2404;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:25:"2025/08/mountain.png.webp";s:8:"filesize";i:4598;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:25:"mountain.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2404;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[mountain.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/mountain.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1289,7 +1289,7 @@
 		<link>/en/seasons-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:13:37 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/seasons.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/seasons.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1307,16 +1307,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/seasons.png.webp]]></wp:attachment_url>
-							<category domain="language" nicename="en"><![CDATA[EN]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/seasons.png.webp]]></wp:attachment_url>
+							<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="post_translations" nicename="pll_689707bad6550"><![CDATA[pll_689707bad6550]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:24:"seasons.png.webp";s:8:"filesize";i:5120;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:24:"seasons.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2620;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:24:"2025/08/seasons.png.webp";s:8:"filesize";i:5120;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:24:"seasons.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2620;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[seasons.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/seasons.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1328,7 +1328,7 @@
 		<link>/en/beehive_1-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:14:06 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/beehive_1.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/beehive_1.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1346,16 +1346,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/beehive_1.png.webp]]></wp:attachment_url>
-							<category domain="language" nicename="en"><![CDATA[EN]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/beehive_1.png.webp]]></wp:attachment_url>
+							<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="post_translations" nicename="pll_689707badc984"><![CDATA[pll_689707badc984]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:26:"beehive_1.png.webp";s:8:"filesize";i:15260;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:26:"beehive_1.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7984;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:26:"2025/08/beehive_1.png.webp";s:8:"filesize";i:15260;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:26:"beehive_1.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7984;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[beehive_1.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/beehive_1.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -1367,7 +1367,7 @@
 		<link>/home/dawn-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 08:57:53 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/dawn.png-1.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/dawn.png-1.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1385,15 +1385,15 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/dawn.png-1.webp]]></wp:attachment_url>
-							<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/dawn.png-1.webp]]></wp:attachment_url>
+							<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[dawn.png-1.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/dawn.png-1.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:23:"dawn.png-1.webp";s:8:"filesize";i:7112;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:23:"dawn.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3442;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:23:"2025/08/dawn.png-1.webp";s:8:"filesize";i:7112;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:23:"dawn.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3442;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1401,7 +1401,7 @@
 		<link>/home/heart-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 08:59:28 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/heart.png-1.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/heart.png-1.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1419,15 +1419,15 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/heart.png-1.webp]]></wp:attachment_url>
-							<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/heart.png-1.webp]]></wp:attachment_url>
+							<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[heart.png-1.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/heart.png-1.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:24:"heart.png-1.webp";s:8:"filesize";i:5004;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:24:"heart.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2556;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:24:"2025/08/heart.png-1.webp";s:8:"filesize";i:5004;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:24:"heart.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2556;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1435,7 +1435,7 @@
 		<link>/home/lotus-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 09:00:56 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/lotus.png-1.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/lotus.png-1.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1453,15 +1453,15 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/lotus.png-1.webp]]></wp:attachment_url>
-							<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/lotus.png-1.webp]]></wp:attachment_url>
+							<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[lotus.png-1.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/lotus.png-1.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:24:"lotus.png-1.webp";s:8:"filesize";i:4738;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:24:"lotus.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2366;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:24:"2025/08/lotus.png-1.webp";s:8:"filesize";i:4738;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:24:"lotus.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2366;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1469,7 +1469,7 @@
 		<link>/home/roots-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 09:01:31 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/roots.png-1.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/roots.png-1.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1487,15 +1487,15 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/roots.png-1.webp]]></wp:attachment_url>
-							<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/roots.png-1.webp]]></wp:attachment_url>
+							<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[roots.png-1.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/roots.png-1.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:24:"roots.png-1.webp";s:8:"filesize";i:9230;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:24:"roots.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:4168;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:24:"2025/08/roots.png-1.webp";s:8:"filesize";i:9230;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:24:"roots.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:4168;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1503,7 +1503,7 @@
 		<link>/home/teacher-without-hair-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 09:02:16 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/teacher-without-hair.png-1.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/teacher-without-hair.png-1.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1521,15 +1521,15 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/teacher-without-hair.png-1.webp]]></wp:attachment_url>
-							<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/teacher-without-hair.png-1.webp]]></wp:attachment_url>
+							<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[teacher-without-hair.png-1.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/teacher-without-hair.png-1.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:39:"teacher-without-hair.png-1.webp";s:8:"filesize";i:9842;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:39:"teacher-without-hair.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:5460;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:39:"2025/08/teacher-without-hair.png-1.webp";s:8:"filesize";i:9842;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:39:"teacher-without-hair.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:5460;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1537,7 +1537,7 @@
 		<link>/home/leaf_1-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 09:02:48 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/leaf_1.png-1.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/leaf_1.png-1.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1555,15 +1555,15 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/leaf_1.png-1.webp]]></wp:attachment_url>
-							<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/leaf_1.png-1.webp]]></wp:attachment_url>
+							<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[leaf_1.png-1.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/leaf_1.png-1.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:25:"leaf_1.png-1.webp";s:8:"filesize";i:7384;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:25:"leaf_1.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3524;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:25:"2025/08/leaf_1.png-1.webp";s:8:"filesize";i:7384;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:25:"leaf_1.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:3524;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1571,7 +1571,7 @@
 		<link>/home/mountain-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 09:03:25 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/mountain.png-1.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/mountain.png-1.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1589,15 +1589,15 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/mountain.png-1.webp]]></wp:attachment_url>
-							<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/mountain.png-1.webp]]></wp:attachment_url>
+							<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[mountain.png-1.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/mountain.png-1.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:27:"mountain.png-1.webp";s:8:"filesize";i:4598;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:27:"mountain.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2404;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:27:"2025/08/mountain.png-1.webp";s:8:"filesize";i:4598;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:27:"mountain.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2404;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1605,7 +1605,7 @@
 		<link>/home/seasons-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 09:03:54 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/seasons.png-1.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/seasons.png-1.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1623,15 +1623,15 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/seasons.png-1.webp]]></wp:attachment_url>
-							<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/seasons.png-1.webp]]></wp:attachment_url>
+							<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[seasons.png-1.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/seasons.png-1.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:26:"seasons.png-1.webp";s:8:"filesize";i:5120;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:26:"seasons.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2620;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:26:"2025/08/seasons.png-1.webp";s:8:"filesize";i:5120;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:26:"seasons.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:2620;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1639,7 +1639,7 @@
 		<link>/home/beehive_1-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 09:04:30 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/beehive_1.png-1.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/beehive_1.png-1.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1657,23 +1657,23 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/beehive_1.png-1.webp]]></wp:attachment_url>
-							<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/beehive_1.png-1.webp]]></wp:attachment_url>
+							<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[beehive_1.png-1.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/beehive_1.png-1.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:28:"beehive_1.png-1.webp";s:8:"filesize";i:15260;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:28:"beehive_1.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7984;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:240;s:6:"height";i:240;s:4:"file";s:28:"2025/08/beehive_1.png-1.webp";s:8:"filesize";i:15260;s:5:"sizes";a:1:{s:9:"thumbnail";a:5:{s:4:"file";s:28:"beehive_1.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7984;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[cb-012x.png]]></title>
-		<link>/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/cb-012x-png/</link>
+		<link>/discipleship-in-iskcon/cb-012x-png/</link>
 		<pubDate>Sat, 09 Aug 2025 11:34:26 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-012x.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/cb-012x.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1691,23 +1691,23 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/cb-012x.png.webp]]></wp:attachment_url>
-							<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/cb-012x.png.webp]]></wp:attachment_url>
+							<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[cb-012x.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/cb-012x.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:290;s:6:"height";i:412;s:4:"file";s:24:"cb-012x.png.webp";s:8:"filesize";i:26846;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:24:"cb-012x.png-211x300.webp";s:5:"width";i:211;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:15064;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"cb-012x.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7486;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:290;s:6:"height";i:412;s:4:"file";s:24:"2025/08/cb-012x.png.webp";s:8:"filesize";i:26846;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:24:"cb-012x.png-211x300.webp";s:5:"width";i:211;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:15064;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"cb-012x.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7486;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[cb-012x.png]]></title>
-		<link>/ru/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/cb-012x-png-2/</link>
+		<link>/ru/discipleship-in-iskcon/cb-012x-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 11:35:18 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-012x.png-1.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/cb-012x.png-1.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1725,23 +1725,23 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/cb-012x.png-1.webp]]></wp:attachment_url>
-							<category domain="language" nicename="ru"><![CDATA[RU]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/cb-012x.png-1.webp]]></wp:attachment_url>
+							<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[cb-012x.png-1.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/cb-012x.png-1.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:290;s:6:"height";i:412;s:4:"file";s:26:"cb-012x.png-1.webp";s:8:"filesize";i:26846;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:26:"cb-012x.png-1-211x300.webp";s:5:"width";i:211;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:15064;}s:9:"thumbnail";a:5:{s:4:"file";s:26:"cb-012x.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7486;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:290;s:6:"height";i:412;s:4:"file";s:26:"2025/08/cb-012x.png-1.webp";s:8:"filesize";i:26846;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:26:"cb-012x.png-1-211x300.webp";s:5:"width";i:211;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:15064;}s:9:"thumbnail";a:5:{s:4:"file";s:26:"cb-012x.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7486;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[cb-012x.png]]></title>
-		<link>/en/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/cb-012x-png-3/</link>
+		<link>/en/discipleship-in-iskcon/cb-012x-png-3/</link>
 		<pubDate>Sat, 09 Aug 2025 11:35:59 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-012x.png-2.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/cb-012x.png-2.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -1759,15 +1759,15 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/cb-012x.png-2.webp]]></wp:attachment_url>
-							<category domain="language" nicename="en"><![CDATA[EN]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/cb-012x.png-2.webp]]></wp:attachment_url>
+							<category domain="language" nicename="en"><![CDATA[English]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[cb-012x.png-2.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/cb-012x.png-2.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:290;s:6:"height";i:412;s:4:"file";s:26:"cb-012x.png-2.webp";s:8:"filesize";i:26846;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:26:"cb-012x.png-2-211x300.webp";s:5:"width";i:211;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:15064;}s:9:"thumbnail";a:5:{s:4:"file";s:26:"cb-012x.png-2-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7486;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:290;s:6:"height";i:412;s:4:"file";s:26:"2025/08/cb-012x.png-2.webp";s:8:"filesize";i:26846;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:26:"cb-012x.png-2-211x300.webp";s:5:"width";i:211;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:15064;}s:9:"thumbnail";a:5:{s:4:"file";s:26:"cb-012x.png-2-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7486;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1900,7 +1900,7 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_translations" nicename="pll_6896fc0e8d932"><![CDATA[pll_6896fc0e8d932]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						</item>
 					<item>
 		<title><![CDATA[Наши ценности]]></title>
@@ -2032,7 +2032,7 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_translations" nicename="pll_6896fc0e8d932"><![CDATA[pll_6896fc0e8d932]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						</item>
 					<item>
 		<title><![CDATA[Our values]]></title>
@@ -2163,12 +2163,12 @@
 		<wp:post_type><![CDATA[page]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="language" nicename="en"><![CDATA[EN]]></category>
+										<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="post_translations" nicename="pll_6896fc0e8d932"><![CDATA[pll_6896fc0e8d932]]></category>
 						</item>
 					<item>
 		<title><![CDATA[Учнівство в ІСККОН]]></title>
-		<link>/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/</link>
+		<link>/discipleship-in-iskcon/</link>
 		<pubDate>Sat, 09 Aug 2025 11:24:18 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/?p=1078</guid>
@@ -2222,11 +2222,11 @@
 		<wp:post_id>1078</wp:post_id>
 		<wp:post_date><![CDATA[2025-08-09 11:24:18]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-08-09 11:24:18]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-08-09 11:34:34]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-08-09 11:34:34]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-08-15 18:16:22]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-08-15 15:16:22]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd]]></wp:post_name>
+		<wp:post_name><![CDATA[discipleship-in-iskcon]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -2234,8 +2234,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_translations" nicename="pll_68972fef28b06"><![CDATA[pll_68972fef28b06]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
 		<category domain="category" nicename="%d1%81ourses"><![CDATA[Наші курси]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_pingme]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -2248,10 +2248,18 @@
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1088]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Ученичество в ИСККОН]]></title>
-		<link>/ru/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/</link>
+		<link>/ru/discipleship-in-iskcon/</link>
 		<pubDate>Sat, 09 Aug 2025 11:24:18 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/?p=1078</guid>
@@ -2299,11 +2307,11 @@
 		<wp:post_id>1080</wp:post_id>
 		<wp:post_date><![CDATA[2025-08-09 11:24:18]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-08-09 11:24:18]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-08-09 11:35:44]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-08-09 11:35:44]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-08-15 18:16:27]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-08-15 15:16:27]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd]]></wp:post_name>
+		<wp:post_name><![CDATA[discipleship-in-iskcon]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -2311,8 +2319,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_translations" nicename="pll_68972fef28b06"><![CDATA[pll_68972fef28b06]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
 		<category domain="category" nicename="%d1%81ourses"><![CDATA[Наши курсы]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_pingme]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -2325,10 +2333,18 @@
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1090]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Discipleship in ISKCON]]></title>
-		<link>/en/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/</link>
+		<link>/en/discipleship-in-iskcon/</link>
 		<pubDate>Sat, 09 Aug 2025 11:24:18 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/?p=1078</guid>
@@ -2376,18 +2392,18 @@
 		<wp:post_id>1081</wp:post_id>
 		<wp:post_date><![CDATA[2025-08-09 11:24:18]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-08-09 11:24:18]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-08-09 11:36:19]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-08-09 11:36:19]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-08-15 18:16:33]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-08-15 15:16:33]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd]]></wp:post_name>
+		<wp:post_name><![CDATA[discipleship-in-iskcon]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="language" nicename="en"><![CDATA[EN]]></category>
+										<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="category" nicename="%d1%81ourses"><![CDATA[Our courses]]></category>
 		<category domain="post_translations" nicename="pll_68972fef28b06"><![CDATA[pll_68972fef28b06]]></category>
 						<wp:postmeta>
@@ -2402,10 +2418,18 @@
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1092]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Школа бгакті]]></title>
-		<link>/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/</link>
+		<link>/school-bhakti/</link>
 		<pubDate>Sat, 09 Aug 2025 12:22:34 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/?p=1094</guid>
@@ -2439,11 +2463,11 @@
 		<wp:post_id>1094</wp:post_id>
 		<wp:post_date><![CDATA[2025-08-09 12:22:34]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-08-09 12:22:34]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-08-09 12:47:22]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-08-09 12:47:22]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-08-15 18:16:02]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-08-15 15:16:02]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96]]></wp:post_name>
+		<wp:post_name><![CDATA[school-bhakti]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -2451,8 +2475,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_translations" nicename="pll_68973d96999ea"><![CDATA[pll_68973d96999ea]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
 		<category domain="category" nicename="%d1%81ourses"><![CDATA[Наші курси]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_pingme]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -2465,10 +2489,18 @@
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1100]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Школа бхакти]]></title>
-		<link>/ru/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/</link>
+		<link>/ru/school-bhakti/</link>
 		<pubDate>Sat, 09 Aug 2025 12:22:34 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/?p=1094</guid>
@@ -2502,11 +2534,11 @@
 		<wp:post_id>1096</wp:post_id>
 		<wp:post_date><![CDATA[2025-08-09 12:22:34]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-08-09 12:22:34]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-08-09 12:25:23]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-08-09 12:25:23]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-08-15 18:16:07]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-08-15 15:16:07]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96]]></wp:post_name>
+		<wp:post_name><![CDATA[school-bhakti]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -2514,8 +2546,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_translations" nicename="pll_68973d96999ea"><![CDATA[pll_68973d96999ea]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
 		<category domain="category" nicename="%d1%81ourses"><![CDATA[Наши курсы]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_pingme]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -2528,10 +2560,18 @@
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1102]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Bhakti School]]></title>
-		<link>/en/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/</link>
+		<link>/en/school-bhakti/</link>
 		<pubDate>Sat, 09 Aug 2025 12:22:34 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/?p=1094</guid>
@@ -2565,18 +2605,18 @@
 		<wp:post_id>1097</wp:post_id>
 		<wp:post_date><![CDATA[2025-08-09 12:22:34]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-08-09 12:22:34]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-08-09 12:25:44]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-08-09 12:25:44]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-08-15 18:16:13]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-08-15 15:16:13]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96]]></wp:post_name>
+		<wp:post_name><![CDATA[school-bhakti]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="language" nicename="en"><![CDATA[EN]]></category>
+										<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="category" nicename="%d1%81ourses"><![CDATA[Our courses]]></category>
 		<category domain="post_translations" nicename="pll_68973d96999ea"><![CDATA[pll_68973d96999ea]]></category>
 						<wp:postmeta>
@@ -2591,13 +2631,21 @@
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1105]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[cb-022x.png]]></title>
-		<link>/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/cb-022x-png/</link>
+		<link>/school-bhakti/cb-022x-png/</link>
 		<pubDate>Sat, 09 Aug 2025 12:24:19 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-022x.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/cb-022x.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -2615,23 +2663,23 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/cb-022x.png.webp]]></wp:attachment_url>
-							<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/cb-022x.png.webp]]></wp:attachment_url>
+							<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[cb-022x.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/cb-022x.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:315;s:6:"height";i:422;s:4:"file";s:24:"cb-022x.png.webp";s:8:"filesize";i:26328;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:24:"cb-022x.png-224x300.webp";s:5:"width";i:224;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:14946;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"cb-022x.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7086;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:315;s:6:"height";i:422;s:4:"file";s:24:"2025/08/cb-022x.png.webp";s:8:"filesize";i:26328;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:24:"cb-022x.png-224x300.webp";s:5:"width";i:224;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:14946;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"cb-022x.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7086;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[cb-022x.png]]></title>
-		<link>/ru/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/cb-022x-png-2/</link>
+		<link>/ru/school-bhakti/cb-022x-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 12:25:04 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-022x.png-1.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/cb-022x.png-1.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -2649,23 +2697,23 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/cb-022x.png-1.webp]]></wp:attachment_url>
-							<category domain="language" nicename="ru"><![CDATA[RU]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/cb-022x.png-1.webp]]></wp:attachment_url>
+							<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[cb-022x.png-1.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/cb-022x.png-1.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:315;s:6:"height";i:422;s:4:"file";s:26:"cb-022x.png-1.webp";s:8:"filesize";i:26328;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:26:"cb-022x.png-1-224x300.webp";s:5:"width";i:224;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:14946;}s:9:"thumbnail";a:5:{s:4:"file";s:26:"cb-022x.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7086;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:315;s:6:"height";i:422;s:4:"file";s:26:"2025/08/cb-022x.png-1.webp";s:8:"filesize";i:26328;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:26:"cb-022x.png-1-224x300.webp";s:5:"width";i:224;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:14946;}s:9:"thumbnail";a:5:{s:4:"file";s:26:"cb-022x.png-1-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7086;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[cb-022x.png]]></title>
-		<link>/en/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/cb-022x-png-3/</link>
+		<link>/en/school-bhakti/cb-022x-png-3/</link>
 		<pubDate>Sat, 09 Aug 2025 12:25:33 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-022x.png-2.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/cb-022x.png-2.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -2683,20 +2731,20 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/cb-022x.png-2.webp]]></wp:attachment_url>
-							<category domain="language" nicename="en"><![CDATA[EN]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/cb-022x.png-2.webp]]></wp:attachment_url>
+							<category domain="language" nicename="en"><![CDATA[English]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[cb-022x.png-2.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/cb-022x.png-2.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:315;s:6:"height";i:422;s:4:"file";s:26:"cb-022x.png-2.webp";s:8:"filesize";i:26328;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:26:"cb-022x.png-2-224x300.webp";s:5:"width";i:224;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:14946;}s:9:"thumbnail";a:5:{s:4:"file";s:26:"cb-022x.png-2-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7086;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:315;s:6:"height";i:422;s:4:"file";s:26:"2025/08/cb-022x.png-2.webp";s:8:"filesize";i:26328;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:26:"cb-022x.png-2-224x300.webp";s:5:"width";i:224;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:14946;}s:9:"thumbnail";a:5:{s:4:"file";s:26:"cb-022x.png-2-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7086;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Бгакті шастрі]]></title>
-		<link>/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/</link>
+		<link>/bhaktishastra/</link>
 		<pubDate>Sat, 09 Aug 2025 12:54:08 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/?p=1108</guid>
@@ -2746,11 +2794,11 @@
 		<wp:post_id>1108</wp:post_id>
 		<wp:post_date><![CDATA[2025-08-09 12:54:08]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-08-09 12:54:08]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-08-09 13:47:09]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-08-09 13:47:09]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-08-15 18:15:43]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-08-15 15:15:43]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96]]></wp:post_name>
+		<wp:post_name><![CDATA[bhaktishastra]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -2758,8 +2806,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_translations" nicename="pll_689752448a752"><![CDATA[pll_689752448a752]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
 		<category domain="category" nicename="%d1%81ourses"><![CDATA[Наші курси]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_pingme]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -2772,13 +2820,21 @@
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1109]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[cb-032x.png]]></title>
-		<link>/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/cb-032x-png/</link>
+		<link>/bhaktishastra/cb-032x-png/</link>
 		<pubDate>Sat, 09 Aug 2025 12:53:42 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-032x.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/cb-032x.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -2796,24 +2852,24 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/cb-032x.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/cb-032x.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_68975244927f0"><![CDATA[pll_68975244927f0]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[cb-032x.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/cb-032x.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:330;s:6:"height";i:429;s:4:"file";s:24:"cb-032x.png.webp";s:8:"filesize";i:49046;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:24:"cb-032x.png-231x300.webp";s:5:"width";i:231;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:23866;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"cb-032x.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:9292;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:330;s:6:"height";i:429;s:4:"file";s:24:"2025/08/cb-032x.png.webp";s:8:"filesize";i:49046;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:24:"cb-032x.png-231x300.webp";s:5:"width";i:231;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:23866;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"cb-032x.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:9292;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[cb-032x.png]]></title>
-		<link>/ru/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/cb-032x-png/</link>
+		<link>/ru/bhaktishastra/cb-032x-png/</link>
 		<pubDate>Sat, 09 Aug 2025 12:53:42 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-032x.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/cb-032x.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -2831,16 +2887,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/cb-032x.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/cb-032x.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_68975244927f0"><![CDATA[pll_68975244927f0]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:330;s:6:"height";i:429;s:4:"file";s:24:"cb-032x.png.webp";s:8:"filesize";i:49046;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:24:"cb-032x.png-231x300.webp";s:5:"width";i:231;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:23866;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"cb-032x.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:9292;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:330;s:6:"height";i:429;s:4:"file";s:24:"2025/08/cb-032x.png.webp";s:8:"filesize";i:49046;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:24:"cb-032x.png-231x300.webp";s:5:"width";i:231;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:23866;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"cb-032x.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:9292;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[cb-032x.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/cb-032x.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -2849,10 +2905,10 @@
 							</item>
 					<item>
 		<title><![CDATA[cb-032x.png]]></title>
-		<link>/en/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/cb-032x-png/</link>
+		<link>/en/bhaktishastra/cb-032x-png/</link>
 		<pubDate>Sat, 09 Aug 2025 12:53:42 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-032x.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/cb-032x.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -2870,16 +2926,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/cb-032x.png.webp]]></wp:attachment_url>
-							<category domain="language" nicename="en"><![CDATA[EN]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/cb-032x.png.webp]]></wp:attachment_url>
+							<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="post_translations" nicename="pll_68975244927f0"><![CDATA[pll_68975244927f0]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:330;s:6:"height";i:429;s:4:"file";s:24:"cb-032x.png.webp";s:8:"filesize";i:49046;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:24:"cb-032x.png-231x300.webp";s:5:"width";i:231;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:23866;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"cb-032x.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:9292;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:330;s:6:"height";i:429;s:4:"file";s:24:"2025/08/cb-032x.png.webp";s:8:"filesize";i:49046;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:24:"cb-032x.png-231x300.webp";s:5:"width";i:231;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:23866;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"cb-032x.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:9292;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[cb-032x.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/cb-032x.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -2888,10 +2944,10 @@
 							</item>
 					<item>
 		<title><![CDATA[cb-042x.png]]></title>
-		<link>/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/cb-042x-png/</link>
+		<link>/bhaktivibhava/cb-042x-png/</link>
 		<pubDate>Wed, 13 Aug 2025 05:52:23 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-042x.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/cb-042x.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -2909,24 +2965,24 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/cb-042x.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/cb-042x.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689c284737933"><![CDATA[pll_689c284737933]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[cb-042x.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/cb-042x.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:274;s:6:"height";i:465;s:4:"file";s:24:"cb-042x.png.webp";s:8:"filesize";i:33816;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:24:"cb-042x.png-177x300.webp";s:5:"width";i:177;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:16364;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"cb-042x.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7866;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:274;s:6:"height";i:465;s:4:"file";s:24:"2025/08/cb-042x.png.webp";s:8:"filesize";i:33816;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:24:"cb-042x.png-177x300.webp";s:5:"width";i:177;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:16364;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"cb-042x.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7866;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[cb-042x.png]]></title>
-		<link>/ru/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/cb-042x-png/</link>
+		<link>/ru/bhaktivibhava/cb-042x-png/</link>
 		<pubDate>Wed, 13 Aug 2025 05:52:23 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-042x.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/cb-042x.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -2944,16 +3000,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/cb-042x.png.webp]]></wp:attachment_url>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/cb-042x.png.webp]]></wp:attachment_url>
 							<category domain="post_translations" nicename="pll_689c284737933"><![CDATA[pll_689c284737933]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:274;s:6:"height";i:465;s:4:"file";s:24:"cb-042x.png.webp";s:8:"filesize";i:33816;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:24:"cb-042x.png-177x300.webp";s:5:"width";i:177;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:16364;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"cb-042x.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7866;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:274;s:6:"height";i:465;s:4:"file";s:24:"2025/08/cb-042x.png.webp";s:8:"filesize";i:33816;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:24:"cb-042x.png-177x300.webp";s:5:"width";i:177;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:16364;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"cb-042x.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7866;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[cb-042x.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/cb-042x.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -2962,10 +3018,10 @@
 							</item>
 					<item>
 		<title><![CDATA[cb-042x.png]]></title>
-		<link>/en/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/cb-042x-png/</link>
+		<link>/en/bhaktivibhava/cb-042x-png/</link>
 		<pubDate>Wed, 13 Aug 2025 05:52:23 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-042x.png.webp</guid>
+		<guid isPermaLink="false">/wp-content/uploads/2025/08/cb-042x.png.webp</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -2983,16 +3039,16 @@
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[/wp-content/themes/krishna-academy/assets/images/cb-042x.png.webp]]></wp:attachment_url>
-							<category domain="language" nicename="en"><![CDATA[EN]]></category>
+						<wp:attachment_url><![CDATA[/wp-content/uploads/2025/08/cb-042x.png.webp]]></wp:attachment_url>
+							<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="post_translations" nicename="pll_689c284737933"><![CDATA[pll_689c284737933]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:274;s:6:"height";i:465;s:4:"file";s:24:"cb-042x.png.webp";s:8:"filesize";i:33816;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:24:"cb-042x.png-177x300.webp";s:5:"width";i:177;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:16364;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"cb-042x.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7866;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:274;s:6:"height";i:465;s:4:"file";s:24:"2025/08/cb-042x.png.webp";s:8:"filesize";i:33816;s:5:"sizes";a:2:{s:6:"medium";a:5:{s:4:"file";s:24:"cb-042x.png-177x300.webp";s:5:"width";i:177;s:6:"height";i:300;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:16364;}s:9:"thumbnail";a:5:{s:4:"file";s:24:"cb-042x.png-150x150.webp";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/webp";s:8:"filesize";i:7866;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[cb-042x.png.webp]]></wp:meta_value>
+		<wp:meta_value><![CDATA[2025/08/cb-042x.png.webp]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -3086,7 +3142,7 @@
 						</item>
 					<item>
 		<title><![CDATA[Бгакти шастри]]></title>
-		<link>/ru/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/</link>
+		<link>/ru/bhaktishastra/</link>
 		<pubDate>Sat, 09 Aug 2025 12:54:08 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/?p=1108</guid>
@@ -3136,11 +3192,11 @@
 		<wp:post_id>1116</wp:post_id>
 		<wp:post_date><![CDATA[2025-08-09 12:54:08]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-08-09 12:54:08]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-08-09 13:54:15]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-08-09 13:54:15]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-08-15 18:15:49]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-08-15 15:15:49]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96]]></wp:post_name>
+		<wp:post_name><![CDATA[bhaktishastra]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -3148,8 +3204,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_translations" nicename="pll_689752448a752"><![CDATA[pll_689752448a752]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
 		<category domain="category" nicename="%d1%81ourses"><![CDATA[Наши курсы]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_pingme]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -3162,10 +3218,18 @@
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1117]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Bhakti Shastri]]></title>
-		<link>/en/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/</link>
+		<link>/en/bhaktishastra/</link>
 		<pubDate>Sat, 09 Aug 2025 12:54:08 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/?p=1108</guid>
@@ -3219,18 +3283,18 @@
 		<wp:post_id>1120</wp:post_id>
 		<wp:post_date><![CDATA[2025-08-09 12:54:08]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-08-09 12:54:08]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-08-09 13:53:57]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-08-09 13:53:57]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-08-15 18:15:55]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-08-15 15:15:55]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96]]></wp:post_name>
+		<wp:post_name><![CDATA[bhaktishastra]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="language" nicename="en"><![CDATA[EN]]></category>
+										<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="category" nicename="%d1%81ourses"><![CDATA[Our courses]]></category>
 		<category domain="post_translations" nicename="pll_689752448a752"><![CDATA[pll_689752448a752]]></category>
 						<wp:postmeta>
@@ -3245,10 +3309,18 @@
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1121]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Брендінг]]></title>
-		<link>/%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d1%96%d0%bd%d0%b3/</link>
+		<link>/branding/</link>
 		<pubDate>Sat, 09 Aug 2025 13:56:31 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/?p=1124</guid>
@@ -3268,11 +3340,11 @@
 		<wp:post_id>1124</wp:post_id>
 		<wp:post_date><![CDATA[2025-08-09 13:56:31]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-08-09 13:56:31]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-08-09 13:56:31]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-08-09 13:56:31]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-08-15 18:15:25]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-08-15 15:15:25]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d1%96%d0%bd%d0%b3]]></wp:post_name>
+		<wp:post_name><![CDATA[branding]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -3280,8 +3352,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_translations" nicename="pll_6897539da7fdd"><![CDATA[pll_6897539da7fdd]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
 		<category domain="category" nicename="branding"><![CDATA[Брендінг]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_pingme]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -3290,10 +3362,18 @@
 		<wp:meta_key><![CDATA[_encloseme]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d1%96%d0%bd%d0%b3]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Брендинг]]></title>
-		<link>/ru/%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d1%96%d0%bd%d0%b3/</link>
+		<link>/ru/branding/</link>
 		<pubDate>Sat, 09 Aug 2025 13:56:31 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/?p=1124</guid>
@@ -3313,11 +3393,11 @@
 		<wp:post_id>1126</wp:post_id>
 		<wp:post_date><![CDATA[2025-08-09 13:56:31]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-08-09 13:56:31]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-08-09 13:57:10]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-08-09 13:57:10]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-08-15 18:15:30]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-08-15 15:15:30]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d1%96%d0%bd%d0%b3]]></wp:post_name>
+		<wp:post_name><![CDATA[branding]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -3325,8 +3405,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_translations" nicename="pll_6897539da7fdd"><![CDATA[pll_6897539da7fdd]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
 		<category domain="category" nicename="branding"><![CDATA[Брендинг]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_pingme]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -3335,10 +3415,18 @@
 		<wp:meta_key><![CDATA[_encloseme]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d1%96%d0%bd%d0%b3]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Branding]]></title>
-		<link>/en/%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d1%96%d0%bd%d0%b3/</link>
+		<link>/en/branding/</link>
 		<pubDate>Sat, 09 Aug 2025 13:56:31 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/?p=1124</guid>
@@ -3358,11 +3446,11 @@
 		<wp:post_id>1127</wp:post_id>
 		<wp:post_date><![CDATA[2025-08-09 13:56:31]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-08-09 13:56:31]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-08-09 13:57:29]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-08-09 13:57:29]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-08-15 18:15:35]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-08-15 15:15:35]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d1%96%d0%bd%d0%b3]]></wp:post_name>
+		<wp:post_name><![CDATA[branding]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -3370,7 +3458,7 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="category" nicename="branding"><![CDATA[Branding]]></category>
-		<category domain="language" nicename="en"><![CDATA[EN]]></category>
+		<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="post_translations" nicename="pll_6897539da7fdd"><![CDATA[pll_6897539da7fdd]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_pingme]]></wp:meta_key>
@@ -3380,10 +3468,18 @@
 		<wp:meta_key><![CDATA[_encloseme]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d1%96%d0%bd%d0%b3]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Бгакті вайбхава]]></title>
-		<link>/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/</link>
+		<link>/bhaktivibhava/</link>
 		<pubDate>Wed, 13 Aug 2025 05:52:51 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/?p=1224</guid>
@@ -3423,11 +3519,11 @@
 		<wp:post_id>1224</wp:post_id>
 		<wp:post_date><![CDATA[2025-08-13 05:52:51]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-08-13 05:52:51]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-08-13 05:56:58]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-08-13 05:56:58]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-08-15 18:14:46]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-08-15 15:14:46]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0]]></wp:post_name>
+		<wp:post_name><![CDATA[bhaktivibhava]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -3435,8 +3531,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_translations" nicename="pll_689c28472f0d1"><![CDATA[pll_689c28472f0d1]]></category>
-		<category domain="language" nicename="uk"><![CDATA[UK]]></category>
 		<category domain="category" nicename="%d1%81ourses"><![CDATA[Наші курси]]></category>
+		<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_pingme]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -3449,10 +3545,18 @@
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1225]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Бгакти вайбхава]]></title>
-		<link>/ru/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/</link>
+		<link>/ru/bhaktivibhava/</link>
 		<pubDate>Wed, 13 Aug 2025 05:52:51 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/?p=1224</guid>
@@ -3502,11 +3606,11 @@
 		<wp:post_id>1227</wp:post_id>
 		<wp:post_date><![CDATA[2025-08-13 05:52:51]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-08-13 05:52:51]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-08-13 05:56:49]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-08-13 05:56:49]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-08-15 18:15:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-08-15 15:15:00]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0]]></wp:post_name>
+		<wp:post_name><![CDATA[bhaktivibhava]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -3514,8 +3618,8 @@
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="post_translations" nicename="pll_689c28472f0d1"><![CDATA[pll_689c28472f0d1]]></category>
-		<category domain="language" nicename="ru"><![CDATA[RU]]></category>
 		<category domain="category" nicename="%d1%81ourses"><![CDATA[Наши курсы]]></category>
+		<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_pingme]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -3528,10 +3632,14 @@
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1228]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title><![CDATA[Bhakti vibhava]]></title>
-		<link>/en/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/</link>
+		<link>/en/bhaktivibhava/</link>
 		<pubDate>Wed, 13 Aug 2025 05:52:51 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/?p=1224</guid>
@@ -3581,18 +3689,18 @@ SB 1.2.18, com.]]></excerpt:encoded>
 		<wp:post_id>1229</wp:post_id>
 		<wp:post_date><![CDATA[2025-08-13 05:52:51]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-08-13 05:52:51]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-08-13 05:56:38]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-08-13 05:56:38]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-08-15 18:15:17]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-08-15 15:15:17]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0]]></wp:post_name>
+		<wp:post_name><![CDATA[bhaktivibhava]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="language" nicename="en"><![CDATA[EN]]></category>
+										<category domain="language" nicename="en"><![CDATA[English]]></category>
 		<category domain="category" nicename="%d1%81ourses"><![CDATA[Our courses]]></category>
 		<category domain="post_translations" nicename="pll_689c28472f0d1"><![CDATA[pll_689c28472f0d1]]></category>
 						<wp:postmeta>
@@ -3606,6 +3714,14 @@ SB 1.2.18, com.]]></excerpt:encoded>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1230]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -3691,7 +3807,7 @@ SB 1.2.18, com.]]></excerpt:encoded>
 		<wp:post_type><![CDATA[wp_navigation]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="language" nicename="uk"><![CDATA[UK]]></category>
+										<category domain="language" nicename="uk"><![CDATA[Українська]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -3730,7 +3846,7 @@ SB 1.2.18, com.]]></excerpt:encoded>
 		<wp:post_type><![CDATA[wp_navigation]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="language" nicename="ru"><![CDATA[RU]]></category>
+										<category domain="language" nicename="ru"><![CDATA[Русский]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -3769,7 +3885,7 @@ SB 1.2.18, com.]]></excerpt:encoded>
 		<wp:post_type><![CDATA[wp_navigation]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="language" nicename="en"><![CDATA[EN]]></category>
+										<category domain="language" nicename="en"><![CDATA[English]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -3798,7 +3914,7 @@ SB 1.2.18, com.]]></excerpt:encoded>
 		<wp:post_type><![CDATA[wp_navigation]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="language" nicename="en"><![CDATA[EN]]></category>
+										<category domain="language" nicename="en"><![CDATA[English]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
 		<wp:meta_value><![CDATA[publish]]></wp:meta_value>

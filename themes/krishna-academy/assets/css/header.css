@@ -318,7 +318,7 @@ body.admin-bar .header-wrapper.scrolled {
 /* Desktops */
 @media screen and (width >= 1440px) {
   header {
-    height: 600px;
+    height: 650px;
     background-image: url('../images/header-desktop.jpg');
   }
 
