@@ -277,31 +277,14 @@
     }
   },
   "customTemplates": [
-    { "name": "archive-post-type", "title": "Archive Post Type", "postTypes": ["post", "page"] },
-    { "name": "attachment", "title": "Attachment", "postTypes": ["post", "page"] },
-    { "name": "author", "title": "Author", "postTypes": ["post", "page"] },
-    { "name": "category", "title": "Category", "postTypes": ["post", "page"] },
-    { "name": "date", "title": "Date Archive", "postTypes": ["post", "page"] },
     { "name": "front-page", "title": "Front Page", "postTypes": ["page"] },
-    { "name": "home", "title": "Blog Home", "postTypes": ["page"] },
-    { "name": "image", "title": "Image Attachment", "postTypes": ["post", "page"] },
-    { "name": "page-slug", "title": "Page by Slug", "postTypes": ["page"] },
-    { "name": "privacy-policy", "title": "Privacy Policy", "postTypes": ["page"] },
-    { "name": "search", "title": "Search Results", "postTypes": ["post", "page"] },
-    { "name": "single-post-type", "title": "Single Post Type", "postTypes": ["post"] },
-    { "name": "promo", "title": "Promo", "postTypes": ["post"] },
-    { "name": "singular", "title": "Singular", "postTypes": ["post", "page"] },
-    { "name": "tag", "title": "Tag Archive", "postTypes": ["post", "page"] },
-    { "name": "taxonomy", "title": "Taxonomy Archive", "postTypes": ["post", "page"] },
-    { "name": "single-course", "title": "Single course", "postTypes": ["post"] },
-    { "name": "single-promo", "title": "Single Promo", "postTypes": ["post"] }
+    { "name": "page", "title": "Page", "postTypes": ["page"] },
+    { "name": "single", "title": "Single", "postTypes": ["post"] }
   ],
   "templateParts": [
     { "area": "header", "name": "header", "title": "Header" },
     { "area": "branding", "name": "hero", "title": "Hero" },
     { "area": "courses", "name": "courses", "title": "Courses" },
-    { "area": "uncategorized", "name": "loop", "title": "Loop" },
     { "area": "footer", "name": "footer", "title": "Footer" }
-  ],
-  "patterns": []
+  ]
 }

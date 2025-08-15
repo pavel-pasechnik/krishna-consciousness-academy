@@ -27,13 +27,13 @@
 
 <channel>
 	<title>Krishna Academy</title>
-	<link>http://localhost:8000</link>
+	<link></link>
 	<description></description>
 	<pubDate>Thu, 14 Aug 2025 08:31:17 +0000</pubDate>
 	<language>ru-RU</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
-	<wp:base_site_url>http://localhost:8000</wp:base_site_url>
-	<wp:base_blog_url>http://localhost:8000</wp:base_blog_url>
+	<wp:base_site_url></wp:base_site_url>
+	<wp:base_blog_url></wp:base_blog_url>
 
 		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[admin]]></wp:author_login><wp:author_email><![CDATA[admin@example.com]]></wp:author_email><wp:author_display_name><![CDATA[admin]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
 
@@ -313,10 +313,10 @@
 
 		<item>
 		<title><![CDATA[logo.svg]]></title>
-		<link>http://localhost:8000/logo-svg/</link>
+		<link>/logo-svg/</link>
 		<pubDate>Sat, 09 Aug 2025 07:41:11 +0000</pubDate>
 		<dc:creator><![CDATA[]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/logo-svg/</guid>
+		<guid isPermaLink="false">/logo-svg/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -347,7 +347,7 @@
 							</item>
 					<item>
 		<title><![CDATA[dawn.png]]></title>
-		<link>http://localhost:8000/dawn-png/</link>
+		<link>/dawn-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:08:19 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/dawn.png.webp</guid>
@@ -382,7 +382,7 @@
 							</item>
 					<item>
 		<title><![CDATA[heart.png]]></title>
-		<link>http://localhost:8000/heart-png/</link>
+		<link>/heart-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:09:38 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/heart.png.webp</guid>
@@ -417,7 +417,7 @@
 							</item>
 					<item>
 		<title><![CDATA[lotus.png]]></title>
-		<link>http://localhost:8000/lotus-png/</link>
+		<link>/lotus-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:10:14 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/lotus.png.webp</guid>
@@ -452,7 +452,7 @@
 							</item>
 					<item>
 		<title><![CDATA[roots.png]]></title>
-		<link>http://localhost:8000/roots-png/</link>
+		<link>/roots-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:10:51 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/roots.png.webp</guid>
@@ -487,7 +487,7 @@
 							</item>
 					<item>
 		<title><![CDATA[teacher-without-hair.png]]></title>
-		<link>http://localhost:8000/teacher-without-hair-png/</link>
+		<link>/teacher-without-hair-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:11:19 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/teacher-without-hair.png.webp</guid>
@@ -522,7 +522,7 @@
 							</item>
 					<item>
 		<title><![CDATA[leaf_1.png]]></title>
-		<link>http://localhost:8000/leaf_1-png/</link>
+		<link>/leaf_1-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:11:52 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/leaf_1.png.webp</guid>
@@ -557,7 +557,7 @@
 							</item>
 					<item>
 		<title><![CDATA[mountain.png]]></title>
-		<link>http://localhost:8000/mountain-png/</link>
+		<link>/mountain-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:13:10 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/mountain.png.webp</guid>
@@ -592,7 +592,7 @@
 							</item>
 					<item>
 		<title><![CDATA[dawn.png]]></title>
-		<link>http://localhost:8000/ru/dawn-png/</link>
+		<link>/ru/dawn-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:08:19 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/dawn.png.webp</guid>
@@ -631,7 +631,7 @@
 							</item>
 					<item>
 		<title><![CDATA[heart.png]]></title>
-		<link>http://localhost:8000/ru/heart-png/</link>
+		<link>/ru/heart-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:09:38 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/heart.png.webp</guid>
@@ -670,7 +670,7 @@
 							</item>
 					<item>
 		<title><![CDATA[lotus.png]]></title>
-		<link>http://localhost:8000/ru/lotus-png/</link>
+		<link>/ru/lotus-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:10:14 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/lotus.png.webp</guid>
@@ -709,7 +709,7 @@
 							</item>
 					<item>
 		<title><![CDATA[roots.png]]></title>
-		<link>http://localhost:8000/ru/roots-png/</link>
+		<link>/ru/roots-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:10:51 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/roots.png.webp</guid>
@@ -748,7 +748,7 @@
 							</item>
 					<item>
 		<title><![CDATA[teacher-without-hair.png]]></title>
-		<link>http://localhost:8000/ru/teacher-without-hair-png/</link>
+		<link>/ru/teacher-without-hair-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:11:19 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/teacher-without-hair.png.webp</guid>
@@ -787,7 +787,7 @@
 							</item>
 					<item>
 		<title><![CDATA[leaf_1.png]]></title>
-		<link>http://localhost:8000/ru/leaf_1-png/</link>
+		<link>/ru/leaf_1-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:11:52 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/leaf_1.png.webp</guid>
@@ -826,7 +826,7 @@
 							</item>
 					<item>
 		<title><![CDATA[dawn.png]]></title>
-		<link>http://localhost:8000/en/dawn-png/</link>
+		<link>/en/dawn-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:08:19 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/dawn.png.webp</guid>
@@ -865,7 +865,7 @@
 							</item>
 					<item>
 		<title><![CDATA[heart.png]]></title>
-		<link>http://localhost:8000/en/heart-png/</link>
+		<link>/en/heart-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:09:38 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/heart.png.webp</guid>
@@ -904,7 +904,7 @@
 							</item>
 					<item>
 		<title><![CDATA[lotus.png]]></title>
-		<link>http://localhost:8000/en/lotus-png/</link>
+		<link>/en/lotus-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:10:14 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/lotus.png.webp</guid>
@@ -943,7 +943,7 @@
 							</item>
 					<item>
 		<title><![CDATA[roots.png]]></title>
-		<link>http://localhost:8000/en/roots-png/</link>
+		<link>/en/roots-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:10:51 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/roots.png.webp</guid>
@@ -982,7 +982,7 @@
 							</item>
 					<item>
 		<title><![CDATA[teacher-without-hair.png]]></title>
-		<link>http://localhost:8000/en/teacher-without-hair-png/</link>
+		<link>/en/teacher-without-hair-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:11:19 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/teacher-without-hair.png.webp</guid>
@@ -1021,7 +1021,7 @@
 							</item>
 					<item>
 		<title><![CDATA[leaf_1.png]]></title>
-		<link>http://localhost:8000/en/leaf_1-png/</link>
+		<link>/en/leaf_1-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:11:52 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/leaf_1.png.webp</guid>
@@ -1060,7 +1060,7 @@
 							</item>
 					<item>
 		<title><![CDATA[seasons.png]]></title>
-		<link>http://localhost:8000/seasons-png/</link>
+		<link>/seasons-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:13:37 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/seasons.png.webp</guid>
@@ -1095,7 +1095,7 @@
 							</item>
 					<item>
 		<title><![CDATA[beehive_1.png]]></title>
-		<link>http://localhost:8000/beehive_1-png/</link>
+		<link>/beehive_1-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:14:06 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/beehive_1.png.webp</guid>
@@ -1130,7 +1130,7 @@
 							</item>
 					<item>
 		<title><![CDATA[mountain.png]]></title>
-		<link>http://localhost:8000/ru/mountain-png/</link>
+		<link>/ru/mountain-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:13:10 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/mountain.png.webp</guid>
@@ -1169,7 +1169,7 @@
 							</item>
 					<item>
 		<title><![CDATA[seasons.png]]></title>
-		<link>http://localhost:8000/ru/seasons-png/</link>
+		<link>/ru/seasons-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:13:37 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/seasons.png.webp</guid>
@@ -1208,7 +1208,7 @@
 							</item>
 					<item>
 		<title><![CDATA[beehive_1.png]]></title>
-		<link>http://localhost:8000/ru/beehive_1-png/</link>
+		<link>/ru/beehive_1-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:14:06 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/beehive_1.png.webp</guid>
@@ -1247,7 +1247,7 @@
 							</item>
 					<item>
 		<title><![CDATA[mountain.png]]></title>
-		<link>http://localhost:8000/en/mountain-png/</link>
+		<link>/en/mountain-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:13:10 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/mountain.png.webp</guid>
@@ -1286,7 +1286,7 @@
 							</item>
 					<item>
 		<title><![CDATA[seasons.png]]></title>
-		<link>http://localhost:8000/en/seasons-png/</link>
+		<link>/en/seasons-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:13:37 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/seasons.png.webp</guid>
@@ -1325,7 +1325,7 @@
 							</item>
 					<item>
 		<title><![CDATA[beehive_1.png]]></title>
-		<link>http://localhost:8000/en/beehive_1-png/</link>
+		<link>/en/beehive_1-png/</link>
 		<pubDate>Sat, 09 Aug 2025 08:14:06 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/beehive_1.png.webp</guid>
@@ -1364,7 +1364,7 @@
 							</item>
 					<item>
 		<title><![CDATA[dawn.png]]></title>
-		<link>http://localhost:8000/home/dawn-png-2/</link>
+		<link>/home/dawn-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 08:57:53 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/dawn.png-1.webp</guid>
@@ -1398,7 +1398,7 @@
 							</item>
 					<item>
 		<title><![CDATA[heart.png]]></title>
-		<link>http://localhost:8000/home/heart-png-2/</link>
+		<link>/home/heart-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 08:59:28 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/heart.png-1.webp</guid>
@@ -1432,7 +1432,7 @@
 							</item>
 					<item>
 		<title><![CDATA[lotus.png]]></title>
-		<link>http://localhost:8000/home/lotus-png-2/</link>
+		<link>/home/lotus-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 09:00:56 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/lotus.png-1.webp</guid>
@@ -1466,7 +1466,7 @@
 							</item>
 					<item>
 		<title><![CDATA[roots.png]]></title>
-		<link>http://localhost:8000/home/roots-png-2/</link>
+		<link>/home/roots-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 09:01:31 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/roots.png-1.webp</guid>
@@ -1500,7 +1500,7 @@
 							</item>
 					<item>
 		<title><![CDATA[teacher-without-hair.png]]></title>
-		<link>http://localhost:8000/home/teacher-without-hair-png-2/</link>
+		<link>/home/teacher-without-hair-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 09:02:16 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/teacher-without-hair.png-1.webp</guid>
@@ -1534,7 +1534,7 @@
 							</item>
 					<item>
 		<title><![CDATA[leaf_1.png]]></title>
-		<link>http://localhost:8000/home/leaf_1-png-2/</link>
+		<link>/home/leaf_1-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 09:02:48 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/leaf_1.png-1.webp</guid>
@@ -1568,7 +1568,7 @@
 							</item>
 					<item>
 		<title><![CDATA[mountain.png]]></title>
-		<link>http://localhost:8000/home/mountain-png-2/</link>
+		<link>/home/mountain-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 09:03:25 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/mountain.png-1.webp</guid>
@@ -1602,7 +1602,7 @@
 							</item>
 					<item>
 		<title><![CDATA[seasons.png]]></title>
-		<link>http://localhost:8000/home/seasons-png-2/</link>
+		<link>/home/seasons-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 09:03:54 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/seasons.png-1.webp</guid>
@@ -1636,7 +1636,7 @@
 							</item>
 					<item>
 		<title><![CDATA[beehive_1.png]]></title>
-		<link>http://localhost:8000/home/beehive_1-png-2/</link>
+		<link>/home/beehive_1-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 09:04:30 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/beehive_1.png-1.webp</guid>
@@ -1670,7 +1670,7 @@
 							</item>
 					<item>
 		<title><![CDATA[cb-012x.png]]></title>
-		<link>http://localhost:8000/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/cb-012x-png/</link>
+		<link>/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/cb-012x-png/</link>
 		<pubDate>Sat, 09 Aug 2025 11:34:26 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-012x.png.webp</guid>
@@ -1704,7 +1704,7 @@
 							</item>
 					<item>
 		<title><![CDATA[cb-012x.png]]></title>
-		<link>http://localhost:8000/ru/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/cb-012x-png-2/</link>
+		<link>/ru/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/cb-012x-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 11:35:18 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-012x.png-1.webp</guid>
@@ -1738,7 +1738,7 @@
 							</item>
 					<item>
 		<title><![CDATA[cb-012x.png]]></title>
-		<link>http://localhost:8000/en/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/cb-012x-png-3/</link>
+		<link>/en/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/cb-012x-png-3/</link>
 		<pubDate>Sat, 09 Aug 2025 11:35:59 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-012x.png-2.webp</guid>
@@ -1772,12 +1772,12 @@
 							</item>
 					<item>
 		<title><![CDATA[Наші цінності]]></title>
-		<link>http://localhost:8000/</link>
+		<link>/</link>
 		<pubDate>Sat, 09 Aug 2025 07:41:07 +0000</pubDate>
 		<dc:creator><![CDATA[]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?page_id=1001</guid>
+		<guid isPermaLink="false">/?page_id=1001</guid>
 		<description></description>
-		<content:encoded><![CDATA[<!-- wp:media-text {"align":"wide","mediaId":1012,"mediaLink":"http://localhost:8000/?attachment_id=1012","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+		<content:encoded><![CDATA[<!-- wp:media-text {"align":"wide","mediaId":1012,"mediaLink":"/?attachment_id=1012","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/dawn.png.webp" alt="" class="wp-image-1012 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Істинність</strong></h3>
 <!-- /wp:heading -->
@@ -1787,7 +1787,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1013,"mediaLink":"http://localhost:8000/?attachment_id=1013","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1013,"mediaLink":"/?attachment_id=1013","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/heart.png.webp" alt="" class="wp-image-1013 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Практичність</strong></h3>
 <!-- /wp:heading -->
@@ -1797,7 +1797,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1014,"mediaLink":"http://localhost:8000/?attachment_id=1014","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1014,"mediaLink":"/?attachment_id=1014","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/lotus.png.webp" alt="" class="wp-image-1014 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Чистота</strong></h3>
 <!-- /wp:heading -->
@@ -1807,7 +1807,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1015,"mediaLink":"http://localhost:8000/?attachment_id=1015","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1015,"mediaLink":"/?attachment_id=1015","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/roots.png.webp" alt="" class="wp-image-1015 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Усвідомлення</strong></h3>
 <!-- /wp:heading -->
@@ -1817,7 +1817,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1016,"mediaLink":"http://localhost:8000/?attachment_id=1016","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1016,"mediaLink":"/?attachment_id=1016","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/teacher-without-hair.png.webp" alt="" class="wp-image-1016 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Живе керівництво</strong></h3>
 <!-- /wp:heading -->
@@ -1827,7 +1827,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1017,"mediaLink":"http://localhost:8000/?attachment_id=1017","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1017,"mediaLink":"/?attachment_id=1017","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/leaf_1.png.webp" alt="" class="wp-image-1017 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Індивідуальність</strong></h3>
 <!-- /wp:heading -->
@@ -1837,7 +1837,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1018,"mediaLink":"http://localhost:8000/?attachment_id=1018","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1018,"mediaLink":"/?attachment_id=1018","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/mountain.png.webp" alt="" class="wp-image-1018 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Стабільність</strong></h3>
 <!-- /wp:heading -->
@@ -1847,7 +1847,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1019,"mediaLink":"http://localhost:8000/?attachment_id=1019","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1019,"mediaLink":"/?attachment_id=1019","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/seasons.png.webp" alt="" class="wp-image-1019 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Систематичність</strong></h3>
 <!-- /wp:heading -->
@@ -1857,7 +1857,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1020,"mediaLink":"http://localhost:8000/?attachment_id=1020","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1020,"mediaLink":"/?attachment_id=1020","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/beehive_1.png.webp" alt="" class="wp-image-1020 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Санкіртана</strong></h3>
 <!-- /wp:heading -->
@@ -1904,12 +1904,12 @@
 						</item>
 					<item>
 		<title><![CDATA[Наши ценности]]></title>
-		<link>http://localhost:8000/ru/home/</link>
+		<link>/ru/home/</link>
 		<pubDate>Sat, 09 Aug 2025 07:41:07 +0000</pubDate>
 		<dc:creator><![CDATA[]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?page_id=1001</guid>
+		<guid isPermaLink="false">/?page_id=1001</guid>
 		<description></description>
-		<content:encoded><![CDATA[<!-- wp:media-text {"align":"wide","mediaId":1025,"mediaLink":"http://localhost:8000/?attachment_id=1012","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+		<content:encoded><![CDATA[<!-- wp:media-text {"align":"wide","mediaId":1025,"mediaLink":"/?attachment_id=1012","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/dawn.png.webp" alt="" class="wp-image-1025 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Истинность</strong></h3>
 <!-- /wp:heading -->
@@ -1919,7 +1919,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1026,"mediaLink":"http://localhost:8000/?attachment_id=1013","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1026,"mediaLink":"/?attachment_id=1013","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/heart.png.webp" alt="" class="wp-image-1026 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Практичность</strong></h3>
 <!-- /wp:heading -->
@@ -1929,7 +1929,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1027,"mediaLink":"http://localhost:8000/?attachment_id=1014","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1027,"mediaLink":"/?attachment_id=1014","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/lotus.png.webp" alt="" class="wp-image-1027 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Чистота</strong></h3>
 <!-- /wp:heading -->
@@ -1939,7 +1939,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1028,"mediaLink":"http://localhost:8000/?attachment_id=1015","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1028,"mediaLink":"/?attachment_id=1015","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/roots.png.webp" alt="" class="wp-image-1028 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Осознание</strong></h3>
 <!-- /wp:heading -->
@@ -1949,7 +1949,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1029,"mediaLink":"http://localhost:8000/?attachment_id=1016","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1029,"mediaLink":"/?attachment_id=1016","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/teacher-without-hair.png.webp" alt="" class="wp-image-1029 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Живое руководство</strong></h3>
 <!-- /wp:heading -->
@@ -1959,7 +1959,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1030,"mediaLink":"http://localhost:8000/?attachment_id=1017","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1030,"mediaLink":"/?attachment_id=1017","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/leaf_1.png.webp" alt="" class="wp-image-1030 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Индивидуальность</strong></h3>
 <!-- /wp:heading -->
@@ -1969,7 +1969,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1031,"mediaLink":"http://localhost:8000/?attachment_id=1018","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1031,"mediaLink":"/?attachment_id=1018","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/mountain.png.webp" alt="" class="wp-image-1031 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Стабильность</strong></h3>
 <!-- /wp:heading -->
@@ -1979,7 +1979,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1032,"mediaLink":"http://localhost:8000/?attachment_id=1019","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1032,"mediaLink":"/?attachment_id=1019","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/seasons.png.webp" alt="" class="wp-image-1032 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Систематичность</strong></h3>
 <!-- /wp:heading -->
@@ -1989,7 +1989,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1033,"mediaLink":"http://localhost:8000/?attachment_id=1020","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1033,"mediaLink":"/?attachment_id=1020","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/beehive_1.png.webp" alt="" class="wp-image-1033 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Санкиртана</strong></h3>
 <!-- /wp:heading -->
@@ -2036,12 +2036,12 @@
 						</item>
 					<item>
 		<title><![CDATA[Our values]]></title>
-		<link>http://localhost:8000/en/home/</link>
+		<link>/en/home/</link>
 		<pubDate>Sat, 09 Aug 2025 07:41:07 +0000</pubDate>
 		<dc:creator><![CDATA[]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?page_id=1001</guid>
+		<guid isPermaLink="false">/?page_id=1001</guid>
 		<description></description>
-		<content:encoded><![CDATA[<!-- wp:media-text {"align":"wide","mediaId":1035,"mediaLink":"http://localhost:8000/?attachment_id=1012","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+		<content:encoded><![CDATA[<!-- wp:media-text {"align":"wide","mediaId":1035,"mediaLink":"/?attachment_id=1012","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/dawn.png.webp" alt="" class="wp-image-1035 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Truthfulness</strong></h3>
 <!-- /wp:heading -->
@@ -2051,7 +2051,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1036,"mediaLink":"http://localhost:8000/?attachment_id=1013","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1036,"mediaLink":"/?attachment_id=1013","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/heart.png.webp" alt="" class="wp-image-1036 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Practicality</strong></h3>
 <!-- /wp:heading -->
@@ -2061,7 +2061,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1037,"mediaLink":"http://localhost:8000/?attachment_id=1014","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1037,"mediaLink":"/?attachment_id=1014","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/lotus.png.webp" alt="" class="wp-image-1037 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Cleanliness</strong></h3>
 <!-- /wp:heading -->
@@ -2071,7 +2071,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1038,"mediaLink":"http://localhost:8000/?attachment_id=1015","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1038,"mediaLink":"/?attachment_id=1015","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/roots.png.webp" alt="" class="wp-image-1038 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Awareness</strong></h3>
 <!-- /wp:heading -->
@@ -2081,7 +2081,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1039,"mediaLink":"http://localhost:8000/?attachment_id=1016","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1039,"mediaLink":"/?attachment_id=1016","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/teacher-without-hair.png.webp" alt="" class="wp-image-1039 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Live guidance</strong></h3>
 <!-- /wp:heading -->
@@ -2091,7 +2091,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1040,"mediaLink":"http://localhost:8000/?attachment_id=1017","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1040,"mediaLink":"/?attachment_id=1017","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/leaf_1.png.webp" alt="" class="wp-image-1040 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Individuality</strong></h3>
 <!-- /wp:heading -->
@@ -2101,7 +2101,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1041,"mediaLink":"http://localhost:8000/?attachment_id=1018","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1041,"mediaLink":"/?attachment_id=1018","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/mountain.png.webp" alt="" class="wp-image-1041 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Stability</strong></h3>
 <!-- /wp:heading -->
@@ -2111,7 +2111,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1042,"mediaLink":"http://localhost:8000/?attachment_id=1019","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1042,"mediaLink":"/?attachment_id=1019","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/seasons.png.webp" alt="" class="wp-image-1042 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Systematicity</strong></h3>
 <!-- /wp:heading -->
@@ -2121,7 +2121,7 @@
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:media-text -->
 
-<!-- wp:media-text {"align":"wide","mediaId":1043,"mediaLink":"http://localhost:8000/?attachment_id=1020","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
+<!-- wp:media-text {"align":"wide","mediaId":1043,"mediaLink":"/?attachment_id=1020","mediaType":"image","isStackedOnMobile":false,"metadata":{"categories":["krishna-academy"],"patternName":"krishna-academy/media-text","name":"Media and Text"},"className":"has-media-on-the-left media-text"} -->
 <div class="wp-block-media-text alignwide has-media-on-the-left media-text"><figure class="wp-block-media-text__media"><img src="/wp-content/themes/krishna-academy/assets/images/beehive_1.png.webp" alt="" class="wp-image-1043 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><strong>Sankirtana</strong></h3>
 <!-- /wp:heading -->
@@ -2168,10 +2168,10 @@
 						</item>
 					<item>
 		<title><![CDATA[Учнівство в ІСККОН]]></title>
-		<link>http://localhost:8000/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/</link>
+		<link>/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/</link>
 		<pubDate>Sat, 09 Aug 2025 11:24:18 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?p=1078</guid>
+		<guid isPermaLink="false">/?p=1078</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Цей курс є обов'язковим для отримання пранама-мантри у гуру ІСККОН.</p>
@@ -2251,10 +2251,10 @@
 							</item>
 					<item>
 		<title><![CDATA[Ученичество в ИСККОН]]></title>
-		<link>http://localhost:8000/ru/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/</link>
+		<link>/ru/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/</link>
 		<pubDate>Sat, 09 Aug 2025 11:24:18 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?p=1078</guid>
+		<guid isPermaLink="false">/?p=1078</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Этот курс является обязательным для получения пранама-мантры у гуру ИСККОН.</p>
@@ -2328,10 +2328,10 @@
 							</item>
 					<item>
 		<title><![CDATA[Discipleship in ISKCON]]></title>
-		<link>http://localhost:8000/en/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/</link>
+		<link>/en/%d1%83%d1%87%d0%bd%d1%96%d0%b2%d1%81%d1%82%d0%b2%d0%be-%d0%b2-%d1%96%d1%81%d0%ba%d0%ba%d0%be%d0%bd/</link>
 		<pubDate>Sat, 09 Aug 2025 11:24:18 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?p=1078</guid>
+		<guid isPermaLink="false">/?p=1078</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>This course is mandatory for receiving the pranama mantra from the ISKCON guru.</p>
@@ -2405,10 +2405,10 @@
 							</item>
 					<item>
 		<title><![CDATA[Школа бгакті]]></title>
-		<link>http://localhost:8000/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/</link>
+		<link>/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/</link>
 		<pubDate>Sat, 09 Aug 2025 12:22:34 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?p=1094</guid>
+		<guid isPermaLink="false">/?p=1094</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Цей курс є обовʼязковим для отримання першого посвячення</p>
@@ -2468,10 +2468,10 @@
 							</item>
 					<item>
 		<title><![CDATA[Школа бхакти]]></title>
-		<link>http://localhost:8000/ru/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/</link>
+		<link>/ru/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/</link>
 		<pubDate>Sat, 09 Aug 2025 12:22:34 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?p=1094</guid>
+		<guid isPermaLink="false">/?p=1094</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Этот курс является обязательным для получения первого посвящения</p>
@@ -2531,10 +2531,10 @@
 							</item>
 					<item>
 		<title><![CDATA[Bhakti School]]></title>
-		<link>http://localhost:8000/en/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/</link>
+		<link>/en/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/</link>
 		<pubDate>Sat, 09 Aug 2025 12:22:34 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?p=1094</guid>
+		<guid isPermaLink="false">/?p=1094</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>This course is mandatory for receiving the first initiation.</p>
@@ -2594,7 +2594,7 @@
 							</item>
 					<item>
 		<title><![CDATA[cb-022x.png]]></title>
-		<link>http://localhost:8000/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/cb-022x-png/</link>
+		<link>/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/cb-022x-png/</link>
 		<pubDate>Sat, 09 Aug 2025 12:24:19 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-022x.png.webp</guid>
@@ -2628,7 +2628,7 @@
 							</item>
 					<item>
 		<title><![CDATA[cb-022x.png]]></title>
-		<link>http://localhost:8000/ru/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/cb-022x-png-2/</link>
+		<link>/ru/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/cb-022x-png-2/</link>
 		<pubDate>Sat, 09 Aug 2025 12:25:04 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-022x.png-1.webp</guid>
@@ -2662,7 +2662,7 @@
 							</item>
 					<item>
 		<title><![CDATA[cb-022x.png]]></title>
-		<link>http://localhost:8000/en/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/cb-022x-png-3/</link>
+		<link>/en/%d1%88%d0%ba%d0%be%d0%bb%d0%b0-%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96/cb-022x-png-3/</link>
 		<pubDate>Sat, 09 Aug 2025 12:25:33 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-022x.png-2.webp</guid>
@@ -2696,10 +2696,10 @@
 							</item>
 					<item>
 		<title><![CDATA[Бгакті шастрі]]></title>
-		<link>http://localhost:8000/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/</link>
+		<link>/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/</link>
 		<pubDate>Sat, 09 Aug 2025 12:54:08 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?p=1108</guid>
+		<guid isPermaLink="false">/?p=1108</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Цей курс є обов'язковим для отримання другого посвячення.<br>Вимога для вступу - диплом курсу&nbsp;<a href="https://academy.krishna.ua/bhaktischool" target="_blank" rel="noreferrer noopener">Школа бгакті.</a></p>
@@ -2775,7 +2775,7 @@
 							</item>
 					<item>
 		<title><![CDATA[cb-032x.png]]></title>
-		<link>http://localhost:8000/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/cb-032x-png/</link>
+		<link>/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/cb-032x-png/</link>
 		<pubDate>Sat, 09 Aug 2025 12:53:42 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-032x.png.webp</guid>
@@ -2810,7 +2810,7 @@
 							</item>
 					<item>
 		<title><![CDATA[cb-032x.png]]></title>
-		<link>http://localhost:8000/ru/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/cb-032x-png/</link>
+		<link>/ru/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/cb-032x-png/</link>
 		<pubDate>Sat, 09 Aug 2025 12:53:42 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-032x.png.webp</guid>
@@ -2849,7 +2849,7 @@
 							</item>
 					<item>
 		<title><![CDATA[cb-032x.png]]></title>
-		<link>http://localhost:8000/en/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/cb-032x-png/</link>
+		<link>/en/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/cb-032x-png/</link>
 		<pubDate>Sat, 09 Aug 2025 12:53:42 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-032x.png.webp</guid>
@@ -2888,7 +2888,7 @@
 							</item>
 					<item>
 		<title><![CDATA[cb-042x.png]]></title>
-		<link>http://localhost:8000/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/cb-042x-png/</link>
+		<link>/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/cb-042x-png/</link>
 		<pubDate>Wed, 13 Aug 2025 05:52:23 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-042x.png.webp</guid>
@@ -2923,7 +2923,7 @@
 							</item>
 					<item>
 		<title><![CDATA[cb-042x.png]]></title>
-		<link>http://localhost:8000/ru/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/cb-042x-png/</link>
+		<link>/ru/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/cb-042x-png/</link>
 		<pubDate>Wed, 13 Aug 2025 05:52:23 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-042x.png.webp</guid>
@@ -2962,7 +2962,7 @@
 							</item>
 					<item>
 		<title><![CDATA[cb-042x.png]]></title>
-		<link>http://localhost:8000/en/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/cb-042x-png/</link>
+		<link>/en/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/cb-042x-png/</link>
 		<pubDate>Wed, 13 Aug 2025 05:52:23 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
 		<guid isPermaLink="false">/wp-content/themes/krishna-academy/assets/images/cb-042x.png.webp</guid>
@@ -3001,10 +3001,10 @@
 							</item>
 					<item>
 		<title><![CDATA[]]></title>
-		<link>http://localhost:8000/?p=1253</link>
+		<link>/?p=1253</link>
 		<pubDate></pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?p=1253</guid>
+		<guid isPermaLink="false">/?p=1253</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -3061,10 +3061,10 @@
 							</item>
 					<item>
 		<title><![CDATA[Custom Styles]]></title>
-		<link>http://localhost:8000/wp-global-styles-krishna-academy/</link>
+		<link>/wp-global-styles-krishna-academy/</link>
 		<pubDate>Sat, 09 Aug 2025 07:43:54 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/wp-global-styles-krishna-academy/</guid>
+		<guid isPermaLink="false">/wp-global-styles-krishna-academy/</guid>
 		<description></description>
 		<content:encoded><![CDATA[{"version": 3, "isGlobalStylesUserThemeJSON": true }]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -3086,10 +3086,10 @@
 						</item>
 					<item>
 		<title><![CDATA[Бгакти шастри]]></title>
-		<link>http://localhost:8000/ru/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/</link>
+		<link>/ru/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/</link>
 		<pubDate>Sat, 09 Aug 2025 12:54:08 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?p=1108</guid>
+		<guid isPermaLink="false">/?p=1108</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Этот курс является обязательным для получения второго посвящения.<br>Требование для поступления - диплом курса Школа бхакти.</p>
@@ -3165,10 +3165,10 @@
 							</item>
 					<item>
 		<title><![CDATA[Bhakti Shastri]]></title>
-		<link>http://localhost:8000/en/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/</link>
+		<link>/en/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d1%88%d0%b0%d1%81%d1%82%d1%80%d1%96/</link>
 		<pubDate>Sat, 09 Aug 2025 12:54:08 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?p=1108</guid>
+		<guid isPermaLink="false">/?p=1108</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>This course is mandatory for receiving the second initiation.<br>The requirement for admission is a diploma from the Bhakti School course.</p>
@@ -3248,10 +3248,10 @@
 							</item>
 					<item>
 		<title><![CDATA[Брендінг]]></title>
-		<link>http://localhost:8000/%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d1%96%d0%bd%d0%b3/</link>
+		<link>/%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d1%96%d0%bd%d0%b3/</link>
 		<pubDate>Sat, 09 Aug 2025 13:56:31 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?p=1124</guid>
+		<guid isPermaLink="false">/?p=1124</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p><strong>Київська духовна академія свідомості Крішни в Україні є вищим недержавним навчальним закладом. Академія була заснована в 1995 році.</strong></p>
@@ -3293,10 +3293,10 @@
 							</item>
 					<item>
 		<title><![CDATA[Брендинг]]></title>
-		<link>http://localhost:8000/ru/%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d1%96%d0%bd%d0%b3/</link>
+		<link>/ru/%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d1%96%d0%bd%d0%b3/</link>
 		<pubDate>Sat, 09 Aug 2025 13:56:31 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?p=1124</guid>
+		<guid isPermaLink="false">/?p=1124</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Киевская духовная академия сознания Кришны в Украине является высшим негосударственным учебным заведением. Академия была основана в 1995 году.</p>
@@ -3338,10 +3338,10 @@
 							</item>
 					<item>
 		<title><![CDATA[Branding]]></title>
-		<link>http://localhost:8000/en/%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d1%96%d0%bd%d0%b3/</link>
+		<link>/en/%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d1%96%d0%bd%d0%b3/</link>
 		<pubDate>Sat, 09 Aug 2025 13:56:31 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?p=1124</guid>
+		<guid isPermaLink="false">/?p=1124</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>The Krishna Consciousness Spiritual Academy in Kyiv, Ukraine, is a higher non-governmental educational institution. The academy was founded in 1995.</p>
@@ -3383,10 +3383,10 @@
 							</item>
 					<item>
 		<title><![CDATA[Бгакті вайбхава]]></title>
-		<link>http://localhost:8000/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/</link>
+		<link>/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/</link>
 		<pubDate>Wed, 13 Aug 2025 05:52:51 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?p=1224</guid>
+		<guid isPermaLink="false">/?p=1224</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Є два типи Бхагават: книга «Бгагаватам» і відданий Бгагаватам.<br>Обидва Бгагавати — дієві засоби, і їх обох чи кожного окремо цілком достатньо, щоб усунути всі перешкоди.<br>ШБ 1.2.18, ком.</p>
@@ -3452,10 +3452,10 @@
 							</item>
 					<item>
 		<title><![CDATA[Бгакти вайбхава]]></title>
-		<link>http://localhost:8000/ru/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/</link>
+		<link>/ru/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/</link>
 		<pubDate>Wed, 13 Aug 2025 05:52:51 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?p=1224</guid>
+		<guid isPermaLink="false">/?p=1224</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Есть два типа Бхагават: книга «Бхагаватам» и преданный Бхагаватам.<br>Оба Бхагавата — действенные средства, и их обоих или каждого в отдельности вполне достаточно, чтобы устранить все препятствия.<br>ШБ 1.2.18, ком.</p>
@@ -3531,10 +3531,10 @@
 							</item>
 					<item>
 		<title><![CDATA[Bhakti vibhava]]></title>
-		<link>http://localhost:8000/en/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/</link>
+		<link>/en/%d0%b1%d0%b3%d0%b0%d0%ba%d1%82%d1%96-%d0%b2%d0%b0%d0%b9%d0%b1%d1%85%d0%b0%d0%b2%d0%b0/</link>
 		<pubDate>Wed, 13 Aug 2025 05:52:51 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/?p=1224</guid>
+		<guid isPermaLink="false">/?p=1224</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>There are two types of Bhagavat: the book Bhagavatam and a devotee of Bhagavatam.<br>Both Bhagavatams are effective means, and either one or both of them are sufficient to remove all obstacles.<br>SB 1.2.18, comm.</p>
@@ -3610,10 +3610,10 @@ SB 1.2.18, com.]]></excerpt:encoded>
 							</item>
 					<item>
 		<title><![CDATA[Custom Styles]]></title>
-		<link>http://localhost:8000/wp-global-styles-twentytwentyfive/</link>
+		<link>/wp-global-styles-twentytwentyfive/</link>
 		<pubDate>Wed, 13 Aug 2025 07:01:44 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/wp-global-styles-twentytwentyfive/</guid>
+		<guid isPermaLink="false">/wp-global-styles-twentytwentyfive/</guid>
 		<description></description>
 		<content:encoded><![CDATA[{"version": 3, "isGlobalStylesUserThemeJSON": true }]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -3635,10 +3635,10 @@ SB 1.2.18, com.]]></excerpt:encoded>
 						</item>
 					<item>
 		<title><![CDATA[Custom Styles]]></title>
-		<link>http://localhost:8000/wp-global-styles-default/</link>
+		<link>/wp-global-styles-default/</link>
 		<pubDate>Wed, 13 Aug 2025 07:14:19 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/wp-global-styles-default/</guid>
+		<guid isPermaLink="false">/wp-global-styles-default/</guid>
 		<description></description>
 		<content:encoded><![CDATA[{"version": 3, "isGlobalStylesUserThemeJSON": true }]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -3660,16 +3660,16 @@ SB 1.2.18, com.]]></excerpt:encoded>
 						</item>
 					<item>
 		<title><![CDATA[Меню головної сторінки]]></title>
-		<link>http://localhost:8000/%d0%bc%d0%b5%d0%bd%d1%8e-%d0%b3%d0%be%d0%bb%d0%be%d0%b2%d0%bd%d0%be%d1%97-%d1%81%d1%82%d0%be%d1%80%d1%96%d0%bd%d0%ba%d0%b8/</link>
+		<link>/%d0%bc%d0%b5%d0%bd%d1%8e-%d0%b3%d0%be%d0%bb%d0%be%d0%b2%d0%bd%d0%be%d1%97-%d1%81%d1%82%d0%be%d1%80%d1%96%d0%bd%d0%ba%d0%b8/</link>
 		<pubDate>Wed, 13 Aug 2025 10:29:27 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/%d0%bc%d0%b5%d0%bd%d1%8e-%d0%b3%d0%be%d0%bb%d0%be%d0%b2%d0%bd%d0%be%d1%97-%d1%81%d1%82%d0%be%d1%80%d1%96%d0%bd%d0%ba%d0%b8/</guid>
+		<guid isPermaLink="false">/%d0%bc%d0%b5%d0%bd%d1%8e-%d0%b3%d0%be%d0%bb%d0%be%d0%b2%d0%bd%d0%be%d1%97-%d1%81%d1%82%d0%be%d1%80%d1%96%d0%bd%d0%ba%d0%b8/</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:polylang/navigation-language-switcher {"hide_current":true,"hide_if_no_translation":true} /-->
 
 <!-- wp:loginout /-->
 
-<!-- wp:navigation-link {"label":"Головна","type":"page","description":"","url":"http://localhost:8000/","title":"","kind":"post-type","className":" menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1001 current_page_item"} /-->
+<!-- wp:navigation-link {"label":"Головна","type":"page","description":"","url":"/","title":"","kind":"post-type","className":" menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1001 current_page_item"} /-->
 
 <!-- wp:navigation-link {"label":"Наші цінності","type":"custom","description":"","url":"/home/#page-section","title":"","kind":"custom","className":" menu-item menu-item-type-custom menu-item-object-custom"} /-->
 
@@ -3699,16 +3699,16 @@ SB 1.2.18, com.]]></excerpt:encoded>
 							</item>
 					<item>
 		<title><![CDATA[Меню главной страницы]]></title>
-		<link>http://localhost:8000/ru/%d0%bc%d0%b5%d0%bd%d1%8e-%d0%b3%d0%bb%d0%b0%d0%b2%d0%bd%d0%be%d0%b9-%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%b8%d1%86%d1%8b/</link>
+		<link>/ru/%d0%bc%d0%b5%d0%bd%d1%8e-%d0%b3%d0%bb%d0%b0%d0%b2%d0%bd%d0%be%d0%b9-%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%b8%d1%86%d1%8b/</link>
 		<pubDate>Wed, 13 Aug 2025 10:29:32 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/%d0%bc%d0%b5%d0%bd%d1%8e-%d0%b3%d0%bb%d0%b0%d0%b2%d0%bd%d0%be%d0%b9-%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%b8%d1%86%d1%8b/</guid>
+		<guid isPermaLink="false">/%d0%bc%d0%b5%d0%bd%d1%8e-%d0%b3%d0%bb%d0%b0%d0%b2%d0%bd%d0%be%d0%b9-%d1%81%d1%82%d1%80%d0%b0%d0%bd%d0%b8%d1%86%d1%8b/</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:polylang/navigation-language-switcher {"hide_current":true,"hide_if_no_translation":true} /-->
 
 <!-- wp:loginout /-->
 
-<!-- wp:navigation-link {"label":"Главная","type":"page","description":"","url":"http://localhost:8000/ru/home/","title":"","kind":"post-type","className":" menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1070 current_page_item"} /-->
+<!-- wp:navigation-link {"label":"Главная","type":"page","description":"","url":"/ru/home/","title":"","kind":"post-type","className":" menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1070 current_page_item"} /-->
 
 <!-- wp:navigation-link {"label":"Наши ценности","type":"custom","description":"","url":"/ru/home/#page-section","title":"","kind":"custom","className":" menu-item menu-item-type-custom menu-item-object-custom current-menu-item"} /-->
 
@@ -3738,16 +3738,16 @@ SB 1.2.18, com.]]></excerpt:encoded>
 							</item>
 					<item>
 		<title><![CDATA[Main page menu]]></title>
-		<link>http://localhost:8000/en/main-page-menu/</link>
+		<link>/en/main-page-menu/</link>
 		<pubDate>Wed, 13 Aug 2025 10:29:37 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/main-page-menu/</guid>
+		<guid isPermaLink="false">/main-page-menu/</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:polylang/navigation-language-switcher {"hide_current":true,"hide_if_no_translation":true} /-->
 
 <!-- wp:loginout /-->
 
-<!-- wp:navigation-link {"label":"Home","type":"page","description":"","url":"http://localhost:8000/en/home/","title":"","kind":"post-type","className":" menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1071 current_page_item"} /-->
+<!-- wp:navigation-link {"label":"Home","type":"page","description":"","url":"/en/home/","title":"","kind":"post-type","className":" menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1071 current_page_item"} /-->
 
 <!-- wp:navigation-link {"label":"Our values","type":"custom","description":"","url":"/en/home/#page-section","title":"","kind":"custom","className":" menu-item menu-item-type-custom menu-item-object-custom current-menu-item"} /-->
 
@@ -3777,10 +3777,10 @@ SB 1.2.18, com.]]></excerpt:encoded>
 							</item>
 					<item>
 		<title><![CDATA[Navigation]]></title>
-		<link>http://localhost:8000/en/?p=1316</link>
+		<link>/en/?p=1316</link>
 		<pubDate>Wed, 13 Aug 2025 15:48:33 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://localhost:8000/navigation/</guid>
+		<guid isPermaLink="false">/navigation/</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:page-list /-->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
