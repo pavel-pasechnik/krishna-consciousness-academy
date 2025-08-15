@@ -560,6 +560,11 @@ add_action('admin_notices', function () {
 			'repo' => true,
 		],
 		[
+			'name' => 'WordPress Importer',
+			'slug' => 'wordpress-importer',
+			'repo' => true,
+		],
+		[
 			'name' => 'Krishna Academy Extrax',
 			'slug' => 'krishna-academy-extrax',
 			'repo' => false,
