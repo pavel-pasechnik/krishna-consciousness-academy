@@ -21,9 +21,19 @@ RUN sed -i "s/Listen 80/Listen ${APACHE_LISTEN_PORT}/" /etc/apache2/ports.conf
 ENV APACHE_RUN_USER=www-data
 ENV APACHE_RUN_GROUP=www-data
 
+# Enable rewrite and switch default vhost to :8080 with AllowOverride All
+RUN a2enmod rewrite \
+  && sed -i 's#<VirtualHost \*:80>#<VirtualHost *:8080>#g' /etc/apache2/sites-available/000-default.conf \
+  && awk '1; /DocumentRoot \/var\/www\/html/ {print "\n    <Directory /var/www/html>\n        AllowOverride All\n        Require all granted\n    </Directory>\n"}' /etc/apache2/sites-available/000-default.conf > /tmp/000-default.conf \
+  && mv /tmp/000-default.conf /etc/apache2/sites-available/000-default.conf
+
 # Suppress Apache FQDN warning
 RUN printf 'ServerName localhost\n' > /etc/apache2/conf-available/servername.conf \
   && a2enconf servername
+
+# Fallback to index.php if .htaccess is ignored
+RUN printf 'FallbackResource /index.php\n' > /etc/apache2/conf-available/fallback.conf \
+  && a2enconf fallback || true
 
 # In prod, we serve from the root /var/www/html
 # (no /wordpress subdirectory)
@@ -43,6 +53,24 @@ ARG WWW_GID=33
 RUN groupmod -o -g ${WWW_GID} www-data && \
     usermod  -o -u ${WWW_UID} -g ${WWW_GID} www-data && \
     chown -R www-data:www-data /var/www/html
+
+# Ensure WordPress .htaccess exists with standard rules
+RUN if [ ! -f /var/www/html/.htaccess ]; then \
+      cat > /var/www/html/.htaccess <<'HTEND'
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
+HTEND \
+    fi \
+    && chown www-data:www-data /var/www/html/.htaccess \
+    && chmod 644 /var/www/html/.htaccess
 
 # Bundle DB CA certificate (provided in repo)
 COPY ./docker/koyeb-build/ca.pem /etc/ssl/certs/mysql-ca.pem
@@ -88,9 +116,9 @@ COPY ./plugins/ /var/www/html/wp-content/plugins/
 # If necessary — demo files/scripts (do not perform auto-import!)
 # COPY ./wordpress-config/demo /var/www/html/demo/
 
-# Fix .htaccess under the root
+# Normalize .htaccess rules for root serving
 RUN if [ -f /var/www/html/.htaccess ]; then \
-      sed -i 's|RewriteBase /wordpress/|RewriteBase /|g; s|/wordpress/index.php|/index.php|g' /var/www/html/.htaccess || true ; \
+      sed -i 's|RewriteBase /wordpress/|RewriteBase /|g; s|/wordpress/index.php|/index.php|g' /var/www/html/.htaccess || true; \
     fi
 
 # Entrypoint: creates wp-config.php if it does not exist
@@ -104,5 +132,8 @@ RUN chown -R www-data:www-data /var/www/html && \
 
 ENV PORT=8080
 EXPOSE 8080
+
+# Validate Apache config at build time
+RUN apachectl -t || (cat /etc/apache2/apache2.conf && exit 1)
 
 CMD ["/usr/local/bin/init-wordpress.sh"]

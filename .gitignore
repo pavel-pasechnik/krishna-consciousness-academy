@@ -22,3 +22,5 @@ themes/index.php
 vendor
 wordpress
 .github
+/plugins/git-updater/
+/wp-content/plugins/git-updater/
