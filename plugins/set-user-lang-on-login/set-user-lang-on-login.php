@@ -77,6 +77,42 @@ add_action('admin_init', function () {
 });
 
 /**
+ * Normalize a locale to WordPress canonical form, e.g. en -> en_US, ru -> ru_RU, pt-br -> pt_BR.
+ */
+function sulol_normalize_locale($locale)
+{
+  $l = trim((string) $locale);
+  if ($l === '') return $l;
+
+  // Unify separators and case (xx or xx_YY)
+  $l = str_replace('-', '_', $l);
+  if (strpos($l, '_') !== false) {
+    list($lang, $region) = explode('_', $l, 2);
+    $l = strtolower($lang) . '_' . strtoupper($region);
+  } else {
+    $l = strtolower($l);
+  }
+
+  // Common short-to-full mappings
+  switch ($l) {
+    case 'en':
+      return 'en_US';
+    case 'ru':
+      return 'ru_RU';
+    case 'uk_ua':
+      return 'uk'; // WP core uses just 'uk' for Ukrainian
+    case 'pt_br':
+      return 'pt_BR';
+    case 'zh_cn':
+      return 'zh_CN';
+    case 'zh_tw':
+      return 'zh_TW';
+  }
+
+  return $l;
+}
+
+/**
  * Get target locales from Polylang if available, otherwise defaults. Filterable via 'sulol_locales'.
  */
 function sulol_get_target_locales()
@@ -89,7 +125,8 @@ function sulol_get_target_locales()
   if (empty($locales)) {
     $locales = ['uk', 'ru_RU'];
   }
-  return apply_filters('sulol_locales', array_unique($locales));
+  $locales = array_map('sulol_normalize_locale', $locales);
+  return apply_filters('sulol_locales', array_values(array_unique($locales)));
 }
 
 /**
@@ -97,9 +134,11 @@ function sulol_get_target_locales()
  */
 function sulol_get_missing_locales()
 {
-  $installed = get_available_languages();
-  $missing = [];
-  foreach (sulol_get_target_locales() as $loc) {
+  $installed = array_map('sulol_normalize_locale', (array) get_available_languages());
+  $targets   = sulol_get_target_locales(); // already normalized & filtered
+  $missing   = [];
+
+  foreach ($targets as $loc) {
     if (! in_array($loc, $installed, true)) {
       $missing[] = $loc;
     }
@@ -141,7 +180,7 @@ function sulol_render_langpacks_page()
   if (empty($missing)) {
     echo '<p>' . esc_html__('Nothing to install. All target languages are present.', 'set-user-lang-on-login') . '</p>';
   } else {
-    echo '<p>' . esc_html__('Missing language packs:', 'set-user-lang-on-login') . ' ' . esc_html(implode(', ', $missing)) . '</p>';
+    echo '<p>' . esc_html__('Missing language packs:', 'set-user-lang-on-login') . ' ' . esc_html(implode(', ', array_map('sulol_normalize_locale', $missing))) . '</p>';
     echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
     echo '<input type="hidden" name="action" value="sulol_install_langpacks" />';
     wp_nonce_field('sulol_install_langpacks');
@@ -187,7 +226,7 @@ add_action('admin_post_sulol_install_langpacks', function () {
 
   $had_error = false;
   foreach ($missing as $loc) {
-    $r = wp_download_language_pack($loc);
+    $r = wp_download_language_pack(sulol_normalize_locale($loc));
     if (is_wp_error($r)) {
       $had_error = true;
     }
