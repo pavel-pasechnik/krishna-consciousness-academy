@@ -723,6 +723,112 @@ add_action('admin_notices', function () {
 	echo '</div>';
 });
 
+// === Offer demo data import right after theme activation (in Site Editor) ===
+// Shows a dismissible notice in the Site Editor suggesting to import demo content.
+// Keeps UX simple: either install/activate the "WordPress Importer" or go to its page.
+add_action('after_switch_theme', function () {
+	update_option('ka_demo_offer_after_activation', 1);
+});
+
+add_action('admin_init', function () {
+	// Dismiss handler for the demo notice
+	if (isset($_GET['ka-dismiss-demo']) && current_user_can('import')) {
+		update_option('ka_demo_offer_after_activation', 0);
+		wp_safe_redirect(remove_query_arg('ka-dismiss-demo'));
+		exit;
+	}
+});
+
+add_action('admin_notices', function () {
+	if (! current_user_can('import')) {
+		return;
+	}
+	// Show only once after activation until dismissed
+	if (! get_option('ka_demo_offer_after_activation')) {
+		return;
+	}
+
+	// Only show in Site Editor or Themes screen to be context-aware
+	if (function_exists('get_current_screen')) {
+		$screen = get_current_screen();
+		$allowed = ['site-editor', 'appearance_page_gutenberg-edit-site', 'themes'];
+		if ($screen && ! in_array($screen->id, $allowed, true)) {
+			return;
+		}
+	}
+
+	require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+
+	// Helper to build install and activate links
+	$build_install_link = function ($slug) {
+		if (! current_user_can('install_plugins')) return '';
+		$href = wp_nonce_url(self_admin_url('update.php?action=install-plugin&plugin=' . urlencode($slug)), 'install-plugin_' . $slug);
+		return '<a class="button button-primary" href="' . esc_url($href) . '">' . esc_html__('Install Importer', 'krishna-academy') . '</a>';
+	};
+	$build_activate_link = function ($file) {
+		if (! current_user_can('activate_plugins')) return '';
+		$href = wp_nonce_url(self_admin_url('plugins.php?action=activate&plugin=' . urlencode($file)), 'activate-plugin_' . $file);
+		return '<a class="button" href="' . esc_url($href) . '">' . esc_html__('Activate Importer', 'krishna-academy') . '</a>';
+	};
+
+	// Detect WordPress Importer
+	$importer_slug = 'wordpress-importer';
+	$importer_file = '';
+	$all_plugins   = get_plugins();
+	foreach ($all_plugins as $file => $headers) {
+		$dir_ok   = (function_exists('str_starts_with') ? str_starts_with($file, $importer_slug . '/') : strpos($file, $importer_slug . '/') === 0);
+		$td_ok    = isset($headers['TextDomain']) && strtolower($headers['TextDomain']) === $importer_slug;
+		$name_has = isset($headers['Name']) && stripos($headers['Name'], 'WordPress Importer') !== false;
+		if ($dir_ok || $td_ok || $name_has) {
+			$importer_file = $file;
+			break;
+		}
+	}
+
+	$is_installed = ($importer_file !== '');
+	$is_active    = $is_installed && is_plugin_active($importer_file);
+
+	// Prepare URLs
+	$wxr_url  = get_theme_file_uri('assets/demo/krishnaacademy.WordPress.xml');
+	$import_ui_url = $is_active
+		? self_admin_url('admin.php?import=wordpress') // importer screen
+		: '';
+
+	$dismiss_url = wp_nonce_url(add_query_arg('ka-dismiss-demo', 1), 'ka_dismiss_demo');
+
+	echo '<div class="notice notice-success is-dismissible" data-dismissible="ka-demo-offer">';
+	echo '<p><strong>' . esc_html__('Would you like to import demo data for this theme?', 'krishna-academy') . '</strong></p>';
+
+	echo '<p>' . esc_html__('We prepared demo content (pages, menus, patterns) to help you get started quickly.', 'krishna-academy') . '</p>';
+
+	echo '<p>';
+	if (! $is_installed) {
+		// Suggest install
+		echo $build_install_link($importer_slug) . ' ';
+		echo '<span class="description" style="margin-left:.5em;">' . esc_html__('Then run the importer and upload the demo XML file.', 'krishna-academy') . '</span>';
+	} elseif (! $is_active) {
+		// Suggest activation
+		echo $build_activate_link($importer_file) . ' ';
+		if ($import_ui_url) {
+			echo '<a class="button" style="margin-left:.5em" href="' . esc_url($import_ui_url) . '">' . esc_html__('Run Importer', 'krishna-academy') . '</a>';
+		}
+	} else {
+		// Importer ready — link to it
+		echo '<a class="button button-primary" href="' . esc_url($import_ui_url) . '">' . esc_html__('Run Importer', 'krishna-academy') . '</a>';
+	}
+	echo ' <a class="button button-link" href="' . esc_url($dismiss_url) . '">' . esc_html__('Don’t show again', 'krishna-academy') . '</a>';
+	echo '</p>';
+
+	// Help: show where to get the demo file (served from the theme)
+	echo '<p class="description" style="margin-top:.5em;">';
+	echo esc_html__('Demo file (WXR):', 'krishna-academy') . ' ';
+	echo '<code>' . esc_html($wxr_url) . '</code>';
+	echo '</p>';
+
+	echo '</div>';
+});
+
 // Handle installing a plugin by cloning a git repository (no archive)
 add_action('admin_post_ka_git_clone_plugin', function () {
 	if (! current_user_can('install_plugins')) {
