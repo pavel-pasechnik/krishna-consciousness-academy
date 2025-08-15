@@ -10,7 +10,12 @@
  * Requires PHP: 7.4
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Update URI: https://github.com/pavel-pasechnik/wordpress/tree/main/plugins/set-user-lang-on-login
+ * GitHub Plugin URI: https://github.com/pavel-pasechnik/wordpress
+ * Primary Branch: main
+ * Directory: plugins/set-user-lang-on-login
  */
+
 
 // Download translations
 add_action('plugins_loaded', function () {

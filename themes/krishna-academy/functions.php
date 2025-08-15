@@ -572,6 +572,11 @@ add_action('admin_notices', function () {
 			'slug' => 'wordpress-importer',
 			'repo' => true,
 		],
+		[
+			'name' => 'Git Updater',
+			'slug' => 'git-updater',
+			'repo' => true,
+		],
 	];
 
 	$all = get_plugins(); // ["dir/file.php" => headers]
