@@ -473,9 +473,8 @@ add_action('after_switch_theme', function () {
 		wp_mkdir_p($upload_path);
 	}
 
-	// If uploads path is not writable, bail silently (log only)
+	// If uploads path is not writable, bail silently
 	if (! function_exists('wp_is_writable') || ! wp_is_writable($upload_path)) {
-		error_log('[krishna-academy] Uploads path is not writable: ' . $upload_path);
 		return;
 	}
 
@@ -484,14 +483,12 @@ add_action('after_switch_theme', function () {
 
 	// If source logo is missing or unreadable, stop
 	if (! is_readable($logo_path)) {
-		error_log('[krishna-academy] Default logo not readable: ' . $logo_path);
 		return;
 	}
 
-	// Copy only if destination is missing; suppress warnings and log failures
+	// Copy only if destination is missing; suppress warnings
 	if (! file_exists($dest_file)) {
 		if (! @copy($logo_path, $dest_file)) {
-			error_log('[krishna-academy] Failed to copy default logo to uploads: ' . $dest_file);
 			return;
 		}
 	}
@@ -538,12 +535,101 @@ add_action('admin_init', function () {
 	}
 });
 
+// Handle external plugin installation from a ZIP URL (used for Git Updater)
+
+// Handle external plugin installation from a ZIP URL (used for Git Updater)
+add_action('admin_post_ka_install_plugin', function () {
+	if (! current_user_can('install_plugins')) {
+		wp_die(__('Sorry, you are not allowed to install plugins on this site.'), 403);
+	}
+	check_admin_referer('ka_install_plugin');
+
+	if (defined('DISALLOW_FILE_MODS') && constant('DISALLOW_FILE_MODS')) {
+		wp_safe_redirect(self_admin_url('plugins.php'));
+		exit;
+	}
+
+	// Ensure filesystem API is initialized (avoid credential prompt in admin-post context)
+	require_once ABSPATH . 'wp-admin/includes/file.php';
+	$fs_ok = WP_Filesystem();
+	if (! $fs_ok) {
+		wp_safe_redirect(self_admin_url('plugins.php'));
+		exit;
+	}
+
+	$zip_url = isset($_GET['url']) ? esc_url_raw(wp_unslash($_GET['url'])) : '';
+	// Auto-activation disabled; activation must be done manually from Plugins screen.
+	if (empty($zip_url)) {
+		wp_safe_redirect(self_admin_url('plugins.php'));
+		exit;
+	}
+
+	require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+	require_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+	$skin = new Automatic_Upgrader_Skin();
+	$upgrader = new Plugin_Upgrader($skin);
+	$result = $upgrader->install($zip_url);
+
+	if (is_wp_error($result)) {
+		wp_safe_redirect(self_admin_url('plugins.php'));
+		exit;
+	}
+
+	// Handle nested plugin directory inside GitHub branch archives
+	$dest = $upgrader->result['destination'] ?? '';
+	if ($dest && is_dir($dest)) {
+		// GitHub branch archives may unpack as git-updater-main/git-updater/
+		$nested = trailingslashit($dest) . 'git-updater';
+		if (is_dir($nested) && file_exists(trailingslashit($nested) . 'git-updater.php')) {
+			$target = trailingslashit(WP_PLUGIN_DIR) . 'git-updater';
+
+			// Remove previous target if exists (best-effort)
+			if (is_dir($target)) {
+				global $wp_filesystem;
+				if ($wp_filesystem && method_exists($wp_filesystem, 'delete')) {
+					$wp_filesystem->delete($target, true);
+				} else {
+					$it = new RecursiveDirectoryIterator($target, FilesystemIterator::SKIP_DOTS);
+					$files = new RecursiveIteratorIterator($it, RecursiveIteratorIterator::CHILD_FIRST);
+					foreach ($files as $fileinfo) {
+						$p = $fileinfo->getPathname();
+						if ($fileinfo->isDir()) {
+							@rmdir($p);
+						} else {
+							@unlink($p);
+						}
+					}
+					@rmdir($target);
+				}
+			}
+
+			// Move nested folder into final location
+			@rename($nested, $target);
+
+			// Point $dest to the final folder so activation below can find it
+			if (is_dir($target)) {
+				$dest = $target;
+			}
+		}
+	}
+
+	wp_safe_redirect(self_admin_url('plugins.php'));
+	exit;
+});
+
 add_action('admin_notices', function () {
 	if (! current_user_can('install_plugins')) return;
 	if (get_option('ka_plugins_notice_dismissed')) return;
 
 	require_once ABSPATH . 'wp-admin/includes/plugin.php';
 	require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+
+	// Where to fetch Git Updater from (your repo by default; can be overridden via filter)
+	$git_updater_zip = apply_filters(
+		'ka_git_updater_zip_url',
+		'https://github.com/afragen/git-updater/archive/refs/heads/main.zip'
+	);
 
 	$plugins = [
 		[
@@ -575,7 +661,8 @@ add_action('admin_notices', function () {
 		[
 			'name' => 'Git Updater',
 			'slug' => 'git-updater',
-			'repo' => true,
+			'repo' => false,
+			'url'  => $git_updater_zip,
 		],
 	];
 
@@ -597,7 +684,7 @@ add_action('admin_notices', function () {
 		$try_sets = [$all, $mu];
 		foreach ($try_sets as $set) {
 			foreach ($set as $file => $headers) {
-				$dir_ok   = str_starts_with($file, $slug . '/');
+				$dir_ok   = (function_exists('str_starts_with') ? str_starts_with($file, $slug . '/') : strpos($file, $slug . '/') === 0);
 				$td_ok    = isset($headers['TextDomain']) && strtolower($headers['TextDomain']) === $slug_l;
 				$name_eq  = function_exists('sanitize_title') && sanitize_title($headers['Name'] ?? '') === $slug;
 				$name_has = isset($headers['Name']) && stripos($headers['Name'], $name) !== false;
@@ -663,6 +750,13 @@ add_action('admin_notices', function () {
 		return '<a class="button button-small" href="' . esc_url($href) . '">' . esc_html__('Activate', 'krishna-academy') . '</a>';
 	};
 
+	$build_external_install_link = function ($zip_url) {
+		if (! current_user_can('install_plugins')) return '';
+		if (empty($zip_url)) return '';
+		$href = wp_nonce_url(self_admin_url('admin-post.php?action=ka_install_plugin&url=' . urlencode($zip_url)), 'ka_install_plugin');
+		return '<a class="button button-small" href="' . esc_url($href) . '">' . esc_html__('Install', 'krishna-academy') . '</a>';
+	};
+
 	foreach ($plugins as $p) {
 		$slug = $p['slug'];
 		$name = $p['name'];
@@ -695,6 +789,12 @@ add_action('admin_notices', function () {
 			echo '<span class="dashicons dashicons-warning"></span> ' . esc_html__('Not installed', 'krishna-academy');
 			if (!empty($repo)) {
 				$actions = $build_install_link($slug);
+			} else {
+				// external zip install
+				$zip = $p['url'] ?? '';
+				if ($zip) {
+					$actions = $build_external_install_link($zip);
+				}
 			}
 		}
 		if ($actions) {
