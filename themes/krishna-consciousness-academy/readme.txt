@@ -1,6 +1,6 @@
 == Krishna Consciousness Academy ==
 
-Contributors: Pavlo Pasichnyk
+Contributors: Pavel Pasechnik
 Requires at least: 6.8
 Tested up to: 6.8
 Requires PHP: 5.7
@@ -21,7 +21,7 @@ Krishna Consciousness Academy is an inspiring WordPress theme for academies of V
 
 == Copyright ==
 
-Krishna Consciousness Academy WordPress Theme, (C) 2025 Pavlo Pasichnyk
+Krishna Consciousness Academy WordPress Theme, (C) 2025 Pavel Pasechnik
 Krishna Consciousness Academy is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
