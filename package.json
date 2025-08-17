@@ -2,7 +2,7 @@
   "name": "wordpress",
   "version": "6.0.0",
   "scripts": {},
-  "author": "Pavlo Pasichnyk <pavel.pasechnik@icloud.com>",
+  "author": "Pavel Pasechnik <pavel.pasechnik@icloud.com>",
   "license": "ISC",
   "description": "",
   "devDependencies": {

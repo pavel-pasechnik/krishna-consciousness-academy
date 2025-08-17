@@ -48,9 +48,6 @@ if [[ "$SKIP_WP_SETUP" == false ]]; then
 
   # Set ElasticPress host constant in wp-config.php
   wp config set EP_HOST http://elasticsearch:9200 --type=constant --allow-root
-
-  # Turn on the language switch on the login screen
-  wp config set WP_LOCALE_SWITCHER true --type=constant --allow-root
 fi
 
 # ? To reapply the configuration: docker exec -it wordpress-wordpress-1 init-wordpress.sh --reinit
@@ -103,32 +100,6 @@ if [[ "$SKIP_WP_SETUP" == false ]] && { ! wp core is-installed --allow-root || [
 
   WP_SITE_URL="http://localhost:8000"
 
-  # Install and activate the import plugin
-  wp plugin install wordpress-importer --activate --url="$WP_SITE_URL" --allow-root
-
-  # Install WordPress languages
-  wp language core install uk --activate --url="$WP_SITE_URL" --allow-root
-  wp language core install ru_RU --url="$WP_SITE_URL" --allow-root
-  wp language core install en_US --url="$WP_SITE_URL" --allow-root
-
-  # Import demo data
-  wp import /var/www/html/wordpress/demo.xml --authors=skip --url="$WP_SITE_URL" --allow-root
-  wp import /var/www/html/wordpress/demo-ru.xml --authors=skip --url="$WP_SITE_URL" --allow-root
-  wp import /var/www/html/wordpress/demo-en.xml --authors=skip --url="$WP_SITE_URL" --allow-root
-  wp import /var/www/html/wordpress/demo-home.xml --authors=skip --url="$WP_SITE_URL" --allow-root
-
-  # Set the front page
-  FRONT_PAGE_ID=$(wp post list --post_type=page --name=home --format=ids --allow-root --url="$WP_SITE_URL")
-  wp option update show_on_front page --allow-root --url="$WP_SITE_URL"
-  wp option update page_on_front "$FRONT_PAGE_ID" --allow-root --url="$WP_SITE_URL"
-
-  # Add a default base category
-  echo "📁 Creating default category 'Без категорії'..."
-  DEFAULT_CAT_ID=$(wp term create category "Без категорії" --slug=bez-kategoriyi --porcelain --allow-root --url="$WP_SITE_URL")
-  wp option update default_category "$DEFAULT_CAT_ID" --allow-root --url="$WP_SITE_URL"
-
-  wp plugin activate polylang-pro --allow-root --url="$WP_SITE_URL"
-
   # Prepare SSH known_hosts for GitHub to avoid host verification prompt
   mkdir -p ~/.ssh
   ssh-keyscan github.com >> ~/.ssh/known_hosts
@@ -144,42 +115,18 @@ if [[ "$SKIP_WP_SETUP" == false ]] && { ! wp core is-installed --allow-root || [
     echo "🔐 No SSH agent configured — skipping SSH wait."
   fi
 
-  # Disable Polylang setup wizard before adding languages
-  wp option update pll_setup_complete 1 --url="$WP_SITE_URL" --allow-root
-  echo "🔧 Setting a serialized value for an option 'polylang'..."
-
   # Automatic update of rewrite rules
   # Setting up a permalink structure
-  wp rewrite structure '/%postname%/' --hard --url="$WP_SITE_URL" --allow-root
   wp rewrite flush --hard --url="$WP_SITE_URL" --allow-root
-
-  # Activating your own topic
-  wp theme activate krishna-academy --url="$WP_SITE_URL" --allow-root
-  wp plugin install redis-cache --url="$WP_SITE_URL" --allow-root
-  wp plugin install wp-super-cache --url="$WP_SITE_URL" --allow-root
-
-  # Installing plugin to safely allow SVG uploads
-  wp plugin install safe-svg --activate --url="$WP_SITE_URL" --allow-root
 
   # Fix permissions for WP Super Cache config
   if [[ -f /var/www/html/wordpress/wp-content/wp-cache-config.php ]]; then
     chmod 666 /var/www/html/wordpress/wp-content/wp-cache-config.php
   fi
 
-  # Installing the ElasticSearch plugin
-  wp plugin install elasticpress --url="$WP_SITE_URL" --allow-root
-  
-  echo "✅ WordPress has been successfully set up for development"
-
-  # Activate the set-user-lang-on-login plugin
-  wp plugin activate set-user-lang-on-login --url="$WP_SITE_URL" --allow-root
-
 else
   echo "✅ WordPress already installed"
 fi
-
-#
-# 🧩 Language selector plugin must be installed separately
 
 # Set permissions 
 echo "🔧 Setting full access to WordPress directory for www-data"

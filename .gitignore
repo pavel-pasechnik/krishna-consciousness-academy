@@ -21,6 +21,5 @@ themes/index.php
 .history
 vendor
 wordpress
-.github
 /plugins/git-updater/
 /wp-content/plugins/git-updater/

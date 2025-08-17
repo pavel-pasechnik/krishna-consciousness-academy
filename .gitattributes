@@ -7,7 +7,6 @@
 /wordpress export-ignore
 /wordpress-config export-ignore
 /wordpress-org export-ignore
-/.github export-ignore
 /.intelephense export-ignore
 /.vscode export-ignore
 /docker export-ignore

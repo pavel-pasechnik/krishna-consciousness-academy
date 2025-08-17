@@ -1,0 +1,125 @@
+name: Export KCA theme to standalone repo & Release (Git Updater)
+
+on:
+  push:
+    tags:
+      - 'v*'
+      - '[0-9]+.[0-9]+.[0-9]+'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  SRC_DIR: themes/krishna-consciousness-academy
+  TARGET_REPO: pavel-pasechnik/krishna-consciousness-academy
+
+jobs:
+  export-and-release:
+    runs-on: ubuntu-latest
+    env:
+      GH_PAT: ${{ secrets.TARGET_REPO_TOKEN }}
+
+    steps:
+      - name: Checkout monorepo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get tag & repo meta
+        id: meta
+        run: |
+          echo "TAG_NAME=${GITHUB_REF_NAME}" >> $GITHUB_OUTPUT
+          echo "REPO_NAME=${GITHUB_REPOSITORY##*/}" >> $GITHUB_OUTPUT
+
+      - name: Read Version from style.css and match with tag
+        id: version
+        run: |
+          FILE="$SRC_DIR/style.css"
+          if [ ! -f "$FILE" ]; then
+            echo "style.css not found in $SRC_DIR"; exit 1
+          fi
+          THEME_VERSION=$(grep -i '^Version:' "$FILE" | cut -d ':' -f 2 | xargs)
+          if [ -z "$THEME_VERSION" ]; then
+            echo "Failed to read Version: from $FILE"; exit 1
+          fi
+          TAG="${{ steps.meta.outputs.TAG_NAME }}"
+          TAG_STRIPPED="${TAG#v}"
+          echo "style.css Version: $THEME_VERSION"
+          echo "Tag: $TAG / Stripped: $TAG_STRIPPED"
+          if [ "$THEME_VERSION" != "$TAG_STRIPPED" ]; then
+            echo "Version in style.css ($THEME_VERSION) must equal tag ($TAG_STRIPPED)"; exit 1
+          fi
+          echo "THEME_VERSION=$THEME_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Prepare export folder & zip
+        id: pack
+        run: |
+          set -e
+          TAG="${{ steps.meta.outputs.TAG_NAME }}"
+          REPO_SLUG="${TARGET_REPO##*/}"
+
+          mkdir -p dist
+          TMP_DIR=$(mktemp -d)
+
+          # Copy only the theme subdir
+          rsync -a "$SRC_DIR/" "$TMP_DIR/$REPO_SLUG/" --delete --exclude ".git" --exclude "node_modules" || true
+
+          # Ensure style.css exists in the exported root
+          test -f "$TMP_DIR/$REPO_SLUG/style.css"
+
+          ZIP_PATH="dist/${REPO_SLUG}-${TAG}.zip"
+          (cd "$TMP_DIR" && zip -r -q "$GITHUB_WORKSPACE/$ZIP_PATH" "$REPO_SLUG")
+
+          echo "zip_path=$ZIP_PATH" >> $GITHUB_OUTPUT
+          echo "zip_name=$(basename "$ZIP_PATH")" >> $GITHUB_OUTPUT
+          echo "tmp_dir=$TMP_DIR" >> $GITHUB_OUTPUT
+
+      - name: Clone target repo
+        run: |
+          git clone "https://x-access-token:${GH_PAT}@github.com/${{ env.TARGET_REPO }}.git" target
+
+      - name: Sync files to target repo
+        run: |
+          set -e
+          REPO_SLUG="${TARGET_REPO##*/}"
+          rsync -a --delete "${{ steps.pack.outputs.tmp_dir }}/$REPO_SLUG/" target/
+          cd target
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "Export from monorepo ${GITHUB_REPOSITORY}@${GITHUB_SHA} (tag ${{ steps.meta.outputs.TAG_NAME }})"
+            git push origin HEAD:main
+          else
+            echo "No changes to commit"
+          fi
+
+      - name: Tag target repo
+        run: |
+          set -e
+          cd target
+          TAG="${{ steps.meta.outputs.TAG_NAME }}"
+          # Recreate tag if already exists? Safer to skip creating if exists
+          if git rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
+            echo "Tag $TAG already exists in target repo. Skipping tag creation."
+          else
+            git tag "$TAG"
+            git push origin "$TAG"
+          fi
+
+      - name: Create Release on target repo and upload ZIP
+        uses: softprops/action-gh-release@v2
+        with:
+          token: ${{ env.GH_PAT }}
+          repository: ${{ env.TARGET_REPO }}
+          tag_name: ${{ steps.meta.outputs.TAG_NAME }}
+          name: ${{ steps.meta.outputs.TAG_NAME }}
+          body: |
+            Automated release exported from ${{ steps.meta.outputs.REPO_NAME }} (monorepo)
+            - Theme version: ${{ steps.version.outputs.THEME_VERSION }}
+            - Asset: ${{ steps.pack.outputs.zip_name }}
+          draft: false
+          prerelease: false
+          files: |
+            ${{ steps.pack.outputs.zip_path }}

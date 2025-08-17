@@ -46,7 +46,6 @@ RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/wordpress|g'
 COPY ./docker/wordpress-build/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 COPY ./wordpress-config/custom.ini /usr/local/etc/php/conf.d/custom.ini
-COPY ./wordpress-config/demo /var/www/html/wordpress/
 
 RUN sed -i 's|RewriteBase /|RewriteBase /wordpress/|g; s|RewriteRule . /index.php \[L\]|RewriteRule . /wordpress/index.php [L]|g' /var/www/html/wordpress/.htaccess || true
 COPY ./wordpress-config/assign-translations.php /var/www/html/wordpress/assign-translations.php

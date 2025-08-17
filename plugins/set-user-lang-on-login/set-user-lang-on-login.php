@@ -79,39 +79,13 @@ add_action('admin_init', function () {
 });
 
 /**
- * Normalize a locale to WordPress canonical form, e.g. en -> en_US, ru -> ru_RU, pt-br -> pt_BR.
+ * Pass-through: returns the locale as provided without normalization.
  */
 function sulol_normalize_locale($locale)
 {
-  $l = trim((string) $locale);
-  if ($l === '') return $l;
-
-  // Unify separators and case (xx or xx_YY)
-  $l = str_replace('-', '_', $l);
-  if (strpos($l, '_') !== false) {
-    list($lang, $region) = explode('_', $l, 2);
-    $l = strtolower($lang) . '_' . strtoupper($region);
-  } else {
-    $l = strtolower($l);
-  }
-
-  // Common short-to-full mappings
-  switch ($l) {
-    case 'en':
-      return 'en_US';
-    case 'ru':
-      return 'ru_RU';
-    case 'uk_ua':
-      return 'uk'; // WP core uses just 'uk' for Ukrainian
-    case 'pt_br':
-      return 'pt_BR';
-    case 'zh_cn':
-      return 'zh_CN';
-    case 'zh_tw':
-      return 'zh_TW';
-  }
-
-  return $l;
+  // Locale is assumed to be correct and canonical upstream (e.g., WP-CLI or Polylang).
+  // Keep only trivial trimming; no case changes, no separator substitutions.
+  return trim((string) $locale);
 }
 
 /**
