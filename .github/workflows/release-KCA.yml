@@ -25,6 +25,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Validate PAT availability
         run: |
@@ -90,7 +91,7 @@ jobs:
           token: ${{ env.GH_PAT }}
           path: target
           fetch-depth: 0
-          persist-credentials: true
+          persist-credentials: false
           ref: main
 
       - name: Sync files to target repo
