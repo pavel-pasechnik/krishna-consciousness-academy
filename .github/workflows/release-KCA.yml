@@ -84,6 +84,9 @@ jobs:
         run: |
           set -e
           git remote -v
+          # принудительно выставим origin с PAT на целевой репо (на случай, если url переопределился)
+          git remote set-url origin "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git"
+          git remote -v
           REPO_SLUG="${TARGET_REPO##*/}"
           rsync -a --delete "${{ steps.pack.outputs.tmp_dir }}/$REPO_SLUG/" ./
           git config user.name "github-actions[bot]"
