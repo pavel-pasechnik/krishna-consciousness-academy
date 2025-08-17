@@ -26,6 +26,14 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Validate PAT availability
+        run: |
+          if [ -z "${GH_PAT}" ]; then
+            echo "Error: TARGET_REPO_TOKEN is not available"; exit 1
+          else
+            echo "GH_PAT is present (masked)"
+          fi
+
       - name: Get tag & repo meta
         id: meta
         run: |
@@ -129,3 +137,4 @@ jobs:
           prerelease: false
           files: |
             ${{ steps.pack.outputs.zip_path }}
+          fail_on_unmatched_files: true
