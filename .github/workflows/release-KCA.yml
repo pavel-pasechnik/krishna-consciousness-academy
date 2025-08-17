@@ -80,11 +80,12 @@ jobs:
           git clone "https://x-access-token:${GH_PAT}@github.com/${{ env.TARGET_REPO }}.git" target
 
       - name: Sync files to target repo
+        working-directory: target
         run: |
           set -e
+          git remote -v
           REPO_SLUG="${TARGET_REPO##*/}"
-          rsync -a --delete "${{ steps.pack.outputs.tmp_dir }}/$REPO_SLUG/" target/
-          cd target
+          rsync -a --delete "${{ steps.pack.outputs.tmp_dir }}/$REPO_SLUG/" ./
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain)" ]; then
@@ -96,9 +97,9 @@ jobs:
           fi
 
       - name: Tag target repo
+        working-directory: target
         run: |
           set -e
-          cd target
           TAG="${{ steps.meta.outputs.TAG_NAME }}"
           # Recreate tag if already exists? Safer to skip creating if exists
           if git rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
