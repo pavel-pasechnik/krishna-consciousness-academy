@@ -83,9 +83,15 @@ jobs:
           echo "zip_name=$(basename "$ZIP_PATH")" >> $GITHUB_OUTPUT
           echo "tmp_dir=$TMP_DIR" >> $GITHUB_OUTPUT
 
-      - name: Clone target repo
-        run: |
-          git clone "https://x-access-token:${GH_PAT}@github.com/${{ env.TARGET_REPO }}.git" target
+      - name: Checkout target repo (with PAT)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.TARGET_REPO }}
+          token: ${{ env.GH_PAT }}
+          path: target
+          fetch-depth: 0
+          persist-credentials: true
+          ref: main
 
       - name: Sync files to target repo
         working-directory: target
