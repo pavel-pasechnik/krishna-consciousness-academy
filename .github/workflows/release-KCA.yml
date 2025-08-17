@@ -84,6 +84,7 @@ jobs:
         run: |
           set -e
           git remote -v
+          git checkout -B main origin/main || git checkout -B main
           # принудительно выставим origin с PAT на целевой репо (на случай, если url переопределился)
           git remote set-url origin "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git"
           git remote -v
@@ -94,7 +95,7 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git add -A
             git commit -m "Export from monorepo ${GITHUB_REPOSITORY}@${GITHUB_SHA} (tag ${{ steps.meta.outputs.TAG_NAME }})"
-            git push origin HEAD:main
+            git push "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
           else
             echo "No changes to commit"
           fi
@@ -103,13 +104,14 @@ jobs:
         working-directory: target
         run: |
           set -e
+          git fetch --tags
           TAG="${{ steps.meta.outputs.TAG_NAME }}"
           # Recreate tag if already exists? Safer to skip creating if exists
           if git rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
             echo "Tag $TAG already exists in target repo. Skipping tag creation."
           else
             git tag "$TAG"
-            git push origin "$TAG"
+            git push "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" "$TAG"
           fi
 
       - name: Create Release on target repo and upload ZIP
