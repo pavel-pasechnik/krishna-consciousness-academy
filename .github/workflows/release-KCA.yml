@@ -131,7 +131,9 @@ jobs:
           if [ -n "$(git -C "$TARGET_DIR" status --porcelain)" ]; then
             git -C "$TARGET_DIR" add -A
             git -C "$TARGET_DIR" commit -m "Export from monorepo ${GITHUB_REPOSITORY}@${GITHUB_SHA} (tag ${{ steps.meta.outputs.TAG_NAME }} → ${{ steps.version.outputs.TAG_TARGET }})"
-            git -C "$TARGET_DIR" push "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
+            git -C "$TARGET_DIR" fetch origin main --prune || true
+            git -C "$TARGET_DIR" pull --rebase origin main || true
+            git -C "$TARGET_DIR" push --force-with-lease "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
           else
             echo "No changes to commit"
           fi
@@ -161,7 +163,9 @@ jobs:
           git -C "$TARGET_DIR" add releases/
           if [ -n "$(git -C "$TARGET_DIR" status --porcelain)" ]; then
             git -C "$TARGET_DIR" commit -m "chore(releases): update archive for ${TAG}"
-            git -C "$TARGET_DIR" push "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
+            git -C "$TARGET_DIR" fetch origin main --prune || true
+            git -C "$TARGET_DIR" pull --rebase origin main || true
+            git -C "$TARGET_DIR" push --force-with-lease "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
           else
             echo "No changes to commit in releases/"
           fi
