@@ -23,5 +23,4 @@ vendor
 wordpress
 /plugins/git-updater/
 /wp-content/plugins/git-updater/
-/target/
 /dist/
