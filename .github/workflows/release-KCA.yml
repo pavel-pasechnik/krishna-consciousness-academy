@@ -53,7 +53,7 @@ jobs:
             echo "Failed to read Version: from $FILE"; exit 1
           fi
           TAG="${{ steps.meta.outputs.TAG_NAME }}"
-          # поддерживаем теги вида kca-1.2.3 и kca-v1.2.3
+          # поддерживаем теги вида kca-1.2.3 и кca-v1.2.3
           TAG_NOPREFIX="${TAG#kca-}"
           TAG_STRIPPED="${TAG_NOPREFIX#v}"
           echo "style.css Version: $THEME_VERSION"
@@ -121,7 +121,7 @@ jobs:
 
           DEMO_SRC="demo/${REPO_SLUG}"
           if [ -d "$DEMO_SRC" ]; then
-            rsync -a --delete "$DEMO_SRC" "$TARGET_DIR/"
+            rsync -a --delete "$DEMO_SRC/" "$TARGET_DIR/"
           else
             echo "No demo folder at $DEMO_SRC (skip)"
           fi
@@ -131,9 +131,7 @@ jobs:
           if [ -n "$(git -C "$TARGET_DIR" status --porcelain)" ]; then
             git -C "$TARGET_DIR" add -A
             git -C "$TARGET_DIR" commit -m "Export from monorepo ${GITHUB_REPOSITORY}@${GITHUB_SHA} (tag ${{ steps.meta.outputs.TAG_NAME }} → ${{ steps.version.outputs.TAG_TARGET }})"
-            git -C "$TARGET_DIR" fetch origin main --prune || true
-            git -C "$TARGET_DIR" pull --rebase origin main || true
-            git -C "$TARGET_DIR" push --force-with-lease "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
+            git -C "$TARGET_DIR" push --force "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
           else
             echo "No changes to commit"
           fi
@@ -163,9 +161,7 @@ jobs:
           git -C "$TARGET_DIR" add releases/
           if [ -n "$(git -C "$TARGET_DIR" status --porcelain)" ]; then
             git -C "$TARGET_DIR" commit -m "chore(releases): update archive for ${TAG}"
-            git -C "$TARGET_DIR" fetch origin main --prune || true
-            git -C "$TARGET_DIR" pull --rebase origin main || true
-            git -C "$TARGET_DIR" push --force-with-lease "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
+            git -C "$TARGET_DIR" push --force "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
           else
             echo "No changes to commit in releases/"
           fi
