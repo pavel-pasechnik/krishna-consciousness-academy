@@ -3,8 +3,8 @@ name: Export KCA theme to standalone repo & Release (Git Updater)
 on:
   push:
     tags:
-      - 'v*'
-      - '[0-9]+.[0-9]+.[0-9]+'
+      - 'kca-*'
+      - 'kca-v*'
   workflow_dispatch:
 
 permissions:
@@ -53,19 +53,22 @@ jobs:
             echo "Failed to read Version: from $FILE"; exit 1
           fi
           TAG="${{ steps.meta.outputs.TAG_NAME }}"
-          TAG_STRIPPED="${TAG#v}"
+          # поддерживаем теги вида kca-1.2.3 и kca-v1.2.3
+          TAG_NOPREFIX="${TAG#kca-}"
+          TAG_STRIPPED="${TAG_NOPREFIX#v}"
           echo "style.css Version: $THEME_VERSION"
-          echo "Tag: $TAG / Stripped: $TAG_STRIPPED"
+          echo "Tag: $TAG / Target tag: $TAG_STRIPPED"
           if [ "$THEME_VERSION" != "$TAG_STRIPPED" ]; then
-            echo "Version in style.css ($THEME_VERSION) must equal tag ($TAG_STRIPPED)"; exit 1
+            echo "Version in style.css ($THEME_VERSION) must equal stripped tag ($TAG_STRIPPED)"; exit 1
           fi
           echo "THEME_VERSION=$THEME_VERSION" >> $GITHUB_OUTPUT
+          echo "TAG_TARGET=$TAG_STRIPPED" >> $GITHUB_OUTPUT
 
       - name: Prepare export folder & zip
         id: pack
         run: |
           set -e
-          TAG="${{ steps.meta.outputs.TAG_NAME }}"
+          TAG="${{ steps.version.outputs.TAG_TARGET }}"
           REPO_SLUG="${TARGET_REPO##*/}"
 
           mkdir -p dist
@@ -99,19 +102,23 @@ jobs:
         run: |
           set -e
           git remote -v
-          git checkout -B main origin/main || git checkout -B main
-          # принудительно выставим origin с PAT на целевой репо (на случай, если url переопределился)
+          # Ensure we are exactly at the latest remote main to avoid non-FF pushes
+          git fetch origin main --prune
+          git checkout -B main || true
+          git reset --hard origin/main || true
+
+          # Force origin to PAT URL and show remotes
           git remote set-url origin "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git"
           git remote -v
+
           REPO_SLUG="${TARGET_REPO##*/}"
           rsync -a --delete "${{ steps.pack.outputs.tmp_dir }}/$REPO_SLUG/" ./
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain)" ]; then
             git add -A
-            git commit -m "Export from monorepo ${GITHUB_REPOSITORY}@${GITHUB_SHA} (tag ${{ steps.meta.outputs.TAG_NAME }})"
-            git fetch origin main --prune
-            git pull --rebase origin main || true
+            git commit -m "Export from monorepo ${GITHUB_REPOSITORY}@${GITHUB_SHA} (tag ${{ steps.meta.outputs.TAG_NAME }} → ${{ steps.version.outputs.TAG_TARGET }})"
             git push "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
           else
             echo "No changes to commit"
@@ -135,7 +142,7 @@ jobs:
           find releases -maxdepth 1 -type f -name '*.zip' -print -delete || true
 
           REPO_SLUG="${TARGET_REPO##*/}"
-          TAG="${{ steps.meta.outputs.TAG_NAME }}"
+          TAG="${{ steps.version.outputs.TAG_TARGET }}"
           cp "$ZIP" "releases/${REPO_SLUG}-${TAG}.zip"
           cp "$ZIP" "releases/${REPO_SLUG}-latest.zip"
 
@@ -152,7 +159,7 @@ jobs:
         run: |
           set -e
           git fetch --tags
-          TAG="${{ steps.meta.outputs.TAG_NAME }}"
+          TAG="${{ steps.version.outputs.TAG_TARGET }}"
           # Recreate tag if already exists? Safer to skip creating if exists
           if git rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
             echo "Tag $TAG already exists in target repo. Skipping tag creation."
@@ -166,8 +173,8 @@ jobs:
         with:
           token: ${{ env.GH_PAT }}
           repository: ${{ env.TARGET_REPO }}
-          tag_name: ${{ steps.meta.outputs.TAG_NAME }}
-          name: ${{ steps.meta.outputs.TAG_NAME }}
+          tag_name: ${{ steps.version.outputs.TAG_TARGET }}
+          name: ${{ steps.version.outputs.TAG_TARGET }}
           body: |
             Automated release exported from ${{ steps.meta.outputs.REPO_NAME }} (monorepo)
             - Theme version: ${{ steps.version.outputs.THEME_VERSION }}
