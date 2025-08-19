@@ -98,37 +98,42 @@ jobs:
           ref: main
 
       - name: Sync files to target repo
-        working-directory: target
         run: |
           set -e
-          git remote -v
-          # Ensure we are exactly at the latest remote main to avoid non-FF pushes
-          git fetch origin main --prune
-          git checkout -B main || true
-          git reset --hard origin/main || true
+          TARGET_DIR="$GITHUB_WORKSPACE/target"
+
+          # Sanity: show where we are and where the target repo lives
+          echo "ROOT: $(pwd)" && ls -la
+          echo "TARGET_DIR: $TARGET_DIR" && ls -la "$TARGET_DIR"
+
+          # Ensure target repo is exactly at latest origin/main
+          git -C "$TARGET_DIR" remote -v
+          git -C "$TARGET_DIR" fetch origin main --prune
+          git -C "$TARGET_DIR" checkout -B main || true
+          git -C "$TARGET_DIR" reset --hard origin/main || true
 
           # Force origin to PAT URL and show remotes
-          git remote set-url origin "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git"
-          git remote -v
+          git -C "$TARGET_DIR" remote set-url origin "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git"
+          git -C "$TARGET_DIR" remote -v
 
           REPO_SLUG="${TARGET_REPO##*/}"
-          rsync -a --delete "${{ steps.pack.outputs.tmp_dir }}/$REPO_SLUG/" ./
+          rsync -a --delete "${{ steps.pack.outputs.tmp_dir }}/$REPO_SLUG/" "$TARGET_DIR/"
 
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain)" ]; then
-            git add -A
-            git commit -m "Export from monorepo ${GITHUB_REPOSITORY}@${GITHUB_SHA} (tag ${{ steps.meta.outputs.TAG_NAME }} → ${{ steps.version.outputs.TAG_TARGET }})"
-            git push "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
+          git -C "$TARGET_DIR" config user.name "github-actions[bot]"
+          git -C "$TARGET_DIR" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git -C "$TARGET_DIR" status --porcelain)" ]; then
+            git -C "$TARGET_DIR" add -A
+            git -C "$TARGET_DIR" commit -m "Export from monorepo ${GITHUB_REPOSITORY}@${GITHUB_SHA} (tag ${{ steps.meta.outputs.TAG_NAME }} → ${{ steps.version.outputs.TAG_TARGET }})"
+            git -C "$TARGET_DIR" push "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
           else
             echo "No changes to commit"
           fi
 
       - name: Store latest release archive in repo
-        working-directory: target
         run: |
           set -e
-          mkdir -p releases
+          TARGET_DIR="$GITHUB_WORKSPACE/target"
+          mkdir -p "$TARGET_DIR/releases"
           ZIP="$GITHUB_WORKSPACE/${{ steps.pack.outputs.zip_path }}"
 
           # Skip committing too-large archives (>95MB) — keep only in GitHub Release
@@ -139,33 +144,32 @@ jobs:
           fi
 
           # Remove existing zips to avoid repo bloat
-          find releases -maxdepth 1 -type f -name '*.zip' -print -delete || true
+          find "$TARGET_DIR/releases" -maxdepth 1 -type f -name '*.zip' -print -delete || true
 
           REPO_SLUG="${TARGET_REPO##*/}"
           TAG="${{ steps.version.outputs.TAG_TARGET }}"
-          cp "$ZIP" "releases/${REPO_SLUG}-${TAG}.zip"
-          cp "$ZIP" "releases/${REPO_SLUG}-latest.zip"
+          cp "$ZIP" "$TARGET_DIR/releases/${REPO_SLUG}-${TAG}.zip"
+          cp "$ZIP" "$TARGET_DIR/releases/${REPO_SLUG}-latest.zip"
 
-          git add releases/
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "chore(releases): update archive for ${TAG}"
-            git push "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
+          git -C "$TARGET_DIR" add releases/
+          if [ -n "$(git -C "$TARGET_DIR" status --porcelain)" ]; then
+            git -C "$TARGET_DIR" commit -m "chore(releases): update archive for ${TAG}"
+            git -C "$TARGET_DIR" push "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
           else
             echo "No changes to commit in releases/"
           fi
 
       - name: Tag target repo
-        working-directory: target
         run: |
           set -e
-          git fetch --tags
+          TARGET_DIR="$GITHUB_WORKSPACE/target"
+          git -C "$TARGET_DIR" fetch --tags
           TAG="${{ steps.version.outputs.TAG_TARGET }}"
-          # Recreate tag if already exists? Safer to skip creating if exists
-          if git rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
+          if git -C "$TARGET_DIR" rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
             echo "Tag $TAG already exists in target repo. Skipping tag creation."
           else
-            git tag "$TAG"
-            git push "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" "$TAG"
+            git -C "$TARGET_DIR" tag "$TAG"
+            git -C "$TARGET_DIR" push "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" "$TAG"
           fi
 
       - name: Create Release on target repo and upload ZIP
