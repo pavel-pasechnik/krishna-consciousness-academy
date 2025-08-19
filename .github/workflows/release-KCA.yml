@@ -99,35 +99,57 @@ jobs:
 
       - name: Sync files to target repo
         run: |
-          set -e
+          set -euo pipefail
           TARGET_DIR="$GITHUB_WORKSPACE/target"
 
-          # Sanity: show where we are and where the target repo lives
           echo "ROOT: $(pwd)" && ls -la
-          echo "TARGET_DIR: $TARGET_DIR" && ls -la "$TARGET_DIR"
+          echo "TARGET_DIR: $TARGET_DIR" && ls -la "$TARGET_DIR" || true
 
-          # Ensure target repo is exactly at latest origin/main
-          git -C "$TARGET_DIR" remote -v
-          git -C "$TARGET_DIR" fetch origin main --prune
-          git -C "$TARGET_DIR" checkout -B main || true
-          git -C "$TARGET_DIR" reset --hard origin/main || true
-
-          # Force origin to PAT URL and show remotes
-          git -C "$TARGET_DIR" remote set-url origin "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git"
-          git -C "$TARGET_DIR" remote -v
-
+          # 0) Resolve and validate variables
           REPO_SLUG="${TARGET_REPO##*/}"
-          rsync -a --delete "${{ steps.pack.outputs.tmp_dir }}/$REPO_SLUG/" "$TARGET_DIR/"
+          if [ -z "$REPO_SLUG" ] || [ "$REPO_SLUG" = "/" ]; then
+            echo "REPO_SLUG resolved to an empty/invalid value" >&2; exit 1
+          fi
+
+          EXPORT_SRC="${{ steps.pack.outputs.tmp_dir }}/$REPO_SLUG"
+          if [ ! -d "$EXPORT_SRC" ] || [ ! -f "$EXPORT_SRC/style.css" ]; then
+            echo "Export source not found or missing style.css: $EXPORT_SRC" >&2; exit 1
+          fi
 
           DEMO_SRC="demo/${REPO_SLUG}"
           if [ -d "$DEMO_SRC" ]; then
-            rsync -a --delete "$DEMO_SRC/" "$TARGET_DIR/"
+            # safety: ensure we are syncing exactly the <repo_slug> folder under demo/
+            if [ "$(basename "$DEMO_SRC")" != "$REPO_SLUG" ]; then
+              echo "Demo path mismatch: $DEMO_SRC" >&2; exit 1
+            fi
+            echo "DEMO_SRC contents:" && ls -la "$DEMO_SRC"
           else
             echo "No demo folder at $DEMO_SRC (skip)"
           fi
 
+          # 1) Align local target to remote main
+          git -C "$TARGET_DIR" fetch origin main --prune || true
+          git -C "$TARGET_DIR" checkout -B main || true
+          git -C "$TARGET_DIR" reset --hard origin/main || true
+
+          # Force origin to PAT URL
+          git -C "$TARGET_DIR" remote set-url origin "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git"
+          git -C "$TARGET_DIR" remote -v
+
+          # 2) Sync exported theme into target root (whitelist approach)
+          rsync -a --delete \
+            --exclude '.git' \
+            "$EXPORT_SRC/" "$TARGET_DIR/"
+
+          # 3) Sync demo/<slug> into target root if present
+          if [ -d "$DEMO_SRC" ]; then
+            rsync -a --delete "$DEMO_SRC/" "$TARGET_DIR/"
+          fi
+
+          # 4) Commit & push
           git -C "$TARGET_DIR" config user.name "github-actions[bot]"
           git -C "$TARGET_DIR" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           if [ -n "$(git -C "$TARGET_DIR" status --porcelain)" ]; then
             git -C "$TARGET_DIR" add -A
             git -C "$TARGET_DIR" commit -m "Export from monorepo ${GITHUB_REPOSITORY}@${GITHUB_SHA} (tag ${{ steps.meta.outputs.TAG_NAME }} → ${{ steps.version.outputs.TAG_TARGET }})"
