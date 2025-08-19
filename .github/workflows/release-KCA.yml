@@ -115,6 +115,36 @@ jobs:
             echo "No changes to commit"
           fi
 
+      - name: Store latest release archive in repo
+        working-directory: target
+        run: |
+          set -e
+          mkdir -p releases
+          ZIP="$GITHUB_WORKSPACE/${{ steps.pack.outputs.zip_path }}"
+
+          # Skip committing too-large archives (>95MB) — keep only in GitHub Release
+          BYTES=$(stat -c%s "$ZIP" 2>/dev/null || wc -c < "$ZIP")
+          if [ "$BYTES" -gt 99500000 ]; then
+            echo "Archive >95MB; skip committing to repo (kept in GitHub Release only)."
+            exit 0
+          fi
+
+          # Remove existing zips to avoid repo bloat
+          find releases -maxdepth 1 -type f -name '*.zip' -print -delete || true
+
+          REPO_SLUG="${TARGET_REPO##*/}"
+          TAG="${{ steps.meta.outputs.TAG_NAME }}"
+          cp "$ZIP" "releases/${REPO_SLUG}-${TAG}.zip"
+          cp "$ZIP" "releases/${REPO_SLUG}-latest.zip"
+
+          git add releases/
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "chore(releases): update archive for ${TAG}"
+            git push "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
+          else
+            echo "No changes to commit in releases/"
+          fi
+
       - name: Tag target repo
         working-directory: target
         run: |
