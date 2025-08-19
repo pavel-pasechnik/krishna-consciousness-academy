@@ -119,6 +119,13 @@ jobs:
           REPO_SLUG="${TARGET_REPO##*/}"
           rsync -a --delete "${{ steps.pack.outputs.tmp_dir }}/$REPO_SLUG/" "$TARGET_DIR/"
 
+          DEMO_SRC="demo/${REPO_SLUG}"
+          if [ -d "$DEMO_SRC" ]; then
+            rsync -a --delete "$DEMO_SRC" "$TARGET_DIR/"
+          else
+            echo "No demo folder at $DEMO_SRC (skip)"
+          fi
+
           git -C "$TARGET_DIR" config user.name "github-actions[bot]"
           git -C "$TARGET_DIR" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git -C "$TARGET_DIR" status --porcelain)" ]; then
