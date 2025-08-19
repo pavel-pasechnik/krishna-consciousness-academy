@@ -22,6 +22,19 @@ if (! function_exists('krishna_consciousness_academy_post_format_setup')) :
 	function krishna_consciousness_academy_post_format_setup()
 	{
 		add_theme_support('post-formats', array('aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video'));
+		add_theme_support('block-templates');
+		add_theme_support('block-template-parts');
+		add_theme_support('site-logo');
+		add_theme_support('wp-block-styles');
+		add_theme_support('align-wide');
+		add_theme_support('editor-styles');
+		add_theme_support('responsive-embeds');
+		add_theme_support('custom-logo', [
+			'height'      => 100,
+			'width'       => 100,
+			'flex-height' => true,
+			'flex-width'  => true,
+		]);
 	}
 endif;
 add_action('after_setup_theme', 'krishna_consciousness_academy_post_format_setup');
@@ -241,3 +254,63 @@ if (! function_exists('krishna_consciousness_academy_format_binding')) :
 		}
 	}
 endif;
+
+// Registers custom Template Part areas (e.g., "hero", "courses").
+// WP core does NOT provide a register_block_template_part_area() function.
+// Correct way is to extend the default areas via the
+// `default_wp_template_part_areas` filter (PHP = area; theme.json = parts).
+add_filter('default_wp_template_part_areas', function (array $areas) {
+	$areas[] = array(
+		'area'        => 'hero',
+		'area_tag'    => 'section', // allowed: div, header, main, section, article, aside, footer
+		'label'       => __('Hero', 'krishna-consciousness-academy'),
+		'description' => __('Template parts used in the Hero section.', 'krishna-consciousness-academy'),
+		'icon'        => 'header'
+	);
+
+	$areas[] = array(
+		'area'        => 'courses',
+		'area_tag'    => 'section',
+		'label'       => __('Courses', 'krishna-consciousness-academy'),
+		'description' => __('Template parts used in Courses layouts.', 'krishna-consciousness-academy'),
+		'icon'        => 'sidebar'
+	);
+
+	return $areas;
+});
+
+// -----------------------------------------------------------------------------
+// Автоподтяжка логотипа из настроек темы (custom_logo) в блок Site Logo
+// Если блок core/site-logo присутствует в шаблоне, но пустой (в нём не выбран
+// attachment), мы подставляем разметку классического логотипа.
+// Это делает лого видимым на фронте сразу после установки в настройках WP.
+add_filter('render_block', function ($block_content, $block) {
+	if (empty($block_content)) {
+		return $block_content;
+	}
+
+	if (! is_array($block) || empty($block['blockName'])) {
+		return $block_content;
+	}
+
+	// Только для блока core/site-logo.
+	if ($block['blockName'] !== 'core/site-logo') {
+		return $block_content;
+	}
+
+	// Если блок уже отрендерил <img>, ничего не делаем.
+	if (strpos($block_content, '<img') !== false) {
+		return $block_content;
+	}
+
+	// Если в блоке пусто/нет изображения — используем custom_logo как fallback.
+	if (function_exists('has_custom_logo') && has_custom_logo()) {
+		$logo_html = get_custom_logo(); // ссылка + <img>
+		if ($logo_html) {
+			// Оборачиваем в див с классами блока, чтобы стили совпадали.
+			return '<div class="wp-block-site-logo">' . $logo_html . '</div>';
+		}
+	}
+
+	return $block_content;
+}, 10, 2);
