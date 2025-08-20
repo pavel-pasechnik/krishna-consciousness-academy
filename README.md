@@ -1,8 +1,4 @@
-# krishna-consciousness-academy
-
-Krishna Consciousness Academy WordPress Theme
-
-# Krishna Consciousness Academy
+# Krishna Consciousness Academy WordPress Theme
 
 A modern, responsive **WordPress theme** designed for the Krishna Consciousness Academy project.
 
