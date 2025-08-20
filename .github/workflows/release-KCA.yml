@@ -136,7 +136,7 @@ jobs:
 
           if [ -n "$(git -C "$TARGET_DIR" status --porcelain)" ]; then
             git -C "$TARGET_DIR" add -A
-            git -C "$TARGET_DIR" commit -m "Publish ${REPO_SLUG} ${${{ steps.version.outputs.TAG_TARGET }}} to repo root; include demo/"
+            git -C "$TARGET_DIR" commit -m "Publish ${REPO_SLUG} ${{ steps.version.outputs.TAG_TARGET }} to repo root; include demo/"
             git -C "$TARGET_DIR" push --force "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
           else
             echo "No changes to commit"
