@@ -71,7 +71,6 @@ jobs:
           TAG="${{ steps.version.outputs.TAG_TARGET }}"
           REPO_SLUG="${TARGET_REPO##*/}"
 
-          mkdir -p dist
           TMP_DIR=$(mktemp -d)
 
           # Copy only the theme subdir
@@ -80,11 +79,12 @@ jobs:
           # Ensure style.css exists in the exported root
           test -f "$TMP_DIR/$REPO_SLUG/style.css"
 
-          ZIP_PATH="dist/${REPO_SLUG}-${TAG}.zip"
-          (cd "$TMP_DIR" && zip -r -q "$GITHUB_WORKSPACE/$ZIP_PATH" "$REPO_SLUG")
+          ZIP_PATH_VERSIONED="$TMP_DIR/${REPO_SLUG}-${TAG}.zip"
+          (cd "$TMP_DIR" && zip -r -q "$ZIP_PATH_VERSIONED" "$REPO_SLUG")
 
-          echo "zip_path=$ZIP_PATH" >> $GITHUB_OUTPUT
-          echo "zip_name=$(basename "$ZIP_PATH")" >> $GITHUB_OUTPUT
+
+          echo "zip_path=$ZIP_PATH_VERSIONED" >> $GITHUB_OUTPUT
+          echo "zip_name=$(basename "$ZIP_PATH_VERSIONED")" >> $GITHUB_OUTPUT
           echo "tmp_dir=$TMP_DIR" >> $GITHUB_OUTPUT
 
       - name: Checkout target repo (with PAT)
@@ -105,27 +105,9 @@ jobs:
           echo "ROOT: $(pwd)" && ls -la
           echo "TARGET_DIR: $TARGET_DIR" && ls -la "$TARGET_DIR" || true
 
-          # 0) Resolve and validate variables
           REPO_SLUG="${TARGET_REPO##*/}"
-          if [ -z "$REPO_SLUG" ] || [ "$REPO_SLUG" = "/" ]; then
-            echo "REPO_SLUG resolved to an empty/invalid value" >&2; exit 1
-          fi
-
-          EXPORT_SRC="${{ steps.pack.outputs.tmp_dir }}/$REPO_SLUG"
-          if [ ! -d "$EXPORT_SRC" ] || [ ! -f "$EXPORT_SRC/style.css" ]; then
-            echo "Export source not found or missing style.css: $EXPORT_SRC" >&2; exit 1
-          fi
-
+          EXPORT_ZIP="$GITHUB_WORKSPACE/${{ steps.pack.outputs.zip_path }}"
           DEMO_SRC="demo/${REPO_SLUG}"
-          if [ -d "$DEMO_SRC" ]; then
-            # safety: ensure we are syncing exactly the <repo_slug> folder under demo/
-            if [ "$(basename "$DEMO_SRC")" != "$REPO_SLUG" ]; then
-              echo "Demo path mismatch: $DEMO_SRC" >&2; exit 1
-            fi
-            echo "DEMO_SRC contents:" && ls -la "$DEMO_SRC"
-          else
-            echo "No demo folder at $DEMO_SRC (skip)"
-          fi
 
           # 1) Align local target to remote main
           git -C "$TARGET_DIR" fetch origin main --prune || true
@@ -136,14 +118,16 @@ jobs:
           git -C "$TARGET_DIR" remote set-url origin "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git"
           git -C "$TARGET_DIR" remote -v
 
-          # 2) Sync exported theme into target root (whitelist approach)
-          rsync -a --delete \
-            --exclude '.git' \
-            "$EXPORT_SRC/" "$TARGET_DIR/"
+          # 2) Remove any old zips from repo root, then copy new archive to root
+          find "$TARGET_DIR" -maxdepth 1 -type f -name "${REPO_SLUG}-*.zip" -print -delete || true
+          cp "$EXPORT_ZIP" "$TARGET_DIR/"
 
-          # 3) Sync demo/<slug> into target root if present
+          # 3) Sync demo/<slug> CONTENTS directly into repo root (if exists)
           if [ -d "$DEMO_SRC" ]; then
+            echo "Sync demo from $DEMO_SRC to repo root"
             rsync -a --delete "$DEMO_SRC/" "$TARGET_DIR/"
+          else
+            echo "No demo folder at $DEMO_SRC (skip)"
           fi
 
           # 4) Commit & push
@@ -152,40 +136,10 @@ jobs:
 
           if [ -n "$(git -C "$TARGET_DIR" status --porcelain)" ]; then
             git -C "$TARGET_DIR" add -A
-            git -C "$TARGET_DIR" commit -m "Export from monorepo ${GITHUB_REPOSITORY}@${GITHUB_SHA} (tag ${{ steps.meta.outputs.TAG_NAME }} → ${{ steps.version.outputs.TAG_TARGET }})"
+            git -C "$TARGET_DIR" commit -m "Publish ${REPO_SLUG} ${${{ steps.version.outputs.TAG_TARGET }}} to repo root; include demo/"
             git -C "$TARGET_DIR" push --force "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
           else
             echo "No changes to commit"
-          fi
-
-      - name: Store latest release archive in repo
-        run: |
-          set -e
-          TARGET_DIR="$GITHUB_WORKSPACE/target"
-          mkdir -p "$TARGET_DIR/releases"
-          ZIP="$GITHUB_WORKSPACE/${{ steps.pack.outputs.zip_path }}"
-
-          # Skip committing too-large archives (>95MB) — keep only in GitHub Release
-          BYTES=$(stat -c%s "$ZIP" 2>/dev/null || wc -c < "$ZIP")
-          if [ "$BYTES" -gt 99500000 ]; then
-            echo "Archive >95MB; skip committing to repo (kept in GitHub Release only)."
-            exit 0
-          fi
-
-          # Remove existing zips to avoid repo bloat
-          find "$TARGET_DIR/releases" -maxdepth 1 -type f -name '*.zip' -print -delete || true
-
-          REPO_SLUG="${TARGET_REPO##*/}"
-          TAG="${{ steps.version.outputs.TAG_TARGET }}"
-          cp "$ZIP" "$TARGET_DIR/releases/${REPO_SLUG}-${TAG}.zip"
-          cp "$ZIP" "$TARGET_DIR/releases/${REPO_SLUG}-latest.zip"
-
-          git -C "$TARGET_DIR" add releases/
-          if [ -n "$(git -C "$TARGET_DIR" status --porcelain)" ]; then
-            git -C "$TARGET_DIR" commit -m "chore(releases): update archive for ${TAG}"
-            git -C "$TARGET_DIR" push --force "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" HEAD:main
-          else
-            echo "No changes to commit in releases/"
           fi
 
       - name: Tag target repo
@@ -200,20 +154,3 @@ jobs:
             git -C "$TARGET_DIR" tag "$TAG"
             git -C "$TARGET_DIR" push "https://x-access-token:${GH_PAT}@github.com/${TARGET_REPO}.git" "$TAG"
           fi
-
-      - name: Create Release on target repo and upload ZIP
-        uses: softprops/action-gh-release@v2
-        with:
-          token: ${{ env.GH_PAT }}
-          repository: ${{ env.TARGET_REPO }}
-          tag_name: ${{ steps.version.outputs.TAG_TARGET }}
-          name: ${{ steps.version.outputs.TAG_TARGET }}
-          body: |
-            Automated release exported from ${{ steps.meta.outputs.REPO_NAME }} (monorepo)
-            - Theme version: ${{ steps.version.outputs.THEME_VERSION }}
-            - Asset: ${{ steps.pack.outputs.zip_name }}
-          draft: false
-          prerelease: false
-          files: |
-            ${{ steps.pack.outputs.zip_path }}
-          fail_on_unmatched_files: true
