@@ -106,7 +106,7 @@ jobs:
           echo "TARGET_DIR: $TARGET_DIR" && ls -la "$TARGET_DIR" || true
 
           REPO_SLUG="${TARGET_REPO##*/}"
-          EXPORT_ZIP="$GITHUB_WORKSPACE/${{ steps.pack.outputs.zip_path }}"
+          EXPORT_ZIP="${{ steps.pack.outputs.zip_path }}"
           DEMO_SRC="demo/${REPO_SLUG}"
 
           # 1) Align local target to remote main
