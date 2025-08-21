@@ -26,4 +26,5 @@ You can explore the demo website in two ways:
 
 ## License
 
-This theme is distributed under the [GPLv2 License](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
+This theme is distributed under the
+[GPLv2 License](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
